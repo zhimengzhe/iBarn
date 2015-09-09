@@ -1,0 +1,36 @@
+{
+    "name": "prizmcloud",
+    "title": "Prizm Cloud Document Viewer jQuery Plugin",
+    "description": "jQuery plugin that allows you to display the Prizm Cloud Document Viewer with clickable thumbnails which update the base viewer with the new document dynamically. Multiple viewers can be on the same page. You can display your documents in a slideshow manner. Prizm Cloud is a cloud based document viewer, so you can display over three hundred different file types on your website, while the documents stay on your server without additional installation of software or hardware.",
+    "keywords": [
+        "document-viewer",
+        "prizm-cloud",
+		"documents",
+		"pdf",
+		"doc",
+		"ppt",
+		"cad",
+		"cloud",
+		"viewing"
+    ],
+    "version": "1.0.5",
+    "author": {
+        "name": "Accusoft",
+		"email": "plugins@prizmcloud.com",
+        "url": "http://www.accusoft.com/"
+    },
+    "licenses": [
+        {
+            "type": "GPLv2",
+			"url": "http://www.gnu.org/licenses/gpl-2.0.html"
+        }
+    ],
+    "bugs": "https://github.com/Accusoft/PrizmCloud-jQuery/issues",
+    "homepage": "http://prizmcloud.com/",
+    "docs": "http://www.prizmcloud.com/plugins/documentation/jquery.html",
+	"demo": "http://prizmcloud.com/demo.html",
+    "download": "https://github.com/Accusoft/PrizmCloud-jQuery/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.7.2"
+    }
+}

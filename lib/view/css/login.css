@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.loginBg { background: url(../img/loginbg.jpg) center 0 no-repeat; }
+.loginLogo { width: 155px; height: 72px; background: url(../img/logoLogin.png) no-repeat; margin: 40px; }
+.login { width: 454px; height: 264px; top: 40%; left: 50%; margin: -132px 0 0 -227px; position: fixed; background: url(../img/loginBg.png); padding-top: 10px; }
+.login .col-lg-10 { margin: 0 8.33%; }
+.m-top20 { margin-top: 20px; }
+.btn { background: #385a75; border: 1px #32516b solid; line-height: 30px; padding: 3px 40px 7px; font-size: 16px; margin-top: 15px; }
+i { font-size: 24px; color: #bbb; }
