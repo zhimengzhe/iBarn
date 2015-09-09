@@ -5,8 +5,8 @@
 
     English:
     iBarn SkyDrive provides file network backup, synchronization and sharing service. 
-    This system can resume upload and down file and if someone uploads one file when you upload it too, 
-    it needn't upload any more, directly upload success. 
+    This system can resume upload and down file and if someone uploads one file,
+    when you upload it too, it needn't upload any more, directly upload success. 
     You can choose file download to local or online collection. 
     The recycle bin function to prevent users from accidentally deleted data. 
     
@@ -42,6 +42,6 @@ when you install, attention to check
 ## 捐赠(donation)
 ---
 ###打开手机通过支付宝扫描二维码捐赠本项目
-（支付宝账号：goodboyfan01@yahoo.com.cn）
+（支付宝账号[alipay]：goodboyfan01@yahoo.com.cn）
 
 ![godeye](http://www.godeye.org/img/theme/apuzvzlz1em53xhd90.png)
