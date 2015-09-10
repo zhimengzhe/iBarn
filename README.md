@@ -5,16 +5,40 @@
 
     English:
     iBarn SkyDrive provides file network backup, synchronization and sharing service. 
-    This system can resume upload and down file and if someone uploads one file,
+    This system can resume upload and down file and if someone uploads one file 
     when you upload it too, it needn't upload any more, directly upload success. 
     You can choose file download to local or online collection. 
     The recycle bin function to prevent users from accidentally deleted data. 
     
-    Thanks Yolanda (QQ:648067827)
+    Function list:
+    Multi file upload, resume upload, quick upload, progress bar.
+    File download, dir download.
+    Create dir; trans file or dir; delete file or dir; share file or dir; edit file or dir.
+    Search file
+    Size icon switch
+    Order by name, size, upload time.
+    Collect
+    Share
+    Recycle bin
+    Recommend
+    
+    Thanks Yolanda for UI help (QQ:648067827)
 
     Chinese:
-    iBarn网盘提供文件的网络备份，同步和分享服务。支持断点续传，秒传等功能。
+    iBarn网盘是一个基于PHP开发的先进的云存储系统，提供文件的网络备份，同步和分享服务；支持断点续传，秒传等功能；
     可选择文件下载到本地或者在线收藏；回收站功能防止用户误删数据
+    
+    功能列表：
+    多文件上传，文件断点续传，秒传，上传进度条
+    文件下载，文件夹下载
+    创建文件夹；移动文件文件夹；删除文件文件夹；分享文件文件夹；编辑文件文件夹。
+    搜索功能
+    列表大小图标切换
+    按照文件名称大小上传时间等排序
+    收藏功能
+    分享功能
+    回收站功能
+    官方推荐模块
     
     感谢王云(QQ:648067827)在前端UI上提供的帮助
 
