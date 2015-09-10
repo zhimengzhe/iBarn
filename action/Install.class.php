@@ -54,7 +54,10 @@ class Install extends Abst {
         $mysqlConf['slave'][0]['port'] = $mysqlConf['master']['port'] = $port;
         $mysqlConf['slave'][0]['dbname'] = $mysqlConf['master']['dbname'] = $dbname;
         if (!file_exists(CONFIG_PATH . 'mysql.php')) {
-            file_put_contents(CONFIG_PATH . 'mysql.php', '<?php return ' . var_export($mysqlConf, true) . '; ?>');
+            $int = file_put_contents(CONFIG_PATH . 'mysql.php', '<?php return ' . var_export($mysqlConf, true) . '; ?>');
+            if (!$int) {
+                return Response::json(FAIL, array('conf目录文件写入失败，请检查是否有写权限'));
+            }
         }
         $cres = $this->check();
         $check = json_decode($cres, true);

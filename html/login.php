@@ -13,13 +13,24 @@
         </div>
         <div class="col-lg-10">
             <div class="checkbox">
-                <label>
+                <label id="rem">
                     <input type="checkbox" id="remember" name="remember" checked="checked"> 自动登录
                 </label>
             </div>
         </div>
         <div class="col-lg-10">
-            <button class="btn btn-info" type="submit" id="loginbtn" name="Submit">登 录</button>
+            <button style="float: left;" class="btn btn-info" type="submit" id="loginbtn">登 录</button>
+            <button style="display: none;float: left;" class="btn btn-info" type="submit" id="registbtn">注册</button>
+            <div style="float: left;margin-left: 20px;margin-top: 23px;" id="aregist">
+                <label>
+                    <a href="javascript:;" onclick="$('#rem, #loginbtn, #aregist').hide();$('#registbtn, #alogin').show();" style="color: #444;">注册</a>
+                </label>
+            </div>
+            <div style="float: left;margin-left: 20px;margin-top: 23px;display: none;" id="alogin">
+                <label>
+                    <a href="javascript:;" onclick="$('#rem, #loginbtn, #aregist').show();$('#registbtn, #alogin').hide();" style="color: #444;">登录</a>
+                </label>
+            </div>
         </div>
     </div>
 </section>
@@ -62,7 +73,34 @@
                     }
                 }
             });
-        })
+        });
+        $("#registbtn").click(function() {
+            var k = 0;
+            var ajaxhtml = "";
+            $(".logininput").each(function(i, obj) {
+                if ($(obj).val().trim() == "") {
+                    k++;
+                    $(this).css("border-color", "red");
+                    $(this).focus();
+                    return false;
+                }
+            });
+            if (k != 0) return;
+            $.ajax({
+                url: 'index.php?m=user&a=regist',
+                type: 'POST',
+                data:{ userName : $('#userName').val(), passWord : $('#passWord').val() },
+                dataType: 'json',
+                timeout: 8000,
+                success: function(ret) {
+                    if (ret.code == 1) {
+                        window.location.href = 'index.php';
+                    } else {
+                        alert(ret.data);
+                    }
+                }
+            });
+        });
     });
 </script>
 </body>
