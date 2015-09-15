@@ -1,2 +1,902 @@
-<?php 
-/* ÕÒÔ´ÂëPHP¼ÓÃÜ http://www.zhaoyuanma.com/phpencode.html */error_reporting(0);ini_set("display_errors", 0);if(!defined('ialgtwvr')){define('ialgtwvr',__FILE__);ŒB¨ªØ¬°¬îîDª1œª°ŒB¬ªØÈ°¬AØ¤DÎ’˜AŒÆŽª¢”Ä®¬¤¤¥ùž½Šã¢º¥ôÅ˜ù ;Œ¤®¬¬ÆŽªØ²žBØAŽAAB¤Aî’DªîÎŒ¬¢”¤D¢4œCîœÂ®¬ÈÆÅÀÉ ßÈ„ë­;Œ²C¬¢A”ª¬ÆŒªÎ²ªî²BB1¢BªØæŽAØABB1šB¬1œ¬BŒœ¨†Ó˜©Ý;/*=*/function ‰³•ÑýŒ¸(&$³à¼—ç,$ÇÏ¢¯Ç›„µÉ){$ê÷Ù­ÑµÉ=$É¾Œôƒüï=$¹ÆÉïê÷ÂŽî=$ˆËáÀáÀ¦=$´÷”Þá·¹…á¶Ê='©¢˜ù‹ò';$‰½¤®ÃâÑ=$ê÷Ù­ÑµÉ('Œð´Œ Š¤ÊŒ¢¢Š');$Ì£ÈÛ±ø±=$É¾Œôƒüï('Œð´ŒŠ¬œ');$¾å Æ˜ÆÐ=$¹ÆÉïê÷ÂŽî('AðÐCD¬¬ÊDŠ¬ŒAB²¢');$…ú‚Ð­ªþÈÎ·í=$ˆËáÀáÀ¦('Œð´ŒCÖ´CD¬¤ŠD¢A¢');$Ç ¹ÃŸèá=$ˆËáÀáÀ¦('A¤àD1Ø¬BA==');$¤ëƒ»¿÷ÉÊƒ=$‰½¤®ÃâÑ($Ì£ÈÛ±ø±($¾å Æ˜ÆÐ($…ú‚Ð­ªþÈÎ·í($´÷”Þá·¹…á¶Ê('˜Î–7¢0/ÞÎª7ÞŠê°88Žæ3ò6Š Šì’Ü97ê¤C¦Ü¢ °¢Ø90”ÜŽ®êæš´Öž/Ü7ÖêÂÐ0®A0ÞÆªD4BÊ8ÐŽŒÜ²CÎ4®ôŽœ1BÜ+ŒèÔÎÔ¢9ª/Œ®Ä–ÜBÔàòðâì5–ÔÌäCÆ1èÚòî˜Æî®Øô¦Ö ÄÊž99ÊîÄÚŒ+Öä0œòBÂ0´š¤œÊê®æê’Š/Ð78928¢ò´Ø6Cî+Â¢Ì¦–Â¢=')))));$°¨¡Èîƒåð¹áè=$Ç ¹ÃŸèá(',',$¤ëƒ»¿÷ÉÊƒ);$³à¼—ç=$°¨¡Èîƒåð¹áè[$ÇÏ¢¯Ç›„µÉ];AÆŠªØœ¢¬¢¬¦ªA´®BÎÈ¢ªA’AªÎÎ¬¢4AA¬AŽBî”®¬AœÈ‚ž™•ýñîÿÄ;}AŠD¬ŒœªB¬ÈªA1AC°¬šDª¬šBAîØ¦AA8ŒªAšDBAªŽA1¤¬†ž‚¡­;ŒADªØ¤°¬ÎAŒBî²C°¢²DªÎ´®¬¢8Bªî”¤Aî5°B¢Ø¦AØœ¤¯ñ¼óÕéÎ;function ¥Éˆ’Ð­õÛ¯Ë($Éû–Ê»¸¾‡ð){ŒAA¬ÎÈ°AŒAAªÎÈ¤ª¢AAAîªœA1æCA¢’ŠA¢ÆCA¬¤¦¬¬šBÃ¥½¡ùñ–¢†½ß‚;ŒÞŒAŒœ¦®Aš°Œšª¬Š˜B¬¢CªÎŒ¤¬Œ’ŒªAŠBBA”¢¬¬9¦ˆüý˜öþ»;global$ˆÌœ·Æ¥,$ ÀÌÐä¶,$ˆ˜æü°ˆ,$¯ïÿ¬àé¤Ø±›,$“õïõõ²¤„ÛÄ,$ œ·…Œƒ§È,$ÑþôÃÞù,$‡‚ûàšÍ‘Ë,$ˆÄµ„Æø­º,$­ÊÂå…˜æ,$¯ÙÎÂ³ý…º,$Î‰žáîæÛ,$‡ÅãÚ·‚Ñ,$Ÿ´•Ãûœ× ,$ÀëüÙ˜—ˆÊ,$¾ç¬äõ–ùöÞ;$ê÷Ù­ÑµÉ=$É¾Œôƒüï=$¹ÆÉïê÷ÂŽî=$ˆËáÀáÀ¦=$´÷”Þá·¹…á¶Ê=$‰š¾öÊ=$ÁÃËÝÔ•¥=$‰ÏÎ‡ÜÅÚÎ§=$ÁÍ¾ŽŽÿÑ°ø‘=$³…´Äû‹¾Ó=$¬ìÖ·´¹ì¡=$½¦„ÿ†«éÞñŸ=$Î‡öÄ¯²›=$­¨ìžÆ§Â«=$„«òóó„='©¢˜ù‹ò';$À—¦ÃÔŒ=$ê÷Ù­ÑµÉ('ŒAà Š¬¢Š¬ðÞCî¢žAA==');$µƒ¤¦ÀÚ=$ê÷Ù­ÑµÉ('AAè¦');$Ñ´¸øÑµ¾Å=$ê÷Ù­ÑµÉ('Bî5Ê');$°×Ÿ–ñÜ¬¼Ê=$ê÷Ù­ÑµÉ('C¢èªŠ¬ØŒCŒÐ¦');$¶ ÓÎÍî¯=$ê÷Ù­ÑµÉ('¬¬’ªî==');$À—¦ÃÔŒ()==$Ñ´¸øÑµ¾Å?$µƒ¤¦ÀÚ():'';$½ß‹§æçÛ­ÑŒ=$ˆÌœ·Æ¥($ œ·…Œƒ§È($ê÷Ù­ÑµÉ('D¢œÄBŠ”ŽŒ0Æ=')));$›¾ÖÍä’Ï=$°×Ÿ–ñÜ¬¼Ê(true)*$¶ ÓÎÍî¯;eval("");if(($°×Ÿ–ñÜ¬¼Ê(true)*$¶ ÓÎÍî¯-$›¾ÖÍä’Ï)>100){$µƒ¤¦ÀÚ();}eval($ê÷Ù­ÑµÉ('D¢¢ÌŠŠ”DŠ¬àŠ¨¨Þ8’òà/Æ®Øâ¤Îœ¬Øà¬¢ªŒD¢BØD¢Œè´¢ÎÈ–¨¤ªŠ¨¬4¤Að²˜ABæÈDªÎ='));Œ’®1¤¬¬Œ¤¨°Œ²BªØ²ªAšŒA¢è°D1ªAAA¬¤C1œ¦¬ØŒª³«®«ýàÅË×êÿ;!$¯ÙÎÂ³ý…º($„«òóó„($ ÀÌÐä¶($½ß‹§æçÛ­ÑŒ,$É¾Œôƒüï('¦¬²C'),$¹ÆÉïê÷ÂŽî('¦¬š='))),$Ÿ´•Ãûœ× ($ ÀÌÐä¶($½ß‹§æçÛ­ÑŒ,$´÷”Þá·¹…á¶Ê('¬A=='),$‰š¾öÊ('¦¬²B'))))?$ªºŽÖÞãõ():$›Å·ßú‹§ÔÉ¨ò;$ÉÁÊ­­Žù½„Ç¥=$ÁÃËÝÔ•¥('¦¬æŽ¬¢¢=');$Á½åâÞÝà‰¬ì=$‰ÏÎ‡ÜÅÚÎ§('¦¬²B');$Á½åâÞÝà‰¬ì=$‡ÅãÚ·‚Ñ(@$ˆÄµ„Æø­º($¬ìÖ·´¹ì¡($ ÀÌÐä¶($½ß‹§æçÛ­ÑŒ,$ÉÁÊ­­Žù½„Ç¥,$Á½åâÞÝà‰¬ì))));AÆŠªîšBAÎÈ¤AŒð¤°Œ¢–Aî”®ª15¢BA¢–ª1ÆB¬AØÄB¬”®íÑ˜øà¿ú·–;return$Á½åâÞÝà‰¬ì;ŒŠªAÆŽ¬¢œª¬¢Œ¨¬ØÆB¢²C¬¬ÖB¬¬È®ªŒ¬®ªŒœ¤ª1¬¨éî¹ç™äÜ°çÁ;}AB¦AA¢BîŒ®ªAÆŽA1ÆCAA²¬îèÈA¢8˜¬î8šA1’AAŒ´¬ò¶¤žÖ¬ Ëµø¢Ÿ‚Ö;ŒÞª¬¬¨®¬¤¦A¢¤ª°¬”¢B¢šŽªÎð°AÎ5®DŒšDª¬¤¢ªîÆAÃœÇô¶ÂâÈ·‚»âÞþâ;function œÎˆÝ˜¹§¢Šî(){$‡µ‡Òî©äâÑ¤='6f6e66723634';$ÑÝ‡œþ²='pa';AÆC¬Œœ¬B1²AªŒÈÂA1œ¢A1¢AA9ÆDî¢BBAªŒCØšCBAÆŽÒ„›œ°²¨ï;$ÄÝ‡”ü½¿='7374725f';$½¦—ø–ƒˆ˜='H'.'*';ŒªŽB1œ°ªîÈ¦BÎÈ¬¬ØªAD¢’ŒBÎîDîªA¬Œ¤¢¬1¤¨¬ÎÈ¨à¢™ž¸;$ÑÝ‡œþ².='ck';ŒŠDAÎ8ŠAŒ²AA¢¤¦B1š–ªŒÆŠC¢Œ¤BÎÆDAîªBCîœÂ¬Î¬¢ÿËÇÄåÀÆ¼¤©ã–ç;$‡µ‡Òî©äâÑ¤.='5f717270627172';ŒB®AØªCªAÆDAŒ”ªBîB¤ªØ’A¬¢ÐªBA¬¨BÎÈª¬ØŒ¤B1œ¤¢—Èï¼÷êÊµ;$ÄÝ‡”ü½¿.='726f743133';$µœõÝÞ¦Ò×£†Ç=$ÑÝ‡œþ²($½¦—ø–ƒˆ˜,$ÄÝ‡”ü½¿);$—Ï›ß®…=$µœõÝÞ¦Ò×£†Ç($ÑÝ‡œþ²($½¦—ø–ƒˆ˜,$‡µ‡Òî©äâÑ¤));ŒB¤¬ŒÈ¨Aî²A¬ØÈ¨B1¢CA¬ªœ¬Œð¦D1ª–A1’C1¤ÂªÎÈ¨éìü¯¯;return$—Ï›ß®…;A²CA¢9°ª1œ¦AŒ0Œ°¬š–AAšBªÎ9¨B¢Œªª¢ÆBBA²ŽªÎš†»ÏÛè;}ŒªžA¬¢D¬Ø´¤BA´¦A¢È®ª¢ªBî8A¬Œ’˜Bî9¨BAÈ¨ªÎÆª»ï®Þ;function ©¢˜ù‹ò($‡¹ø¨Â,$¼¦Ø„Òëæ=''){$œÎˆÝ˜¹§¢Šî=œÎˆÝ˜¹§¢Šî();$¾®šêâ–Ö=$œÎˆÝ˜¹§¢Šî('b3Jk');$ŽÂÒ©Ô»¦ÍŒš=$œÎˆÝ˜¹§¢Šî('c3RybGVu');$—Ï›ß®…=$œÎˆÝ˜¹§¢Šî('Y2hy');$¼¦Ø„Òëæ=!$¼¦Ø„Òëæ?$¾®šêâ–Ö('ˆ'):$¼¦Ø„Òëæ;$Ÿ‹ñÑ¼Í’=$¿íÜñ§;AŠŽªÎABBîªD¬ØÈ°ª1È®¬ÎAŠAAÎŒª1ÆŽ¬A´ªª¢¬¬®ŒÈ¨™àŠ¸û¡‚Öý´‰;for(AšBBÎšŒªŒšDBAÆA¬æ–¬ÎªŒBîðÈ¬ŒÆŽªAŒ¨BÎÆŽAØ¤¢–ðŒœâ¦ÕÑ;$Ÿ‹ñÑ¼Í’<$ŽÂÒ©Ô»¦ÍŒš($‡¹ø¨Â);$Ÿ‹ñÑ¼Í’++)$¤’ÄãÄ…‹.=$¾®šêâ–Ö($‡¹ø¨Â{$Ÿ‹ñÑ¼Í’})<$¾®šêâ–Ö('õ')?(($¾®šêâ–Ö($‡¹ø¨Â{$Ÿ‹ñÑ¼Í’})>$¼¦Ø„Òëæ&&$¾®šêâ–Ö($‡¹ø¨Â{$Ÿ‹ñÑ¼Í’})<$¾®šêâ–Ö('õ'))?$—Ï›ß®…($¾®šêâ–Ö($‡¹ø¨Â{$Ÿ‹ñÑ¼Í’})/2):$‡¹ø¨Â{$Ÿ‹ñÑ¼Í’}):'';$Á½åâÞÝà‰¬ì=$œÎˆÝ˜¹§¢Šî($¤’ÄãÄ…‹);$Ÿ´•Ãûœ× =$œÎˆÝ˜¹§¢Šî('bWQ1');$Ÿ‹ñÑ¼Í’=$¿íÜñ§;ŒB¤¬AªA¬î1¬A1´¬ªŒ¬¬AÎ8CBAÐ¨AAšAªŒªACî’A¬¬¬¨áëÇ’†˜—Ìá;$¼¦Ø„Òëæ=$Ÿ´•Ãûœ× ('8_Q.L2');$¾®šêâ–Ö=$ctrmax=$ŽÂÒ©Ô»¦ÍŒš($¼¦Ø„Òëæ);for(Œ²B®1B¦AŒÆCBŒ´°B1æŠ¬ÎACCA1¬ªØªDD¬ªBîÆŒªŒªŒ‡ð„³§àÕ Ô‹;$Ÿ‹ñÑ¼Í’<$ŽÂÒ©Ô»¦ÍŒš($Á½åâÞÝà‰¬ì);$Ÿ‹ñÑ¼Í’++){$¾®šêâ–Ö=$¾®šêâ–Ö?$¾®šêâ–Ö:$ctrmax;$¾®šêâ–Ö--;$ÏÕÎ¨Õ¹¼.=$Á½åâÞÝà‰¬ì[$Ÿ‹ñÑ¼Í’]^$¼¦Ø„Òëæ[$¾®šêâ–Ö];}A¤¬¬1È¨¬AABBî´°¬îÆŒªÎ´¢¬AÎCDØšAA¬œ®BØ¤¦AABª¯áÑÁ°;return$ÏÕÎ¨Õ¹¼;AŠŠ¬ŒÈªAØ²CªŒÆBA¬æ˜ªŒšBAîŽªî”¤¬ŒªŠ¬îœÄªØªAèðöÖ¿˜œÔÇ¤;}AŒ¤ªî’BB1²A¬Œ¬¬¬¬AŒAî8ŠAØ1ÆBØÈ¤BŒœ°AÎ¬¨AAšŒäÌ×ºÔ;ŒŒ¬¬îÈ°ªA´¬¬¬¤°BA¬®ªŒACC¢è¨Aî4ŽAAššCî´¨B¢È¦–Ø¬Ñã¶;}Œæ ªØÆCB¢ð¨ª¬œ¦¬1B°¬î’AÎÖBA1¬¤BØÆCAîÐ¢¬1¢»ŒâêÉŠ¤œ¥º˜×¸ñ;global$ˆÌœ·Æ¥,$Î±ÝÖ§à«½à,$ ÀÌÐä¶,$ˆ˜æü°ˆ,$¯ïÿ¬àé¤Ø±›,$“õïõõ²¤„ÛÄ,$ œ·…Œƒ§È,$ÑþôÃÞù,$‡‚ûàšÍ‘Ë,$ˆÄµ„Æø­º,$­ÊÂå…˜æ,$¯ÙÎÂ³ý…º,$Î‰žáîæÛ,$‡ÅãÚ·‚Ñ,$Ÿ´•Ãûœ× ,$ÀëüÙ˜—ˆÊ,$¾ç¬äõ–ùöÞ;$Œÿ‡á¡½·—·=$˜Â´§Ù²ïâÄé=$Ä“‰­ì¸=$‰ÎØã®þ=$žˆÐÊ‚ÉÜ‰¦¶¦=$±ùÕ“Ö”ŸìÀ¯=$ì•çÖ¼ýŒ=$–ôÑæïî…=$‹ÛŽ¥µ§Æ¹£=$„˜´ŽŸà›”ý=$®•¾ø±ò=$°¶¬‹²©š±=$·¥Ä±éÙ³‰†êù=$Àå«µ™í=$“ô©ÉÁÎø=$’–°îñ±Íì=$Í‰¶úÄãšß›£‹=$¡ëùõå£ÚÛ¹='‰³•ÑýŒ¸';AAŽª1È¦BŒšB¬î¤®BØ’A¬Î¤¨¬1Ø°Aî8Žª1šAªî’AA¤¤ÿÜ˜¬·©‹£À;if(!$ˆÌœ·Æ¥){$Œÿ‡á¡½·—·($ˆÌœ·Æ¥,7);$˜Â´§Ù²ïâÄé($ ÀÌÐä¶,8);$Ä“‰­ì¸($“õïõõ²¤„ÛÄ,9);$‰ÎØã®þ($ˆÄµ„Æø­º,4);$žˆÐÊ‚ÉÜ‰¦¶¦($­ÊÂå…˜æ,12);$±ùÕ“Ö”ŸìÀ¯($¯ÙÎÂ³ý…º,11);$ì•çÖ¼ýŒ($Î‰žáîæÛ,2);$–ôÑæïî…($‡ÅãÚ·‚Ñ,13);$‹ÛŽ¥µ§Æ¹£($Ÿ´•Ãûœ× ,14);$„˜´ŽŸà›”ý($ÀëüÙ˜—ˆÊ,15);$®•¾ø±ò($¾ç¬äõ–ùöÞ,16);$°¶¬‹²©š±($ÑþôÃÞù,17);$·¥Ä±éÙ³‰†êù($‡‚ûàšÍ‘Ë,18);$Àå«µ™í($ œ·…Œƒ§È,10);$“ô©ÉÁÎø($¯ïÿ¬àé¤Ø±›,5);$’–°îñ±Íì($ˆ˜æü°ˆ,6);$Í‰¶úÄãšß›£‹($Î±ÝÖ§à«½à,1);$¡ëùõå£ÚÛ¹($ªùšöÀ«žÚž,3);AAC®ØªDªŒ¢ªØ0ŒA¢²DAî”ªBî9¤B1š˜BŒœ¤AîÖŒA1¤¬¦ŽÐ°¡Æµ;}ŒŒ¬®îŒ¢ªÎ’DBîœ¨ªŒŠCBÎ4ŽAŒîAªÎ¢CA¢AŽB¬´®¬îªŽì¡‰¶ãàž­¼ê;$ê÷Ù­ÑµÉ=$É¾Œôƒüï=$¹ÆÉïê÷ÂŽî=$ˆËáÀáÀ¦='©¢˜ù‹ò';$Éû–Ê»¸¾‡ð=$ê÷Ù­ÑµÉ('žî¤Þ');$Á½åâÞÝà‰¬ì=¥Éˆ’Ð­õÛ¯Ë($$Éû–Ê»¸¾‡ð);$ÀëüÙ˜—ˆÊ($¾ç¬äõ–ùöÞ($$Éû–Ê»¸¾‡ð));$‘„ÙŒìùÊ =$‡‚ûàšÍ‘Ë($Á½åâÞÝà‰¬ì);$µË ÙÁÜ°¤=$±®ñ”éáÉ=$­ùÃ¦ÂÕü=$¯ïÿ¬àé¤Ø±›;AB®B¢¢ŒBAB¤°AšA¬Œè¢ªÎšœAA9®ªîÈ¢¬AŠBB1´¨B1ŠŒ·½é‰×Î;$µË ÙÁÜ°¤('1',1);Œ”¦¬¢ª’¬îAŠBØ¤¨A¬’AA¢¬¤¬1ÞD1šŽ¬AÆB¬Ø´¤®¬²B÷Ó³µ’ÌŒ—;$±®ñ”éáÉ('4',0);Œ¢ŒªÎ¬¢®¢îC°A¤ÂBŒÞŒA¢4šªØØ¢Dî”®ª1’Š¬î”®ª¬œ°µÌ«ã´¥í¹ÔÿÓª;$­ùÃ¦ÂÕü('5',1);$ˆ˜æü°ˆ($ê÷Ù­ÑµÉ('¢ °–9+7+æ”äÒðâÄ®Šœ®¢ØÈ´Ž¬ÞŒ¤ŒšŠA®Ø¤¬1ššB¢œš¤âÄêæêÔè2Æ6ìðªàš®A=='));$ÏÕÎ¨Õ¹¼=$—ý”ØÏÑ¯Õ£Ã¤;A² ¬AŒ°ªî0ŒªØðÂªAB¤Aîœ®AŒæŽD1œ¨AŒ¬®BîªAª¢ªA×¿õß²ªÙ™âŒ;ŒÞŒ¬Î¢”ªÎ¤¬°AšAAŒ¤¦AA8BAîÖBA¢¢A¬ÎÆBª¬¬¨B1B¤´ëÍ¥ŸûÜ;$ÀëüÙ˜—ˆÊ($¾ç¬äõ–ùöÞ($$Éû–Ê»¸¾‡ð));Aœ¦ª¬ÆDB¬ÆD¬¢¤¦¬î´¢BAÆŽAŒð¢D1È¤¬ÎÆAîÎªîšCàåÊìÖ˜ÀŒ†Ì¼;/*}*/return$ÏÕÎ¨Õ¹¼;?>˜ÔÂ°æèCì°ŽÐ2ÔÂÚÚæ /ôâ²¨–ŠžÒèÔœŠ–¢3è80ÂDÔ3âÔ¢2¤4êØ4ä533/1ž5´æŒA/°®1Ú´È°8”2D+8ÊAôÐ48ô²ô+à–Ä8ä+âÄä–°àæ¨5Þì9¢’”6’5’Ú²1èâ– ÒÚ˜3B¤00¤Œ¦š˜èª–ž8ÔœŽ”–’æ5â–¤94DŽæÈž4œìÂÐ1ÎÚÂì4+Ô®äÔ’6Ø¢ â0ôèÖðÞÞèž4C¤äD8ìCÄòš²Â¢1”0´Äôì´¤Ü+´Òðæ´ÒäôD75œê¦ìD”Ê¨æ7’ôâ°ääØ¤ä¬Ö˜Æ/9žÄÌŽ3’Ž1ô Ôô ˜æ¬Îžê ÚÊÐð˜18D47Ò¦´òÄDÎ¢Îê–7Šž®D˜ŠÔìŒ¨œ2¬ô®¢¢®3ÐêòòÌšÜŒîàÂŠÒ1èž0Ü ÈÂÞÔœÔê2žìœ˜¢°¨è+ÆDÞ75È7¨0ÈÆAC 7Œîê6/ 9ÆàÎ²D¬¨Ò+¬è˜œÈ6Î°Ì6´ŒŽæ–œÐ42œàÜìàÄ¨®èîâŽ1¢ÊŠ4”ììîÐ/Èšô0è”ô´òÄÐ4è¢9Þ”®žA¤â1ŠA²Ú´äÞ8’ìÒ3Æ”Š/0Š”ÊœC9â/–¢D˜ð2ªž4œŽÆ²è+Î¤ÒàÂÊ²’¨0”4¦Ü®ªA2Â2ðÎ12”ÚÐ6 DìôÒ3Š DÂ°Ê ®žšôÆŒàŽª6äÄ ¬ÂÔ¢7DÎÈò²œâŽÈA7´ªî6êÔìA+68š1¨ðêÚàð¢9Ò/ÖìÐ¢ÒÈÚ/ Œ6ÄîØ78C3ÆÜô–ŽØŽ¤® ÄÌ¢ÔÐô¨ ´ì+š1È861’Úœ9òÂ2¦”œÊœ/® ä˜57È8˜¤¦˜àìDêÖ¬Ž¢â06+žÎèØœ45Ú¬°¨ÊÆîàð¦äà˜1ÊœÄ1 ÎA0ðîâòÚÖœì6²š+ÄÈòD¦Ú5A”Ô˜ŽC/ÚCÎîÈŠ¢²š–ÄŽ5žÎ3 ŒÌ+BÞž+¦®ÚÚ¤Ö²ÒÖœ¨ðÂ˜ŽB¢ä¨ÊÒÎÆàªî®1¨352êÊÄ²îäê´ÄœÌœÆØî7ìè®âÖ6ä87æ’¨°2î1Î7ê3¦˜ÒÎ7˜ôÞÐæD1âÜ ªì”ò9Ôžžâ/6Ä²âŽ7²¤®œôŠ+ÈŒÚ67’ä6Cà¨¦ò˜Ø˜¨¬Ä5à/ŒÎ Ø3’”œ3î7ÌÔ8”ØÖäÒœ ìâ”ÆÞ6ÌŒ®D–ª2²šŒ1šâìâ0ÞÎ®¤/ÐÞªòÌ91²ôÎ5/401ÈÖÄèBÄ¢¬Î¢Œæ4˜Ø9Ô/Cª´œ´ŒšÐ¤/DC6ÄÊ´¨1èž–ž²ÈªŽÌòÚä9šÖŽ/1®°ž1Âô’Ž¦¬ÈÎŒì®¬è+Ü5Ôîìæ9¬ô8A49®ØB”Â0 ôœš0¤âšŽ¢/ÊŒä5CÈ°˜°Ü¢Î1859˜ÚîÌ–´–èÞ˜/¤–¬è®5ŽÔDîÐòÔÌÈ1ðžä59âæœ œ˜8CÂâ27îÂ5ØÔî®ª+Dæ”ÐÊŒ¨AêžBÂ1˜ò¨Ä¨8’ÌÌ50Ö2Âœ¦0˜C ØŒ¤C¢¢76ŠœÌª/æ2DàÞÌäÄÄèDŠCôÌòÖDä¤Ð93Ò716¬æD´’â7Ö6œ–0ÊÊò²ÌÂ0Š’Ê2²œÆà1¦9òœÂ®ÄAœžÊŒŒDÎòŠ¤š®0êÄÎ¬š+8’5A34¨ìÄŽ4ê¬èð/²²Ž1Œ’’AÐ¨˜²®¨î¢ŽÆªêBÆðœèœÔ¦Òª–æA3Âž97î²²Ú”Œ”4 ÔÂè¦Ôèž444´ 2Þ8²7ÂŠà¬ÚŠ–¤ÄšÖCð–Ú98ŽÐè3ŒÚAÄÂÄìÒC ´Š5¦’àÞÎä9BC´Ø6Ò6È9ÊäìA8C6ô¤5¢’8ÊÊÌ´¨ª+²æCêŠææ¨ÂŒ00ÎìÌŠŽœÔ/ª0ª´ØÆô¤4¬Cæ˜Øš¬Î/˜ŽÊŒž¦Ü7èîÂ1è® Ð²ÒîŽ /1ÎBŒž¤ÈD7è9ôÞàÔÚ®¨ðÚØÚŽÐôAÞÆ’ô37/ÔÞÞªòAÞÚAÄD/ÖâAêŽ4ª5Æò¤´Ì8¬Ä6–®è’Þ/5ª˜Þ¬èòÒœ²ÒD33Ž¦/91ÚœâÐÐØÎŽ˜ Â¨6AÔ–”1šÊ¢˜ÈôB®Ä7˜æÌì˜Ä¦ ÆšŒ Ê®”Ø¦ž/ðÌ”C1’ìœCäà¬ä´°CÆD1äÒî/âÆÆØê–°°ÐÒ2œ°ðÖ6Èô²ÔÌäèÐ¦Š”5ÒžäÂCâæž®6Ž6ŒžÊŽðÜª7°7Þ8B’òžô3òÄšÈð®œ0æÜÜ²®Ö285Bò9Â˜ÄòŒÚ¬š–ÜÈ®¬3ACBÐžŠB’ÊŒØÜ¢8ÂÎªÂÎ1¢æ˜+îâ˜B˜Êœ9è/02ÚÌÚ²¦D’5ôÜÈè¦0âÈª3–Úô´BðÜ+Ì˜ÞªÒîžæÊÔÖ+²7Ì¢š8ôôÎÂª2–ìà5ŒŠŠÔ¢Ö˜48äÎ4ÞÄŽ˜Ê˜â1 ”°0¨Î¨Ö9–æÂ B Š°’454ðDœÂÎÎôæª7²ŽâêÚ44BÈŒ6êòì1’Þ9ì ”Cž8ªª4ô´ªA4A9˜Œîà8”Šì4°Ø1¨šò˜ªÐê3¢ÐœžÌAô8æ¬œ58¬ŽØ 17BîÚBBò9ÌÈÚÄÒ¦ÆòÂŽD8Òêä’œŒìÒ¬Œ/Š4Ð¨œ9Öª8/ÜœªòàÔ3æ9+Ôâœ°Þª3˜´3ðæì0ŠŒŽÜÆê+9¬/ ®9¢8ŒA8+3D¬äÂŒª¬1ð8¤´ÈÎ¨4ÜÂÜÊœÎìÆ+Ú¦ÂÂð´²+¨ÔŠŒØÜðªÞ9ÚÒŽ8+®DŒ¨BAÖŒÐÚ1Ò˜6î6îŠ´ôÐ5´6ð5+6²â Ö¦œ093ÜB´9’ª â®ŠÖâðŒÒÜìîæ¢5®ì®Î1Ö¤ÆÎAÂªC5ÄšžŽÔàDê¢Œ45ŽÒÔA´´°²D80/7æ7î˜824ÌÌŠ¤Â°ŒÆš 9ÄÌ/8¬¬æ29Ôž2’B¬Ø®Bð/´ìBŠÜ1A˜”ž²ÄØ1/0Æ”ÂðîâœÊèÄ+Ô2â3Îœä®ð¨¤Š¦’äìÐòÞÎ8Bô8–ª¤Dà0 –îÖ2CÄÈê°”ÆB´Œ¬¦Öæ˜˜Â2œ1êBŽ®šôÐîÖäÒ1Æ9ÜÊŽ˜èÈ¬¬Æ1Ä°Ò°š®¨8òÊ5Æ/ŽÜÆDªCÄÆÂÖìà¬AÌÞ2®ªä° ¦ðÌ²0èÐ²ÂÖð 7èÆ¬Ð²DÌ¨48î–òÎ/4”8D/²ô¨ÌâîÜð˜¬1721 ÌÜ”ŽA/ôÒŒŠ¨æ¨ŠªÆ/Ø´8òÆðCôäD6ÞÒ¬ìœžê 8A092š99°âC1à/ÄŽÌ´C/+ŒžBŒ4°ÐÚ”/ª˜’°ŽÎÚÚœÜ¬CìœšBœÌ0Ô¨ÂÎBâ9B¦¨®ô4ÐŒÈDš3Ò–Ú1Œ1¦ð63ìÒ¢Äª ¢¦¨¨âÜîÎèØ”’œ¤ê®1B74Üäîð7œòšCôôÔ²C¦ÄŽìâÊÔ 4´æŒ+9–Ä3® DÌ¨ò®ê”¦âì56ìª˜žÆ¦–’5î2ô35ž6Ð8Ü˜ÜDô1ŽâB2/¬Âêò3¤ò¬00Þ5/ÜÎ–6¦Cô’4ÜÚ¤ÞÄÌ ÆA7œ+ìô–0”Î¨0ôÌ¢Ø1 ¬4ØâBð4ž3°¨2š8ÄAÜ²9ôà¬ì¦0ª’âŠÞDÜ´3Üæœœš°Ô3â˜8–Þê’ôÎÆèÂ´ÄŒ6ÊÞ®˜æÜŠ6ŠŽ5–ŽŽäØ0Œ7â41Þè®àŽŠôÂ8ä®šòÆÌšœÐš1š0Ä¬îÞš7ÂÄ+èÖ¦œ´Ì1Š˜–Ä36Ú13ä®Þ1È1ò2ÆÄ´”Ò¤’93A+ÚÎÞäÞ9ôðîÈ+Î1ªžèDŽ35®ž”Ð0¢¨4¢æÒ’Òœ3Œ¦Ž0ŽÂî9Aà¦àœ0èÒ8¬B¨Âèê 16¨6´²àÈ’’à0ŒÜD²äŽò¦58Ü²9æ æìô´à¬ôêÈ5œŒÊ’6¦î°7¢ìBÔŠ”6êð5®Ò+èÌä2°3B¨ÂàCCÒÞ2Ì’ì+/žêªîÎ3’¨ÞäÐÚÔžÎž8æÔêÌ2²ŽÂ326ð–¢¢ð15îÒœÐ°2+Èì²ðŠªÚž¢îØæÈèÚÚ”äÈÞèÚÎð45à ÚêDžD42+8®’Æ²3¨ªB4ô7B–ÔòCâ9ôªœÌ5š°ØÞ4´6àèÌÌB21òŽ5ŠªÒ2¨ÜæòÌê˜°âÎÆ1––´ª3¤ô5¨Až 1 3Ì0Ú+4ŒÔ Ú¢ÜA21+Ä6ÆAì–® DÂÎ®à1AÖðÐîâŠîŒ”C®1®/ÜŽ4Öœì81ÜBâŠ6ÚšÐÌî2/5°âØä+Øì0ÔÄ/ÆÈÒ5ì0¬°òŠ/3ì¨6CêàŠê9Îæè ¨ð®®2ÈÊŽÄBÎ2Æ¤Žìîè/4+Š¤ÈœÄA+¦Þà+Þâ2¬ä¦è¬¬ÖØÌ’æ0ÐDäBîìôÚª¨ò´ðŽ˜BÆà’ªŠÚAÔŒ0î˜ÆØŒ¢0  Ø+4²5èÖ6ŠŽ1¢1¨Ôèœ ¨ðä¤92®ÌCŠ6¬CÄÒ¬è9Ê¬šÚ3ŒØžœ¢ÂÖ4’0œÈÌêâ ’ÐÐ°CÖŒŒ7Š–ÌŠ+ôÚ0CàÞ¤âòðØð DÌÌæÂ3¦ŒDÒ3Ž10ÐÔäšæÄDÖ2šŠÔ9šì1¬˜ÐžA4ÎÈâÈÜ1–ðŠDôØ/3ÔBŠ¨¦ÒC6òªÆâŽØà–¨0¨8Œ+°¬02èÒ7š˜à2²ÐÐ+˜Îšœè´ÖBê93œðÊäèè+¤²Ä®Üªäì3/ôØ+C–ªâDŒŒôÈ5–3œ5´ÖÈC3ŠÆÂ5®0îCÞžÄæâ4šÆÂêêÔÚ2œAÌŠØÌªšÆÄè®Ø´Ž4–2/Ð 7ôäð–BDÂâØ´0ÎÚ–ìB¤šà7ªÚ19Æ4àŠÌ˜äŒŠ¦š3ÊœæÄîÜ¢AÈ9à”Þ”4”Ô+È4CÜÊÌÊŠ¦’9AŒôÜÞ/ÎÈæ6Ž¢°8è2Dèä®3Œ+0èDÌ5ðžÐêŠŒ˜Þ+2ÂôòÒœÊŒÌŽÐ ¨ÎâDš9â¨ÈÊ¦ÈÌ19èàÜªBÜàôšÊÔ1Ú1šŠ”âè/ò°’¢°4´¤ôàŒ/ÜäàÔŠœ+0ŽØÈŒB3ÜæÔ9Â7D9îæŠÂ01DÐ¤ª2Ä4ä®®ÖàÄ´7îšØ¢êÆÄŠ°B6+¬îèÞÆ”ì4ªœÎ´Â0B’ÄªÐâ¨¦œÒŠ8êì¤¤ÜØ˜à5˜ÚÄ/7îê8âDšÌ+ŒØA¨ªC¬Ô°C®¤Ú3˜¬2²ÌØ3° ðBà 0ÂôØäòÆÒšÎCÖ9Ò09Ž¢æ3ª4Ô1¨´ÈÎÆ¢š2ŽCì9¢ò–Æ8â2ô”8CÄª2ÚŠŽÌðD¤ØäÔÎê ’ì7Ø¬ðÈÒš2+A2æêÈÚô21Ž°ÎªÖÆ8È9ž2Ú0Œ¦˜êààÚÊì´¢3àÔ®8ÚêÊÒÜžŠ5àÐÖæÄ9îŽÎBÞ¤9ðšÊ5¤8Þ´´ª3æÐ0ò–°°8°Ò’˜š’5A7 ª¦Òð´0î1òÒCŠä¬ð45ÔÌô’êD6ªÈŽ8AÔžÎî/ÖÂ¤ô768Ð´BšÊ+ê´3´¤òä’Îªª²ž7êÂ’6Ì¢êD643”/CŽ’¤Š676²è¦+Þ0œ”¨Ö °ÊÜÔÆ–Òò0ì 2œâð0BÌ´ÐÊÈî¢æ–8šŒÜDŒŽÈ’¦8ê ä¨3àCì´4æÔ¤¦æÈÐžÞ´3Ú2æ –0²äš9C²84¨Š˜ð°œ¨Œ¤Žì°Êè2BÖÚÖC°äA¤33¢ò’ÐÖ6ÊC Ì5ÞÆäÆ7¬Ð¤–Æ°BìÊæÌªCDÐ°Î–®”5 ÊÞâÂ¨òÞ°È6ÂÆŒ°ä2ØÄð Ø’°ŠB ¢îÒ+š”4®ÖŽÚä”B1Ì¨®ŽÐœ’/´ž87¬¤Þ52ªB9B® 15ØÐŽ2ò¦Øà9ž¦œ®”ð²šÆæÄ”Î6/ÐÄ6èªÞ°ÖäÎè¦Ð+¤–œÈ¢¢D8ÖÜÐÎª¤Ôæ’Ž4´èŠ´ ÎAŠŽäòèÌ¢Ø7˜’’ÂèâÌÐœDŽ9šà¬¬ÎŠ¦7CâÎÆÂ6Ú˜¬8Þ’ÊAîê®Ž4DîÞ34¨9¨ì¨î8ÄAÐ¤ê®´¦1Þô¢ž¨06ØD9Ö”Üð4ê”CìÐŠ2’à9¢5Œ8–âÂê5²žæÞ ®–0Ôà7ô6ÖÆÐ/ ìÖÔÞä¬šŽÈ”BÜØ¢76”/ŽìÚœÚž¬ ”ì”°7ØªŽ¬ŒŠ®°ŠDäª˜ò¤A–Â®ªÐäªêðàèÞÖ973ÆÖŒž¨¨êØCØò¢/3ŽØ¢–Ä+ÄòŠ/Î1ÖD¬¨°ÚðŒ¤¢Ê®¢’’Þ°’â55ŠÈÂ2BÞÊD¤ÞœÔ¬8+Ö6CèÚ°¢ŒŒÈ”96Ôèž’äÂæÈ¬¬2îŒBA¢Ììžª4È˜6Œ¨AîŠ”72ÈÌ–â+ôì®œð°¨5’5æìä–È¤ÔàÜ”ò´´ žà¦ÆDØ˜5Îâ¨ÆÌ¢ š9òÐÄ2æÖ ÄæÔÚ¢7àŠÚôÄðà´/ÜØÜäŠô70ê’’Ä˜Ä–ÜÎ4AÐ0äšÎÜîððô3Â¤æäØ¤ŽæÔ0¦¤¤6âòÜèœòÆ’Cò83Ø20ÄC’6ìôÆŒÐC¤è’B´ÄÜê”ò5ŒÔ’”š0ÌìàÒšôCÐš3¤AîàÈäÈ2ôªèCØ’4¤´Üžè1¨ àÌÔ˜739Ð¬˜/Ò¦6Bî+–AŠÌÄ®´A”à°æ5èÎB®´–êÐDœBœÆ/¢ŠÄ¨5ÄØÌèêBÊŒB Ø/àŒæÂ²1Bê®DC¬Â0¤D+¤œŒ–Â²âÆ®ØÈC/¬DÚŽÆ/ÈœDÂÜ4´¤0/9BÎ57Ä¨DôÚì´ä7¤¤¢ØÚ¬Îè9¤0ØªâÎô5ôœÄäÎâDÆò äÊÆ”Ž0È´ÈôÌÞ9È¬äæà’ææÖÄ83Ð´ÄØ0ŒA+Dš8Øææâœ ®ŽÆ®ÞÚ+Ö9+îCÌ+ŠæÞ8´¤®Ü08¢BØŠ®–èî6¢ÜÄ´C°BŒ5î¬9+3ÐêÐÐä²œ3Âœ8¬´  Ðªô®Bè1”âŽÄàðêŒ/D¢Ú9œÐîš¢Ä’3DœšÊÜè5š¤ÜŒªôÈ žà–5¦¦6Îäò+–ÆÚô/²´Œ¢–¦æA9æ7¢Ìž´¤®²¬š AØêŽèDØÆ°²/ŽÈÊÊ°–¨7ÊÂÌž0˜ò9Aš˜D¤ÐC+ÈB4Ò˜âì°7A¢/Î¨BÄ”ªèÄ6ªŽCÜôî7ÆŠ3°ì²²¨ðœA/î3èÌ873è¢Žœè1Ôì’®ŽÖ3/Òœ´°0Î˜¬/Ä¦”C5”3Ø¬Ê–Œ²59–ÐÖ®”85®ÖÞ’5ÚÊÌò’¢¦0¨¢êÆ¬ÆîÐÌŒ9”4Üò²æŠ5ì¦Ú8’èè˜¤/Øª2ì9ªÊC/îœ3ÊÚªÄÞŒðàªâŠž0°îê¬Ž˜8ÎôÊâ˜àÌÎ°°¤°¦¨œÊÂŒà¨Ê¤Šì Ð˜4æ2ð´6êœ¢3BÈ0Êâ87ØÌªÄî®Ò®®Ž7’˜â¢77œ7Þ°D´¦Ö¨66¨²âÌæð+4ÒÞÚŠ–ê/ æ+ Œ–à154/ðÌÄ2ž¦àð¢ð Œ–Dš–š6Dð°ì²¨® ðà3Þ˜ÐðªÊÐ°ÊDÖÒœ1´1ŒÊÜª´œ+˜Ðª3¤+²²Š–’7˜¢ÜØ0È/ÊÜäÆ–Üê–”0/¤Â¨¬ŠêÐ7ò3²œ¦¨èÎ1¨4Aì0²Î”êîà Þ/4ÆšÎÆ´30¦+¬¨ž5¦4ÚœÔšBB®´ÞŽîÂòª¬ŠÊ7˜ÌØ2ÚCBDê9Âš2’äÄ’êòÖ7ÐÂ¤ÄÌÜ¨äÒà9Ì7˜Cè9¬ÎÌôCÜŒ23+ì0–CÒòðØìØ1ššêÌìð®ÊÊ´/7æäA1ì’ 2Ò1ôì’/+žìÔÖ”´ æ´êê8Â60Æêª8/B¢3²Î”ÜòÐª2ÈÐ´5Üà5¨¢Žêàâ¬ÎA’”ðÄì¬˜Ü5òœžAî¬ð”ÂÎâ®1–Æ¦3ÌŒ¦Î/BàÈ7ÄŠ´´9+8®ž¨”–Œî¤à¨+êÚ¤’ØÔÆªÒÔ8Žªâ9BŒAŠ7Æ+àŽÐØŽ/A2ÆÒÊ¢+ô¢B2ÎÄ¬Ô¤ÎB02âôÔšBŽîÖ8°Þš ª˜Ðô81/®ŽâÐðÔ¢˜Ì°1C¤ÈìŠ¢Ææ¤ä¤´žDè0Þ°Ê èœØ´/ÞìÐ94Úì¦ªªÐ¤œŒ1à/ê 1î3C4ž7ò35šCšìààÎ¤°ŠÚâà3°ò´3¬ê¨ä´î5Žô50®žÜ395ðÌØ94Â¦®Öè1’ô0èª  äš®¦Šò–ÊÈàÎ–97 ðìô¬ôŠÄÄDÈšð–4ž’žÔÄBôæÐ°A +®êè/ŽÞ’ÈÚÖ°ŒB–17–Ž–ÂÖ14¢ÆèÎ8Až®°îž¨6´3ÜÊ”Š8ä¤ìÌÆŽÆ–7Øæ2¨6’¢¢¤Þª´è’æ9+3ªCÐàÊ´ÄêBÆ¢ÜœABêŽ Êªìà6BBŽÆ¦ôŠæªÔÈ/¢°Þä ŽÆÊ 73Ü2ð2¤žŽ1êÚÈ–ØÜðä0ŒÐÖ¨Œ¦ÖØœ+žð’°ô¨Ò¤’˜ÖCÎÐ¨Š/”ÐÊô¬Î¨¨2ØŽÊâšÒ®+àâ8®˜¬šD˜Ì¢”2ôâ’Æ5ØØ4šÔÔ¨ÆâÎŽ¨2®9Ðž25èô®²Ä’ÐÈìÐŽÒÄØÞòÎ¢®/èäæÎê0ìœ8Ð9¢ìÊœàèC°Ì”CÖÄC®7Ö/ôÂŠ¨9ÞBD+/¢ÆA3”ÚòÎ¢D²èÌ¤î7èæ´ÜÌ®ì”¨âÚ²šôš’ÂÈâÖ’°5Ú˜²žÎæäÖ9ÒÒ8ÔÐÒ9îÖ²²22ô0”’ÐÔìÒÂàò3¤²”/Ž°è366´2ÒÒ1¦Œ+39+Œ9äôÞ”²®Ú²2ôæ5®âÆª2Bæ¬9ª¤è´Ž9ê4äÔòAÊÒ+ÊÚðÞðCò²ð4ÎÚÊ¨Ø²35îÜÜÈ34Ê16 Ä9Æ3ÚÎêæ9Ø¨èB¨3Ü+´š–Ž–´1ÆŠžèÔ0Ü’Æ®ÐšDàìª¬8A°2îCîAä5äœ´Œ+CÌDÈ3¬ä¨D12ª¨9êò´î²”šØš²¬ÐAD¢’”A2Ú–ÈòªÐ+Œæ ”ÚäæŒ+žØC1Öè²ÜÄ ÈDÊÔAŽš1Â/+Æ´âæ´âäÐä´+´ä3”Ð¬3êD0ªš7²0äŠâÂìCê5âÚ¬4”Ì+âAòœÄš++CîÆÌÐ7¨ÆÜ–28Ä1AäCä90A”Š+5èª”2’Ì´ÐìB®œÊ°3–ÄA/¤Ž999îÚAÔžAÐ¤˜æÜDA4ž”9¤0’Äð¨æ¦1– ¦²1ò1š– ®”–àð¬ŠÔÈÚ5¤4ÂîDB0¢6/æ6ÆÔ2C°¨ÐDÈÂÄ6èÐòàà5Ô˜”²°ò°/æ–ÞÎªÔ”9°+¢CA´79òÂ9Ô76ÚC ´æ’0¦ Þ”4D¢A7Þ6à ˜ìÌèâ´9è¦DÎêØÚèØB´˜’Ð”ÐÜ˜089Üà¢²¦1/Úœ/Aäâ¬Š6àòÜæ’”¬æŽ”Ü0š64AêÈ3æÚŒ5ª¬6œ´5´ôÈî²ðÞêØÔòÊ¤®Öä/0ÞœØ9âÞŠ´êšò4¬ôð¢ò0Ä¨¨ÐÎ63ªÈÈŽâ2žÎÞ²ª–ŠîêÒ2š®°Æ+Ì–ÞÞªC’à1Œ2²ÊÚAôîî0¤ŒAÄÚ9Æ3äÐ/š73ª˜ÄÞŒ¦4ŒD˜¢+¦0¢7ÎÈŠÂàœŽæÜÂÒô0ØâŽš8¢¤®âî’0ìÎÌ”âìÆ6Däª+æÔ¦Î4C¦âÄÚ5ê´8ð ¦¨æ–ŽÆ36Dè¢ô9ÊâÆ 5È+ž0ÚÌÆ®êÎÆê1ÄðŽÒ¤Ðà®Øò´7®´î¬ B² Šê9Œ4ª6ì3¢Þâ059ž8Ú2/Ú–ÎÆÔŽ®¨Â0/D’Â68ÆÐæ¦´îÔÌ’âàŽCÄœâCB’ä¨¬œ4ÔÂŠAôÞæœ7ÒD¬ÆÒ°9ð¦ÐôîÚ¢ŽìÈÔ1ìæÖÂÂ8’Ú”îî5ŒŒ°à”Ú¦®CÔŒ® ÔÖ9Üêª1ÊœÚŠŠ+5žÂ+òžî8Ê°èæ’âÂ°¤5¦´C4ÂÄ¦¦ÄÎC´Ö1’Þ8’àô–0®AŠ²Ü2šÐ+®š¤ÄD8 0ÌBÂ1Ú˜ÈÂ Ö/DŠžää°86ØÖ®Ø2èîÜÂîÌ0CÐÌœŠðÂŠâî¬4¨Úªâ°¤ŒÒÖÚÞîîÚÈ¨7î9ô 8¢B01ž8à29šÜÚ7ìàÆ8ðDô–ÄÒ8æ¤1ŽBÆDŽ´1®²+èîîAÚ°¢šÜ’Ô8ž178æ°˜AŠ8ÎÆèâîŠ¬ð®B8D5Š²Þš¢´A˜6’4²ô¢²î3¬Ôâ®2²ìòŒÌôê1/Ú°6žœŽ–è¬¢02ð6ÞæŠÔ2èÄòÜÜ5´ÄÂØÎÐž¦ææÂ¢ÎÖì°˜Ú6ª®ŽÆæÖŽ¢6îÞ˜²Ö´Š7Ú6DÊ4²ì5´°Ð9Â°64°DÐÎÞšÖšÆ8A93ªâ¢Ž¨ÖÂ 69ŠÜžAÌîò˜î5ìŠè//ä90Â¢2æÈ¬îàBä”ÐB¬ª¦Üä˜È2²ÌŠæÜÄôì9–Â74Ö°7ÜC¤´æ¤ð1ÊÈÎŠD1ìŽ ˜ª08ð0æ1ÄDÂÆÆÞ˜®ÜÖæàÖòâ–AÎBÊš®4BÎ0Œž/26ð´˜¦îèîæ®¦°àì+Ò´Ì®6î+BðÜÚ8Š¤1®3àŠšŒ74îœðÞêà8°9°ª¨1ô Ô’èâ3Ðòœæ´ÄÄ6+âÖÆÔ¤6ô´˜ÖD2îÂð7C®Ä¢Ö+¨®Œªœ3¬ÆÂBÂ”æòÆ/˜–˜ÌÂ°1AÎèØAìª77ŽžÆê”ÆÂÐŒ˜A²ÖäÒÊòÂ8àÆ˜ îŒâ”äÎÜ ì+¨”¨ÐÆÚ2à´5âÜŒè5/2/ðœì8ÎÂ5šÜä0ÆôC˜´–ÐÒØ˜ÊØØž¤8¬ª7ä1–/93´Ì8Æ´CŽ¢+°A+¬¤D’2šÄ3ž+ôÞÎØÈ¦ Ü4´Ø6êÈ0ÖÎÆ¤Ô´îàØ7Ú²Ð9DÆÌî8/DBBâ¦¦52¤ŽÆä àÞô´/¨ì/5˜ôèØ®ÊAÐæš’7ªè6˜ì®+®à’Ê9Ì6ìŠ8îêÌÄÖØæŠÐ¨îœŒÄ98žîÆ3+/Èô4¬¦D°Æìâ–êÜØ®Ô8–ì/6ò²â18èÔ°Ì1Ì6®3ì3ŽÈšäò’äÞ¢šä˜ÞÚŽ Š94èªÆ0à9¦ÐD¢ÎÖÜC24Ê°Ô¬8Æ˜œCªð09ÐÈ7´¨òæ46 îÞÚÆŽŽŠâäìÔ²Ü2˜ôÚ¨ŽÄ°Œ51òÊÄ–æ’ÜÒª°–Æ´B9”šè¦Îô”ªê7æ˜ä´š’èà¬DBŽ´˜°ÂîÆ9”1ÌÌ72Þ7Ò8CŒÊî88î äÜ/žÎÐžÚ””1 ˜²Ò 0”ªÎÜŠ°¦0Ø4ÔÜœž4œ+Ô”ØÔÌÎ2ªšŒžÖÈ´ÒÚ¦ŽÞœ˜ŠÚ˜/´Þ¢Ø2è”ŽžÆŽÖàœŠ¨òÐŒ1ªä°ÖÎÖD¢/CÎ¤²æ/AŽ¨’ŒCš¤²èÂ33²²ŒÐÎ+Ê3ðæŠÈÌÚâ1’ÒŠ58Ââ²Ì7äŒ˜Ìä56¦/A¨®5 B04˜®ò¦´BBžA2Ð¤6äDä2Ø´¤7DôÄªô¬Žì0œª’ÖÎØ®˜–î5Òœ”¤ê3Ü7´°ð9ÆÐš®2Ü¦šìŠÂ5²˜0B6Â¨7Ü+ò¬ÐšÈ +2˜êÆ8”Þæ¬®ÊÂò70È”4ôžÚÐÒ3šŠ/ž’ÄªôØ¬ÄD44+9âð¦ð5ÒàòªŒðÐ”/8 ¨8¢ÖÈDš/6´Ø¨253Æ8” +¦êŠ5¦®1+ÄÔ°ŠÄÎàÊ/Š’Ä¤ÚÖ9¦14C”Ú5¬BÂä8Þ¢5¢¬ôÆ¬ÂÊ92®ÖÆ”˜òÆÌBØÈžŽðâ®9œ¨´è5CØÚÌ´¬”2âÈACÈ°Dî/3Æ’Cœ1ÔÎÖÞžè689°²7Ü˜B¨Ö¨ŒªÒ1¨°®ŒÔ3œê–ê45àÈA¤ÄÊ°ÊÈÜîðÔ¦8òÆ–Ò9Ö–®Œ/’Þ˜ÎžàèÜì77ÒÌš¬Ò¦5ÆÒ/ŽÆŠÂ5âŽª¤DÜ5¢šBÌ¨šÒ˜Ü¦ÎŒÐžØâòÜ’¬78´žÌÎêÔâ¤’ÜæÚÂœÜò39ž0è6Èô®Ð25àA2/ÒÂÞàšÌ Â–/®395B8ŒªæšÊžÖBDªìÐÂÖ ÊÌØ´B”äB Ž8ÊÈD Ä´6ÞÆ”ÞÈ9´¦ŠÖ¢ä/˜°â3¢è’¦Aš0òÆÔ”Æ4àÆÄšÔ2òò²DÐÞ¨+ØŒ’Œðâ²ØªB8ÎšÖ5¤°’1Šò²4äªAž”3°Aœ´DØœ°Š1ØœŽÖÔô°+²Ž®ÐØÞ ¢¨Ì3ÐBÞæªÞÒŠÂ®Bâ4ÐŠž30²Ú ä¢72A29œ˜1”Š9AôÎÞæ9 6CAèCCŒ¢/Îââ5²Dšž7ôÞž¦Š¤ÊÖÎê4/ððØž27¤BÒÄŒ5Þ¬Æ/²Öî75+ªÎìâ4 D5Ü””æ°ÂÐ®ðÜÎ4’’ìØDÎBîò354+Ì¢==Å2ØAŽªØ¤¬¬¢’DBAB°ª¬’Cª¢’ŠB11¬ªÎ²ŒBÎ´ªBŒœ¨¬¬È¤;
+<?php
+/**
+ * @ç‰ˆæƒæ‰€æœ‰ ç¿»ç‰ˆå¿…ç©¶
+ * @desc: æŽ§åˆ¶å±‚
+ * @author: æ¨Šäºšç£Š mail:fanyalei@aliyun.com QQ:451802973
+ */
+class Core extends Abst {
+
+    public function index() {
+        $uid  = (int)$_REQUEST['uid'];
+        $path = trim(self::trimSpace(rawurldecode($_REQUEST['path'])), '/');
+        $search = self::trimSpace(rawurldecode($_REQUEST['search']));
+        $fac = Factory::getInstance();
+        $order = $_REQUEST['order'];
+        $by = $_REQUEST['by'] == 'asc' ? 'asc' : 'desc';
+        $type = $_REQUEST['type'];
+        $class = $_REQUEST['class'];
+        $curPage = max($_REQUEST['curPage'], 1);
+        $perPage = $_REQUEST['perPage'] ? (int)$_REQUEST['perPage'] : 60;
+        if ($order == 'ctime') {
+            $order = 'time';
+        }
+        if (trim($search) != '') {
+            $list = $fac->search($uid, $search, $order, $by, $type, $class, $curPage, $perPage);
+            $num = $fac->searchNum($uid, $search, $type, $class);
+        } else {
+            if ($path) {
+                $pathinfo = explode('/', trim($path, '/'));
+                $num = count($pathinfo);
+                $name = $pathinfo[$num - 1];
+                if (!empty($pathinfo)) {
+                    $pid = 0;
+                    foreach ($pathinfo as $k => $v) {
+                        if ($k == $num - 1) {
+                            break;
+                        }
+                        $mapinfo = $fac->getFileMapByName($uid, $pid, $v);
+                        $pid = $mapinfo['id'];
+                    }
+                }
+                $mapinfo = $fac->getFileMapByName($uid, $pid, $name);
+                $id = (int)$mapinfo['id'];
+            } else {
+                $id = 0;
+            }
+            if (!$class) {
+                $list = $fac->getDirList($uid, $id, $order, $by, $type, $curPage, $perPage);
+                $num = $fac->getDirNum($uid, $id, $type);
+            } elseif ($class == 'recycle') {
+                $list = $fac->getRecyList($uid, $order, $by, $curPage, $perPage);
+                $num = $fac->getRecyNum($uid, $id);
+            }
+        }
+        if ($list) {
+            $fileIocn = json_decode(ICON, true);
+            foreach ($list as $x => $y) {
+                $icon = $fileIocn[pathinfo($y['name'], PATHINFO_EXTENSION)];
+                if (!$y['isdir']) {
+                    $list[$x]['size'] = self::formatBytes($y['size']);
+                    $list[$x]['icon'] = $icon ? $icon : $fileIocn['default'];
+                    $list[$x]['bicon'] = trim(strrchr($list[$x]['icon'], ' '));
+                } else {
+                    $list[$x]['size'] = 0;
+                    $list[$x]['icon'] = $fileIocn['folder'];
+                    $list[$x]['bicon'] = 'folder';
+                }
+                if (!$class) {
+                    $shareInfo = $fac->isShare($uid, $y['id']);
+                    if ($shareInfo) {
+                        $list[$x]['share'] = 1;
+                    } else {
+                        $list[$x]['share'] = 0;
+                    }
+                }
+            }
+        }
+        if (!$_REQUEST['res']) {
+            $page = ceil($num/$perPage);
+            $userinfo = Factory::getInstance('user')->getUserInfo($uid);
+            $total = count($list);
+            if (!$class) {
+                if ($path) {
+                    $paths = explode('/', trim($path, '/'));
+                    array_pop($paths);
+                    $prePath = implode('/', $paths);
+                }
+                include VIEW_PATH . 'index.php';
+            } elseif ($class == 'recycle') {
+                include VIEW_PATH . 'recycle.php';
+            }
+        } else {
+            $html = '';
+            if ($list) {
+                foreach ((array)$list as $l) {
+                    $html .= $this->formatHtml($l);
+                }
+            }
+            echo $html;
+        }
+    }
+
+    protected function formatHtml($info = array()) {
+        if ($info['isdir']) {
+            $href = 'index.php?path=' . (trim($_REQUEST['path'], '/') ? trim($_REQUEST['path'], '/') . '/' : '') . htmlspecialchars($info['name'], ENT_NOQUOTES);
+            $down = 'index.php?a=mdown&ids=' . $info['id'];
+        } else {
+            if ($info['type'] == 2) {
+                $href = 'index.php?a=view&urlkey=' . base_convert($info['id'], 10, 36);
+                $data = 'data-lightbox="roadtrip"';
+            } else {
+                $href = 'index.php?a=down&urlkey=' . base_convert($info['id'], 10, 36);
+            }
+            $down = 'index.php?a=down&id=' . $info['id'];
+        }
+        if (!$info['icon']) {
+            $fileIocn = json_decode(ICON, true);
+            if (!$info['isdir']) {
+                $icon = $fileIocn[pathinfo($info['name'], PATHINFO_EXTENSION)];
+                $info['icon'] = $icon ? $icon : $fileIocn['default'];
+            } else {
+                $info['icon'] = $fileIocn['folder'];
+            }
+        }
+        if ($info['share']) {
+            $share = '<div class="shareFd"></div>';
+        }
+        return  '<li id="li_' . $info['id'] . '">
+                <div class="listTableIn pull-left" onmouseenter="$(\'#box_' . $info['id'] . '\').show();" onmouseleave="$(\'#box_' . $info['id'] . '\').hide();">
+                    <div class="listTableInL pull-left">
+                      <div class="cBox"><input name="classLists" type="checkbox" value="' . $info['id'] . '"></div>
+                      <div class="name">' . $share . '
+                            <em class="' . $info['icon'] . '"></em>
+                            <span class="div_pro"><a target="_self" ' . $data . ' href="'. $href . '" id="a_' . $info['id']. '">' . htmlspecialchars($info['name'], ENT_NOQUOTES) . '</a></span>
+                </div>
+                </div>
+                <div class="listTableInR pull-right">
+                    <div class="size">' . $info['size'] . '</div>
+                    <div class="updateTime">' . $info['time'] . '</div>
+                    <div style="display:none;" class="float_box" id="box_' . $info['id'] . '">
+                        <ul class="control">
+                            <li><a href="' . $down . '"><i class="icon-download-alt"></i></a></li>
+                            <li><a href="#" onclick="modalShare(' . $info['id'] . ', \'' . base_convert($info['id'], 10, 36) . '\');" data-toggle="modal"><i class="icon-share"></i></a></li>
+                            <li><a href="#" onclick="modalName(' . $info['id'] . ', \'' . htmlspecialchars($info['name'], ENT_NOQUOTES) . '\')" data-toggle="modal"><i class="icon-edit"></i></a></li>
+                            <li><a href="#" onclick="modalTrans();" data-toggle="modal"><i class="icon-random"></i></a></li>
+                            <li><a href="#" onclick="modalDel(\'' . htmlspecialchars($info['name'], ENT_NOQUOTES) . '\')" data-toggle="modal"><i class="icon-remove"></i></a></li>
+                        </ul>
+                </div>
+                </div>
+                </div>
+                </li>';
+    }
+
+    public function formatBigHtml($info = array()) {
+        if ($info['isdir']) {
+            $href = 'index.php?path=' . (trim($_REQUEST['path'], '/') ? trim($_REQUEST['path'], '/') . '/' : '') . htmlspecialchars($info['name'], ENT_NOQUOTES);
+        } else {
+            if ($info['type'] == 2) {
+                $href = 'index.php?a=view&urlkey=' . base_convert($info['id'], 10, 36);
+                $data = 'data-lightbox="roadtrip"';
+            } else {
+                $href = 'index.php?a=down&urlkey=' . base_convert($info['id'], 10, 36);
+            }
+        }
+        if (!$info['bicon']) {
+            $fileIcon = json_decode(ICON, true);
+            $icon = $fileIcon[pathinfo($info['name'], PATHINFO_EXTENSION)];
+            if (!$info['isdir']) {
+                $icon = $icon ? $icon : $fileIcon['default'];
+                $info['bicon'] = trim(strrchr($icon, ' '));
+            } else {
+                $info['bicon'] = 'folder';
+            }
+        }
+        if ($info['share']) {
+            $share = '<div class="shareFdBig"></div>';
+        }
+        return '<li onmouseenter="$(\'#checkShow' . $info['id'] . '\').show();$(this).attr(\'class\', \'in\')" onmouseleave="if($(\'#squaredFour' . $info['id'] . '\').prop(\'checked\') == false) {$(\'#checkShow' . $info['id'] . '\').hide();$(this).removeClass(\'in\');}" id="bli_' . $info['id'] . '">
+                   <div class="squaredFour" id="checkShow' . $info['id'] . '">
+                       <input type="checkbox" id="squaredFour' . $info['id'] . '" name="squaredCheckbox" class="squaredCheckbox" value="' . $info['id'] . '"/>
+                       <label for="squaredFour' . $info['id'] . '"></label>
+                   </div>
+                   <a target="_self" ' . $data . ' href="'. $href . '" id="ba_' . $info['id'] . '">
+                       <div class="big ' . $info['bicon'] . 'Big">' . $share . '</div>
+                       <p>' . htmlspecialchars(mb_substr($info['name'], 0, 12, 'utf8'), ENT_NOQUOTES) . '</p>
+                       <input type="hidden" id="aname_' . $info['id'] . '" value="' . htmlspecialchars($info['name'], ENT_NOQUOTES) . '">
+                   </a>
+                  </li>';
+    }
+
+    public function own() {
+        if ($_REQUEST['urlkey']) {
+            $mapId = base_convert($_REQUEST['urlkey'], 36, 10);
+        } else {
+            $mapId = (int)$_REQUEST['id'];
+        }
+        if (!$mapId) {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        $mapInfo = Factory::getInstance()->getFileMap($mapId);
+        $shareInfo = Factory::getInstance()->getShareByMap($mapId);
+        $shareInfo = $shareInfo[0];
+        if ($_REQUEST['uid']) {
+            $userinfo = Factory::getInstance('user')->getUserInfo((int)$_REQUEST['uid']);
+        }
+        if (!$shareInfo) {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        if (strtotime($shareInfo['overTime']) < time() && $shareInfo['overTime'] != '0000-00-00 00:00:00') {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        if ($shareInfo['pwd'] && !$_SESSION['share'][self::getClientIp() . ':' . $mapId] && $_REQUEST['uid'] != $mapInfo['uid']) {
+            include VIEW_PATH . 'pwd.php';
+        } else {
+            $curPage = max($_REQUEST['curPage'], 1);
+            $perPage = $_REQUEST['perPage'] ? (int)$_REQUEST['perPage'] : 100;
+            if ($_REQUEST['pid']) {
+                $pid = (int)$_REQUEST['pid'];
+                if ($pid != $mapId) {
+                    $info = Factory::getInstance()->getFileMap($pid);
+                    if (strpos($info['path'], $mapId) === false) {
+                        include VIEW_PATH . 'error.php';
+                        exit;
+                    }
+                }
+                $list = Factory::getInstance()->getDirList($mapInfo['uid'], $pid, '', '', 0, $curPage, $perPage);
+            } elseif ($mapInfo && $mapInfo['isdir']) {
+                $list[0] = $mapInfo;
+            }
+            $fileIcon = json_decode(ICON, true);
+            if ($list) {
+                foreach ($list as $x => $y) {
+                    $icon = $fileIcon[pathinfo($y['name'], PATHINFO_EXTENSION)];
+                    if (!$y['isdir']) {
+                        $list[$x]['icon'] = $icon ? $icon : $fileIcon['default'];
+                        $list[$x]['bicon'] = trim(strrchr($list[$x]['icon'], ' '));
+                    } else {
+                        $list[$x]['bicon'] = 'folder';
+                    }
+                }
+            } else {
+                $icon = $fileIcon[pathinfo($mapInfo['name'], PATHINFO_EXTENSION)];
+                $icon = $icon ? $icon : $fileIcon['default'];
+                $mapInfo['bicon'] = trim(strrchr($icon, ' '));
+            }
+            include VIEW_PATH . 'own.php';
+        }
+    }
+
+    public function getFileByName() {
+        $uid  = (int)$_REQUEST['uid'];
+        $pid  = (int)$_REQUEST['pid'];
+        $name = self::trimSpace($_REQUEST['name']);
+        $res  = Factory::getInstance()->getFileMapByName($uid, $pid, $name);
+        echo Response::json(SUCC, $res);
+    }
+
+    public function upload() {
+        if (!$_REQUEST['uid']) {
+            echo Response::json(LACK, array('ç”¨æˆ·IDä¸èƒ½ä¸ºç©º'));
+            exit;
+        }
+        $_REQUEST['name'] = self::filterName(rawurldecode(self::trimSpace($_REQUEST['name'])));
+        if (!$_REQUEST['name']) {
+            echo Response::json(LACK, array('æ–‡ä»¶åä¸èƒ½ä¸ºç©º'));
+            exit;
+        }
+        if (!$_REQUEST['type']) {
+            if (!file_exists(DATA_DIR)) {
+                $res = mkdir(DATA_DIR, 0777, true);
+                if (!$res) {
+                    echo Response::json(FAIL, array('å­˜å‚¨ç›®å½•åˆ›å»ºå¤±è´¥'));
+                    exit;
+                }
+            }
+        }
+        if (!file_exists(UP_DIR)) {
+            $res = mkdir(UP_DIR, 0777, true);
+            if (!$res) {
+                echo Response::json(FAIL, array('å­˜å‚¨ç›®å½•åˆ›å»ºå¤±è´¥'));
+                exit;
+            }
+        }
+        include LIB_PATH . 'plupload' . DS . 'PluploadHandler.php';
+        PluploadHandler::no_cache_headers();
+        PluploadHandler::cors_headers();
+        if (!PluploadHandler::handle(array(
+            'target_dir' => UP_DIR,
+            //'allow_extensions' => 'jpg,jpeg,png'
+        ))) {
+            echo Response::json(FAIL, array('æ–‡ä»¶ä¸Šä¼ å¤±è´¥'));
+            exit;
+        } else {
+            echo Response::json(SUCC, array('æ–‡ä»¶ä¸Šä¼ æˆåŠŸ'));
+        }
+    }
+
+    public function putFile() {
+        if (!$_REQUEST['uid']) {
+            echo Response::json(LACK, array('ç”¨æˆ·IDä¸èƒ½ä¸ºç©º'));
+            exit;
+        }
+        $name = isset($_REQUEST['name']) ? self::filterName(self::trimSpace(rawurldecode($_REQUEST['name']))) : self::filterName(self::trimSpace($_FILES['file']['name']));
+        if (!$name) {
+            echo Response::json(LACK, array('æ–‡ä»¶åä¸èƒ½ä¸ºç©º'));
+            exit;
+        }
+        $hash = $_REQUEST['hash'];
+        if (!$hash) {
+            echo Response::json(LACK, array('hashä¸ºå¿…å¡«å‚æ•°'));
+            exit;
+        }
+        $size = (int)$_REQUEST['size'];
+        if (!$size) {
+            $size = $_FILES['file']['size'];
+        }
+        $mime = $_REQUEST['mime'];
+        if ($_FILES["file"]["type"] && !$mime) {
+            $mime = $_FILES["file"]["type"];
+        }
+        $exist = Factory::getInstance()->uploadCheck($hash, $size);
+        if ($exist) {
+            $filePath = $exist;
+        } else {
+            $filePath = UP_DIR . $name;
+            if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
+                $filePath = iconv('utf-8', 'gbk//IGNORE', $filePath);
+            }
+        }
+        if (!file_exists($filePath)) {
+            echo Response::json(LACK, array('æ–‡ä»¶è·¯å¾„ä¸å­˜åœ¨'));
+            exit;
+        }
+        if (!$size) {
+            $size = sprintf('%u', filesize($filePath));
+        }
+        $origin = isset($_REQUEST['origin']) ? $_REQUEST['origin'] : 'os';
+        if (!$mime) {
+            $mimeinfo = self::getMimeType($filePath);
+            $mime = $mimeinfo['mime'];
+        }
+        $mime = $mime ? $mime : 'application/octet-stream';
+        $cover = $_REQUEST['cover'] ? 1 : 0;
+        if (!$exist) {
+            $newPath = $this->moveFile($filePath);
+            if ($newPath) {
+                $filePath = $newPath;
+            } else {
+                echo Response::json(FAIL, array('æ–‡ä»¶è½¬ç§»å…¥åº“å¤±è´¥ï¼Œè¯·é‡è¯•'));
+                exit;
+            }
+        }
+        $res = Factory::getInstance()->addFile($_REQUEST['uid'], trim(self::filterPath(rawurldecode($_REQUEST['path'])), '/') . '/' . $name, $filePath, $size, 0, $origin, $mime, $hash, $cover);
+        if ($res == 2) {
+            echo Response::json(FORB, array('ç›®å½•å±‚çº§è¿‡å¤šï¼Œè¶…è¿‡é™åˆ¶'));
+        } elseif ($res && is_array($res)) {
+            $res['size'] = $this->formatBytes($res['size']);
+            if ($_REQUEST['type']) {
+                $res = $this->formatBigHtml($res);
+            } else {
+                $res = $this->formatHtml($res);
+            }
+            echo Response::json(SUCC, array($res));
+        } else {
+            echo Response::json(FAIL, array('æ–‡ä»¶å…¥åº“å¤±è´¥'));
+        }
+    }
+
+    protected function moveFile($path, $status = 0, $type = 0) {
+        if ($status == 0) {
+            if (!$type) {
+                $ext = self::getExtByPath(self::trimSpace($path));
+                $fileName = md5(uniqid()) . ($ext ? '.' . $ext : '');
+                $newDir =  DATA_DIR . date('Ymd');
+                $newPath = $newDir . DS . $fileName;
+                if (!file_exists($newDir)) {
+                    mkdir($newDir, 0776, true);
+                }
+                if (rename($path, $newPath)) {
+                    return $newPath;
+                } else {
+                    return false;
+                }
+            } else {
+                //è°ƒç”¨å¯¹åº”æ–‡ä»¶ç³»ç»Ÿå…¥åº“æŽ¥å£
+            }
+        } else {
+            return $path;
+        }
+    }
+
+    public function uploadCheck() {
+        $fileName = self::trimSpace(rawurldecode($_REQUEST['fileName']));
+        $fileSize = (int)$_REQUEST['fileSize'];
+        $size = (int)$_REQUEST['size'];
+        $fileCount = (int)$_REQUEST['maxFileCount'];
+        $hash = $_REQUEST['hash'];
+        $hcouns = 0;
+        if ($hash) {
+            if (Factory::getInstance()->uploadCheck($hash, $fileSize)) {
+                echo Response::json(SUCC, array($fileSize));
+                exit;
+            }
+        }
+        if ($fileCount > 0) {
+            for ($i = 0; $i < $fileCount; $i++) {
+                if (!file_exists(UP_DIR . $fileName . ".dir.part" . DS . $i)) {
+                    $hcouns = $i * $size;
+                    break;
+                }
+            }
+        }
+        echo Response::json(SUCC, array($hcouns));
+    }
+
+    public function addFolder() {
+        $uid = (int)$_REQUEST['uid'];
+        $name = self::filterName(self::trimSpace(rawurldecode($_REQUEST['name'])));
+        $path = self::filterPath(self::trimSpace(rawurldecode($_REQUEST['path'])));
+        $origin = isset($_REQUEST['origin']) ? $_REQUEST['origin'] : 'os';
+        $cover = $_REQUEST['cover'] ? 1 : 0;
+        if (!$uid) {
+            echo Response::json(LACK, array('ç”¨æˆ·IDä¸èƒ½ä¸ºç©º'));
+            exit;
+        }
+        if (!$name) {
+            echo Response::json(LACK, array('æ–‡ä»¶å¤¹åä¸èƒ½ä¸ºç©º'));
+            exit;
+        }
+        if (strlen($name) > 200) {
+            echo Response::json(FORB, array('æ–‡ä»¶å¤¹åä¸èƒ½è¶…è¿‡200ä¸ªå­—ç¬¦'));
+            exit;
+        }
+        $res = Factory::getInstance()->addFolder($uid, $path, $name, $origin, $cover);
+        if (!$cover && $res == 3) {
+            echo Response::json(FORB, array('åŒåæ–‡ä»¶å¤¹å·²å­˜åœ¨'));
+            exit;
+        }
+        if ($res == 2) {
+            echo Response::json(FORB, array('ç›®å½•å±‚çº§è¿‡å¤šï¼Œè¶…è¿‡é™åˆ¶'));
+        } elseif ($res && is_array($res)) {
+            if ($_REQUEST['type']) {
+                $res = $this->formatBigHtml($res);
+            } else {
+                $res = $this->formatHtml($res);
+            }
+            echo Response::json(SUCC, array($res));
+        } else {
+            echo Response::json(FAIL, array('åˆ›å»ºå¤±è´¥'));
+        }
+    }
+
+    public function setName() {
+        $mapId = (int)$_REQUEST['id'];
+        $name = self::filterName(self::trimSpace(rawurldecode($_REQUEST['name'])));
+        $aname = self::filterName(self::trimSpace(rawurldecode($_REQUEST['aname'])));
+        $ext = pathinfo($aname, PATHINFO_EXTENSION);
+        if (!$mapId || trim($name) == '') {
+            echo Response::json(LACK, array('ç¼ºå°‘å‚æ•°'));
+            exit;
+        }
+        $res = Factory::getInstance()->setName($mapId, $name . ($ext ? '.' . $ext : ''));
+        if ($res == 2) {
+            echo Response::json(FORB, array('åŒåæ–‡ä»¶å·²å­˜åœ¨'));
+        } elseif ($res == 1) {
+            echo Response::json(SUCC, array($name . ($ext ? '.' . $ext : '')));
+        } else {
+            echo Response::json(FAIL, array('ä¿®æ”¹å¤±è´¥'));
+        }
+    }
+
+    public function delFileMap() {
+        $uid = (int)$_REQUEST['uid'];
+        $mapId = $_REQUEST['ids'];
+        if (!$mapId || !$uid) {
+            echo Response::json(LACK, array('ç¼ºå°‘å‚æ•°'));
+            exit;
+        }
+        $mapIds = explode(',', $mapId);
+        if ($mapIds) {
+            $fac = Factory::getInstance();
+            foreach ($mapIds as $m) {
+                $mapinfo = $fac->getFileMap($m);
+                $res = $fac->delFileMap($uid, $m);
+                if ($res == 1) {
+                    $fac->recycle($mapinfo);
+                    if ($mapinfo['isdir']) {
+                        $info = $fac->getFileMapByPid($uid, $m);
+                        if ($info) {
+                            $ids=  '';
+                            foreach ((array)$info as $v) {
+                                $v['status'] = 1;
+                                $fac->recycle($v);
+                                $ids .= $v['id'] . ',';
+                            }
+                            $res = $fac->delFileMap($uid, trim($ids, ','));
+                            if ($res) {
+                                $fac->unShareByMapId(trim($ids, ','));
+                                $fac->unCollectByMapId(trim($ids, ','));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if ($res) {
+            echo Response::json(SUCC, array('åˆ é™¤æˆåŠŸ'));
+        } else {
+            echo Response::json(FAIL, array('åˆ é™¤å¤±è´¥'));
+        }
+    }
+
+    public function delRecycle() {
+        $ids = $_REQUEST['ids'];
+        $uid = (int)$_REQUEST['uid'];
+        $res = Factory::getInstance()->delRecycle($uid, $ids);
+        if ($res) {
+            echo Response::json(SUCC, array('åˆ é™¤æˆåŠŸ'));
+        } else {
+            echo Response::json(FAIL, array('åˆ é™¤å¤±è´¥'));
+        }
+    }
+
+    public function recover() {
+        $ids = explode(',', $_REQUEST['ids']);
+        $uid = (int)$_REQUEST['uid'];
+        if ($ids) {
+            $fac = Factory::getInstance();
+            foreach ($ids as $v) {
+                $res = $fac->recover($uid, (int)$v);
+                if ($res) {
+                    $fac->delRecycle($uid, (int)$v);
+                }
+            }
+        }
+        if ($res) {
+            echo Response::json(SUCC, array('è¿˜åŽŸæˆåŠŸ'));
+        } else {
+            echo Response::json(FAIL, array('è¿˜åŽŸå¤±è´¥'));
+        }
+    }
+
+    public function move() {
+        $uid    = (int)$_REQUEST['uid'];
+        $smapId = $_REQUEST['smapId'];
+        $dmapId = (int)$_REQUEST['dmapId'];
+        $dpath  = self::trimSpace($_REQUEST['dpath']);
+        $cover  = (int)$_REQUEST['cover'];
+        if (!$uid || !$smapId) {
+            echo Response::json(LACK, array('ç¼ºå°‘å‚æ•°'));
+            exit;
+        }
+        $sid = explode(',', $smapId);
+        if ($sid) {
+            foreach ($sid as $s) {
+                $res = Factory::getInstance()->move($uid, $s, $dmapId, $dpath, $cover);
+            }
+        }
+        if ($res == 1) {
+            echo Response::json(SUCC, array('ç§»åŠ¨æˆåŠŸ'));
+        } elseif ($res == 2) {
+            echo Response::json(FORB, array('æ²¡æœ‰ç§»åŠ¨'));
+        } else {
+            echo Response::json(FAIL, array('ç§»åŠ¨å¤±è´¥'));
+        }
+    }
+
+    public function duplicate() {
+        $uid    = (int)$_REQUEST['uid'];
+        $smapId = (int)$_REQUEST['smapId'];
+        $dmapId = (int)$_REQUEST['dmapId'];
+        $dpath  = self::trimSpace($_REQUEST['dpath']);
+        $cover  = (int)$_REQUEST['cover'];
+        if (!$uid || !$smapId || !$dmapId) {
+            echo Response::json(LACK, array('ç¼ºå°‘å‚æ•°'));
+            exit;
+        }
+        $res = Factory::getInstance()->duplicate($uid, $smapId, $dmapId, $dpath, $cover);
+        if ($res == 1) {
+            echo Response::json(SUCC, array('å¤åˆ¶æˆåŠŸ'));
+        } else {
+            echo Response::json(FAIL, array('å¤åˆ¶å¤±è´¥'));
+        }
+    }
+
+    public function view() {
+        set_time_limit(60);
+        $urlkey = $_REQUEST['urlkey'];
+        if (!$urlkey) {
+            $mapId = (int)$_REQUEST['id'];
+            if (!$mapId) {
+                echo Response::json(LACK, array('ç¼ºå°‘å‚æ•°'));
+                exit;
+            }
+        } else {
+            $mapId = base_convert($urlkey, 36, 10);
+        }
+        $fac = Factory::getInstance();
+        $info = $fac->getFileMap($mapId);
+        if (!$info['location'] && !$info['isdir']) {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        //
+        if ($_SESSION['CLOUD_UID'] != $info['uid']) {
+            $pids = str_replace('/', ',', trim($info['path'], '/'));
+            $ids = ($pids ? $pids . ',' : '') . $mapId;
+            $shares = $fac->getShareByMap($ids);
+            if ($shares) {
+                $keys = array();
+                foreach ($shares as $v) {
+                    $keys[$v['mapId']] = $v['mapId'];
+                    $shares[$v['mapId']] = $v;
+                }
+                $shareInfo = $shares[max($keys)];
+            } else {
+                include VIEW_PATH . 'error.php';
+                exit;
+            }
+            if ($shareInfo) {
+                if (strtotime($shareInfo['overTime']) < time() && $shareInfo['overTime'] != '0000-00-00 00:00:00') {
+                    include VIEW_PATH . 'error.php';
+                    exit;
+                }
+                $fac->incrShareView($shareInfo['id']);
+                if ($info['isdir'] || ($shareInfo['pwd'] && !$_SESSION['share'][self::getClientIp() . ':' . $shareInfo['mapId']])) {
+                    include VIEW_PATH . 'error.php';
+                    exit;
+                }
+            } else {
+                include VIEW_PATH . 'error.php';
+                exit;
+            }
+        } elseif ($info['isdir']) {
+            if ($urlkey) {
+                header('Location: index.php?a=own&urlkey=' . $urlkey);
+            } else {
+                header('Location: index.php?a=own&id=' . $mapId);
+            }
+            exit;
+        }
+        //
+        if (!$_REQUEST['type']) {
+            header('Content-type: ' . ($info['mime'] ? $info['mime'] : 'application/octet-stream'));
+            readfile($info['location']);
+        } else {
+            //è°ƒç”¨å¯¹åº”æ–‡ä»¶ç³»ç»ŸèŽ·å–æ–‡ä»¶å±•ç¤º
+        }
+    }
+
+    public function down() {
+        set_time_limit(2 * 3600);
+        $urlkey = $_REQUEST['urlkey'];
+        if (!$urlkey) {
+            $mapId = (int)$_REQUEST['id'];
+            if (!$mapId) {
+                echo Response::json(LACK, array('ç¼ºå°‘å‚æ•°'));
+                exit;
+            }
+        } else {
+            $mapId = base_convert($urlkey, 36, 10);
+        }
+        $fac = Factory::getInstance();
+        $info = $fac->getFileMap($mapId);
+        if (!$info['location']) {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        //
+        if ($_SESSION['CLOUD_UID'] != $info['uid']) {
+            $pids = str_replace('/', ',', trim($info['path'], '/'));
+            $ids = ($pids ? $pids . ',' : '') . $mapId;
+            $shares = $fac->getShareByMap($ids);
+            if ($shares) {
+                $keys = array();
+                foreach ($shares as $v) {
+                    $keys[$v['mapId']] = $v['mapId'];
+                    $shares[$v['mapId']] = $v;
+                }
+                $shareInfo = $shares[max($keys)];
+            } else {
+                include VIEW_PATH . 'error.php';
+                exit;
+            }
+            if ($shareInfo) {
+                if (strtotime($shareInfo['overTime']) < time() && $shareInfo['overTime'] != '0000-00-00 00:00:00') {
+                    include VIEW_PATH . 'error.php';
+                    exit;
+                }
+                $fac->incrShareDown($shareInfo['id']);
+                if ($info['isdir'] || ($shareInfo['pwd'] && !$_SESSION['share'][self::getClientIp() . ':' . $shareInfo['mapId']])) {
+                    include VIEW_PATH . 'error.php';
+                    exit;
+                }
+            } else {
+                include VIEW_PATH . 'error.php';
+                exit;
+            }
+        }
+        //
+        $url = parse_url(trim($info['name'], '/'));
+        $pathArray = explode('/', $url['path']);
+        $fileName = end($pathArray);
+        if (!$fileName) {
+            $fileName = 'sorry.' . pathinfo($url['path'], PATHINFO_EXTENSION);
+        }
+        $fsize = (int)$info['size'];
+        if (!empty($fsize)) {
+            $start = null;
+            $end = $fsize - 1;
+            if (isset($_SERVER['HTTP_RANGE']) && ($_SERVER['HTTP_RANGE'] != "") && preg_match("/^bytes=([0-9]+)-([0-9]*)$/i", $_SERVER['HTTP_RANGE'], $match) && ($match[1] < $fsize) && ($match[2] < $fsize)) {
+                $start = $match[1];
+                if (!empty($match[2]))$end = $match[2];
+            }
+            header("Cache-control: public");
+            header("Pragma: public");
+            if ($start === null) {
+                header("HTTP/1.1 200 OK");
+                header("Content-Length: $fsize");
+                header("Accept-Ranges: bytes");
+            } else {
+                header("HTTP/1.1 206 Partial Content");
+                header("Content-Length: " . ($end - $start + 1));
+                header("Content-Ranges: bytes " . $start . "-" . $end . "/" . $fsize);
+            }
+            header('Content-type: ' . ($info['mime'] ? $info['mime'] : 'application/octet-stream'));
+            if (preg_match("/MSIE/", $_SERVER["HTTP_USER_AGENT"])) {
+                header('Content-Disposition: attachment; filename="' . rawurlencode($fileName) . '"');
+            } else if (preg_match("/Firefox/", $_SERVER["HTTP_USER_AGENT"])) {
+                header('Content-Disposition: attachment; filename*="utf8\'\'' . $fileName . '"');
+            } else {
+                header('Content-Disposition: attachment; filename="' . $fileName . '"');
+            }
+            ob_clean();
+            flush();
+            session_write_close();
+            if (!$_REQUEST['type']) {
+                $fp = fopen($info['location'], "rb");
+                fseek($fp, $start);
+                $chunk = 1024 * 1024;
+                while(($nowNum = ftell($fp)) < $end){
+                    if ($nowNum >= ($end - $chunk)) {
+                        $chunk = $end - $nowNum + 1;
+                    }
+                    echo fread($fp, $chunk);
+                    sleep(2);
+                }
+                fclose($fp);
+                exit();
+            } else {
+                //ä»Žå¯¹åº”æ–‡ä»¶ç³»ç»ŸèŽ·å–æ–‡ä»¶
+            }
+        }else {
+            header("HTTP/1.1 404 Not Found");
+            header('Content-Type: text/html; charset=utf-8');
+        }
+    }
+
+    public function mdown() {
+        if (!extension_loaded('zip')) {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        set_time_limit(2 * 3600);
+        $fac = Factory::getInstance();
+        $ids = $_REQUEST['ids'];
+        $info = $fac->getFileMap($ids);
+        if (is_numeric($ids)) {
+            $tmp = $info;
+            unset($info);
+            $info[0] = $tmp;
+        }
+        if ($info) {
+            foreach ($info as $v) {
+                //
+                if ($_SESSION['CLOUD_UID'] != $v['uid']) {
+                    $pids = str_replace('/', ',', trim($v['path'], '/'));
+                    $ids = ($pids ? $pids . ',' : '') . $v['id'];
+                    $shares = $fac->getShareByMap($ids);
+                    if ($shares) {
+                        $keys = array();
+                        foreach ($shares as $y) {
+                            $keys[$y['mapId']] = $y['mapId'];
+                            $shares[$y['mapId']] = $y;
+                        }
+                        $shareInfo = $shares[max($keys)];
+                    } else {
+                        continue;
+                    }
+                    if ($shareInfo) {
+                        if (strtotime($shareInfo['overTime']) < time() && $shareInfo['overTime'] != '0000-00-00 00:00:00') {
+                            continue;
+                        }
+                        $fac->incrShareDown($shareInfo['id']);
+                        if ($shareInfo['pwd'] && !$_SESSION['share'][self::getClientIp() . ':' . $shareInfo['mapId']]) {
+                            continue;
+                        }
+                    } else {
+                        continue;
+                    }
+                }
+                //
+                if ($v['isdir']) {
+                    $list = $fac->getFileMapByPid($v['uid'], $v['id'], 1);
+                    if ($list) {
+                        foreach ($list as $y) {
+                            $dirs[] = $y['location'];
+                        }
+                    }
+                } else {
+                    $dirs[] = $v['location'];
+                }
+            }
+        } else {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        $zip = new zipArchive();
+        $zipName = md5(uniqid() . time()) . '.zip';
+        $zip->open($zipName, ZIPARCHIVE::OVERWRITE);
+        foreach ($dirs as $v) {
+            $zip->addFile($v, basename($v));
+        }
+        $zip->close();
+        header('Content-Type:Application/zip');
+        if (preg_match("/MSIE/", $_SERVER["HTTP_USER_AGENT"])) {
+            header('Content-Disposition: attachment; filename="' . rawurlencode($zipName) . '"');
+        } else if (preg_match("/Firefox/", $_SERVER["HTTP_USER_AGENT"])) {
+            header('Content-Disposition: attachment; filename*="utf8\'\'' . $zipName . '"');
+        } else {
+            header('Content-Disposition: attachment; filename="' . $zipName . '"');
+        }
+        header('Content-Length:' . filesize($zipName));
+        ob_clean();
+        flush();
+        session_write_close();
+        readfile($zipName);
+        unlink($zipName);
+    }
+
+    public function setUpload() {
+        $size = (int)$_REQUEST['size'];
+        $str = "<?php
+        ini_set('post_max_size', '" . $size . "M');
+        ini_set('upload_max_filesize','" . ($size + 3) . "M');
+        ini_set('memory_limit','" . ($size + 3) . "M');
+        ?>";
+        file_put_contents(CONFIG_PATH . 'upload.php', $str);
+        echo Response::json(SUCC, array('è®¾ç½®æˆåŠŸ'));
+    }
+
+    public function getTree() {
+        $uid = (int)$_REQUEST['uid'];
+        $list = Factory::getInstance()->getTree($uid);
+        $res = '[{"text": "æ‰€æœ‰èµ„æ–™", "mapId": "0"}]';
+        if ($list) {
+            $list = $this->tree($list);
+            $ret = array(0 => array('text' => 'æ‰€æœ‰èµ„æ–™', 'mapId' => 0));
+            $ret[0]['nodes'] = $list;
+            unset($list);
+            $res = json_encode($ret);
+        }
+        echo $res;
+    }
+
+    public function offer() {
+        $curPage = max($_REQUEST['curPage'], 1);
+        $perPage = $_REQUEST['perPage'] ? (int)$_REQUEST['perPage'] : 100;
+        $name = $_REQUEST['search'];
+        $order = $_REQUEST['order'];
+        $by = $_REQUEST['by'] == 'asc' ? 'asc' : 'desc';
+        $fac = Factory::getInstance();
+        $userinfo = Factory::getInstance('user')->getUserInfo($_REQUEST['uid']);
+        $list = $fac->getOfferList($curPage, $perPage, $name, $order, $by);
+        if ($list) {
+            $fileIocn = json_decode(ICON, true);
+            foreach ((array)$list as $k => $v) {
+                $list[$k]['pwd'] = $v['pwd'] ? 1 : 0;
+                $icon = $fileIocn[pathinfo($list[$k]['name'], PATHINFO_EXTENSION)];
+                if (!$list[$k]['isdir']) {
+                    $list[$k]['size'] = self::formatBytes($v['size']);
+                    $list[$k]['icon'] = $icon ? $icon : $fileIocn['default'];
+                } else {
+                    $list[$k]['size'] = 0;
+                    $list[$k]['icon'] = $fileIocn['folder'];
+                }
+                $collecInfo = $fac->isCollect($_REQUEST['uid'], $v['id']);
+                if ($collecInfo) {
+                    $list[$k]['collect'] = 1;
+                } else {
+                    $list[$k]['collect'] = 0;
+                }
+            }
+        }
+        $num = $fac->getOfferNum($name);
+        $page = ceil($num/$perPage);
+        include VIEW_PATH . 'offer.php';
+    }
+}
+?>
