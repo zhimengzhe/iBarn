@@ -368,7 +368,12 @@ class Core extends Abst {
         }
     }
 
-    protected function moveFile($path, $status = 0, $type = 0) {
+    protected function moveFile($path, $status = 0) {
+        if (!extension_loaded('fastdfs_client')) {
+            $type = 0;
+        } else {
+            $type = 1;
+        }
         if ($status == 0) {
             if (!$type) {
                 $ext = self::getExtByPath(self::trimSpace($path));
@@ -376,7 +381,7 @@ class Core extends Abst {
                 $newDir =  DATA_DIR . date('Ymd');
                 $newPath = $newDir . DS . $fileName;
                 if (!file_exists($newDir)) {
-                    mkdir($newDir, 0776, true);
+                    mkdir($newDir, 0777, true);
                 }
                 if (rename($path, $newPath)) {
                     return $newPath;
@@ -384,7 +389,24 @@ class Core extends Abst {
                     return false;
                 }
             } else {
-                //调用对应文件系统入库接口
+                include FDFS . 'Exception.php';
+                include FDFS . 'Base.php';
+                include FDFS . 'Tracker.php';
+                include FDFS . 'Storage.php';
+                $confinfo = include FDFS . 'config.php';
+                $group = include FDFS . 'group.php';
+                if ($confinfo['tracker']) {
+                    shuffle($confinfo['tracker']);
+                }
+                $gs = array_keys((array)$group);
+                if ($gs) {
+                    shuffle($gs);
+                }
+                $tracker = new FastDFS\Tracker($confinfo['tracker'][0], $confinfo['trackerPort']);
+                $storageInfo = $tracker->applyStorage($gs[0]);
+                $storage = new FastDFS\Storage($storageInfo['storage_addr'], $storageInfo['storage_port']);
+                $ret = $storage->uploadFile($storageInfo['storage_index'], $path);
+                return $ret['group'] . DS . $ret['path'];
             }
         } else {
             return $path;
@@ -642,11 +664,19 @@ class Core extends Abst {
             exit;
         }
         //
-        if (!$_REQUEST['type']) {
-            header('Content-type: ' . ($info['mime'] ? $info['mime'] : 'application/octet-stream'));
+        header('Content-type: ' . ($info['mime'] ? $info['mime'] : 'application/octet-stream'));
+        if (!extension_loaded('fastdfs_client')) {
             readfile($info['location']);
         } else {
-            //调用对应文件系统获取文件展示
+            $group = include FDFS . 'group.php';
+            $g = strtok($info['location'], '/');
+            $ips = $group[$g];
+            if ($ips) {
+                shuffle($ips);
+                echo file_get_contents('http://' . $ips[0] . '/' . $info['location']);
+            } else {
+                include VIEW_PATH . 'error.php';
+            }
         }
     }
 
@@ -736,7 +766,7 @@ class Core extends Abst {
             ob_clean();
             flush();
             session_write_close();
-            if (!$_REQUEST['type']) {
+            if (!extension_loaded('fastdfs_client')) {
                 $fp = fopen($info['location'], "rb");
                 fseek($fp, $start);
                 $chunk = 1024 * 1024;
@@ -750,7 +780,15 @@ class Core extends Abst {
                 fclose($fp);
                 exit();
             } else {
-                //从对应文件系统获取文件
+                $group = include FDFS . 'group.php';
+                $g = strtok($info['location'], '/');
+                $ips = $group[$g];
+                if ($ips) {
+                    shuffle($ips);
+                    echo file_get_contents('http://' . $ips[0] . '/' . $info['location']);
+                } else {
+                    include VIEW_PATH . 'error.php';
+                }
             }
         }else {
             header("HTTP/1.1 404 Not Found");
@@ -760,6 +798,10 @@ class Core extends Abst {
 
     public function mdown() {
         if (!extension_loaded('zip')) {
+            include VIEW_PATH . 'error.php';
+            exit;
+        }
+        if (extension_loaded('fastdfs_client')) {
             include VIEW_PATH . 'error.php';
             exit;
         }

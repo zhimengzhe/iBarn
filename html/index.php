@@ -175,7 +175,8 @@
                               </div>
                               <a target="_self" <?php if ($v['type'] == 2) { ?>data-lightbox="img_<?php echo $v['id']; ?>"<?php } ?> <?php if ($v['isdir']) { ?> href="index.php?path=<?php echo (trim($_REQUEST['path'], '/') ? trim($_REQUEST['path'], '/') . '/' : '') . htmlspecialchars($v['name'], ENT_NOQUOTES); ?>" <?php } elseif ($v['type'] == 2) { ?> href="index.php?a=view&urlkey=<?php echo base_convert($v['id'], 10, 36); ?>" <?php } else { ?> href="index.php?a=down&urlkey=<?php echo base_convert($v['id'], 10, 36); ?>" <?php } ?> id="ba_<?php echo $v['id']; ?>">
                                   <div id="d_<?php echo $v['id']; ?>" class="big <?php echo $v['bicon'] . 'Big'; ?>"><?php if ($v['share']) { ?><div class="shareFdBig"></div><?php } ?></div>
-                                  <p><?php echo htmlspecialchars(mb_substr($v['name'], 0, 12, 'utf8'), ENT_NOQUOTES); ?></p>
+                                  <p><?php if (function_exists('mb_substr')) { echo htmlspecialchars(mb_substr($v['name'], 0, 12, 'utf8'), ENT_NOQUOTES);
+                                      } else { echo htmlspecialchars(substr($v['name'], 0, 12), ENT_NOQUOTES); } ?></p>
                                   <input type="hidden" id="aname_<?php echo $v['id']; ?>" value="<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>">
                               </a>
                           </li>

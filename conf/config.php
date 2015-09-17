@@ -20,6 +20,7 @@ define('LOG_PATH', ROOT_PATH . 'log' . DS);
 define('ACTION_PATH', ROOT_PATH . 'action' . DS);
 define('PWD', 'openstorer');
 define('DIR', $dataDir);
+define('FDFS', LIB_PATH . 'fdfs' . DS);
 
 $icon = array(
     'default' => 'db_class_png txt',

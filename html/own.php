@@ -64,7 +64,8 @@
                               </div>
                               <a target="_self" <?php if ($v['type'] == 2) { ?>data-lightbox="roadtrip"<?php } ?> <?php if ($v['isdir']) { ?> href="index.php?a=own&urlkey=<?php echo base_convert($mapInfo['id'], 10, 36); ?>&pid=<?php echo $v['id']; ?>" <?php } elseif ($v['type'] == 2) { ?> href="index.php?a=view&urlkey=<?php echo base_convert($v['id'], 10, 36); ?>" <?php } else { ?> href="index.php?a=down&urlkey=<?php echo base_convert($v['id'], 10, 36); ?>" <?php } ?> id="a_<?php echo $v['id']; ?>">
                                   <div class="big <?php echo $v['bicon'] . 'Big'; ?>"></div>
-                                  <p><?php echo htmlspecialchars(mb_substr($v['name'], 0, 10, 'utf8'), ENT_NOQUOTES); ?></p>
+                                  <p><?php if (function_exists('mb_substr')) { echo htmlspecialchars(mb_substr($v['name'], 0, 10, 'utf8'), ENT_NOQUOTES);
+                                      } else { echo htmlspecialchars(substr($v['name'], 0, 12), ENT_NOQUOTES); } ?></p>
                               </a>
                           </li>
                           <?php }
