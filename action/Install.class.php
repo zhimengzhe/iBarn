@@ -22,7 +22,7 @@ class Install extends Abst {
         try {
             $mysql = new PDO('mysql:host=' . $config['master']['host'] . ';port=' . $config['master']['port'], $config['master']['user'], $config['master']['pwd']);
         } catch (Exception $e) {
-            return Response::json(FAIL, array('请正确输入信息连接mysql，保证启动mysql，谢谢！'));
+            return Response::json(FAIL, array('请正确输入信息连接mysql；开启php的PDO扩展,mysql扩展；保证启动mysql，谢谢！'));
         }
         $mysql->exec('CREATE DATABASE ' . $config['master']['dbname']);
         $mysql = null;
