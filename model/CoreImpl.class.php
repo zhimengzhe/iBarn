@@ -520,7 +520,7 @@ class CoreImpl extends Abst {
                 $map[] = $v['mapId'];
             }
             $maps = implode(',', $map);
-            $sql = 'update share set saveNum = saveNum - 1 where find_in_set(cast(mapId as char), :ids)';
+            $sql = 'update share set saveNum = saveNum - 1 where find_in_set(cast(mapId as char), :ids) and saveNum > 0';
             $mysql->execute($sql, array(':ids' => $maps));
         }
         return $mysql->getRowCount() ? 1 : 0;
