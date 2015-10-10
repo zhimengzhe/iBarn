@@ -105,6 +105,7 @@ $lang = array(
     'Conf directory file write failed, please check if you have write permissions' => 'conf目录文件写入失败，请检查是否有写权限',
     'Administrator account create failed, please reinstall' => '管理员账号创建失败，请重新安装',
     'Install success' => '安装成功',
+    'There are not allowed special characters' => '有不被允许的特殊字符',
 );
 define('LANG', json_encode($lang));
 function t($string) {

@@ -13,20 +13,20 @@ class FilterManager {
 			require_once __DIR__ . "/" . $val . '.class.php';
 			$fun = "run";
 			if (!$val::getInstance()->$fun($m, $a)) {
-				die(Response::json(FAIL, array(FilterManager::MSG)));
+				die(Response::json(FAIL, array(t(FilterManager::MSG))));
 			}
 		}
 	}
 
     public static function filterPath($path) {
         if (!preg_match('/[:*?<>|\"]/', $path)) {
-            die(Response::json(FAIL, array(FilterManager::MSG)));
+            die(Response::json(FAIL, array(t(FilterManager::MSG))));
         }
     }
 
     public static function filterName($name) {
         if (!preg_match('/[:*?<>|\"\/\\\]/', $name)) {
-            die(Response::json(FAIL, array(FilterManager::MSG)));
+            die(Response::json(FAIL, array(t(FilterManager::MSG))));
         }
     }
 }
