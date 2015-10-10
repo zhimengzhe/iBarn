@@ -81,9 +81,9 @@ class Share extends Abst {
             } else {
                 $href = "index.php?a=mdown&ids=" . $info['mapId'];
             }
-            $func = '<li><a alt="下载" href="' . $href . '"><i class="icon-download-alt"></i></a></li>';
+            $func = '<li><a href="' . $href . '"><i class="icon-download-alt"></i></a></li>';
         } else {
-            $func = '<li><a href="#" onclick="$(\'#sid\').val(' . $info['id'] . ');" alt="收藏" data-target="#myModal1" data-toggle="modal"><i class="icon-star"></i></a></li>';
+            $func = '<li><a href="#" onclick="$(\'#sid\').val(' . $info['id'] . ');" data-target="#myModal1" data-toggle="modal"><i class="icon-star"></i></a></li>';
         }
         return  '<li id="li_' . $info['id'] . '">
                 <div class="listTableIn pull-left" onmouseenter="$(\'#box_' . $info['mapId'] . '\').show();" onmouseleave="$(\'#box_' . $info['mapId'] . '\').hide();">
@@ -168,21 +168,21 @@ class Share extends Abst {
         $price = (int)$_REQUEST['price'];
         $pwd = self::trimSpace(rawurldecode($_REQUEST['pwd']));
         if (strlen($pwd) > 8) {
-            echo Response::json(FAIL, array('密码不能超过8位'));
+            echo Response::json(FAIL, array(tip('密码不能超过8位')));
             exit;
         }
         $overTime = $_REQUEST['overTime'];
         if (!$uid || !$mapId) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $res = Factory::getInstance()->share($uid, $type, $mapId, $pwd, $overTime, $price);
         if ($res == -1) {
-            echo Response::json(FORB, array('文件已分享，不能重复分享'));
+            echo Response::json(FORB, array(tip('文件已分享，不能重复分享')));
         } elseif ($res) {
-            echo Response::json(SUCC, array('分享成功'));
+            echo Response::json(SUCC, array(tip('操作成功')));
         } else {
-            echo Response::json(FAIL, array('分享失败'));
+            echo Response::json(FAIL, array(tip('操作失败')));
         }
     }
 
@@ -190,28 +190,28 @@ class Share extends Abst {
         $uid = (int)$_REQUEST['uid'];
         $mapId = $_REQUEST['ids'];
         if (!$uid || !$mapId) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $res = Factory::getInstance()->unShare($uid, $mapId);
         if ($res) {
-            echo Response::json(SUCC, array('取消分享成功'));
+            echo Response::json(SUCC, array(tip('操作成功')));
         } else {
-            echo Response::json(FAIL, array('取消分享失败'));
+            echo Response::json(FAIL, array(tip('操作失败')));
         }
     }
 
     public function unShareAll() {
         $uid = (int)$_REQUEST['uid'];
         if (!$uid) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $res = Factory::getInstance()->unShareAll($uid);
         if ($res) {
-            echo Response::json(SUCC, array('取消分享成功'));
+            echo Response::json(SUCC, array(tip('操作成功')));
         } else {
-            echo Response::json(FAIL, array('取消分享失败'));
+            echo Response::json(FAIL, array(tip('操作失败')));
         }
     }
 
@@ -219,11 +219,11 @@ class Share extends Abst {
         $mapId = (int)$_REQUEST['mapId'];
         $pwd = $_REQUEST['pwd'];
         if (!$mapId || !$pwd) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         if (strlen($pwd) > 8) {
-            echo Response::json(FAIL, array('密码长度错误'));
+            echo Response::json(FAIL, array(tip('密码不能超过8位')));
             exit;
         }
         $res = Factory::getInstance()->pwd($mapId, $pwd);
@@ -231,7 +231,7 @@ class Share extends Abst {
             $_SESSION['share'][self::getClientIp() . ':' . $mapId] = 1;
             echo Response::json(SUCC, array('urlkey' => base_convert($mapId, 10, 36)));
         } else {
-            echo Response::json(FAIL, array('验证失败'));
+            echo Response::json(FAIL, array(tip('验证失败')));
         }
     }
 }

@@ -581,17 +581,23 @@ class CoreImpl extends Abst {
             return 0;
         }
         if ($param['isdir']) {
+            while (Mysql::getInstance('slave')->fetchColumn('select id from filemap where uid = :uid and path = :path and name = :name and isdir = 1', array(
+                ':uid' => $uid,
+                ':path' => $param['path'],
+                ':name' => $param['name']
+            ))) {
+                $param['name'] = $this->reName($param['name']);
+            }
             $info = Mysql::getInstance('slave')->fetchAll('select * from recycle where uid = :uid and path like :path', array(':uid' => $uid, ':path' => '/' . $param['mapId']  . '/' . '%'));
             if ($info) {
                 foreach ($info as $v) {
-                    if (!$v['isdir']) {
-                        while (Mysql::getInstance('slave')->fetchColumn('select id from filemap where uid = :uid and path = :path and name = :name', array(
-                            ':uid' => $uid,
-                            ':path' => $v['path'],
-                            ':name' => $v['name']
-                        ))) {
-                            $v['name'] = $this->reName($v['name']);
-                        }
+                    while (Mysql::getInstance('slave')->fetchColumn('select id from filemap where uid = :uid and path = :path and name = :name and isdir = :isdir', array(
+                        ':uid' => $uid,
+                        ':path' => $v['path'],
+                        ':name' => $v['name'],
+                        ':isdir' => $v['isdir'],
+                    ))) {
+                        $v['name'] = $this->reName($v['name']);
                     }
                     $sql = 'insert into filemap (id, uid, name, pid, path, location, isdir, mime, type, size, origin, time)
                             values (:mapId, :uid, :name, :pid, :path, :location, :isdir, :mime, :type, :size, :origin, :time)';
@@ -612,7 +618,7 @@ class CoreImpl extends Abst {
                 }
             }
         } else {
-            while (Mysql::getInstance('slave')->fetchColumn('select id from filemap where uid = :uid and path = :path and name = :name', array(
+            while (Mysql::getInstance('slave')->fetchColumn('select id from filemap where uid = :uid and path = :path and name = :name and isdir = 0', array(
                 ':uid' => $uid,
                 ':path' => $param['path'],
                 ':name' => $param['name']

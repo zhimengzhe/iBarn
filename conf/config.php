@@ -69,6 +69,8 @@ $icon = array(
 );
 define('ICON', json_encode($icon));
 include_once CONFIG_PATH . 'upload.php';
+include_once CONFIG_PATH . 'lang' . DS . 'lang.php';
+include_once CONFIG_PATH . 'lang' . DS . 'tipLang.php';
 include_once LIB_PATH . 'response/Response.class.php';
 include_once LIB_PATH . 'log/Log.class.php';
 include_once LIB_PATH . 'mysql/Mysql.class.php';

@@ -10,7 +10,7 @@
                           <div id="ucontainer">
                               <button class="btn btn-info" type="button" data-target="#myModal1" data-toggle="modal" onclick="$('#sid').val('');">
                                   <i class="icon-star"></i>
-                                  收藏
+                                  <?php echo t('收藏'); ?>
                               </button>
                           </div>
                       </li>
@@ -20,13 +20,13 @@
                       <div class="searchRight pull-right">
                           <div class="input-group m-bot15">
                               <div class="input-group-btn">
-                                  <button class="btn btn-white" type="button">全部</button>
+                                  <button class="btn btn-white" type="button"><?php echo t('全部'); ?></button>
                               </div>
-                              <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>" placeholder="搜你想要">
+                              <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>" placeholder="<?php echo t('搜你想要'); ?>">
                           </div>
                           <button class="btn btn-success searchButton" type="submit">
                               <i class="icon-search"></i>
-                              搜索
+                              <?php echo t('搜索'); ?>
                           </button>
                       </div>
                   </form>
@@ -39,13 +39,13 @@
                                 <div class="listTableTop pull-left">
                                     <div class="listTableTopL pull-left">
                                         <div class="cBox"><input id="chkAll" type="checkbox"></div>
-                                        <div class="name">名称</div>
+                                        <div class="name"><?php echo t('名称'); ?></div>
                                     </div>
                                     <div class="listTableTopR5 pull-right">
-                                        <div class="size" id="view">浏览数<div class="seq"></div></div>
-                                        <div class="size" id="down">下载数<div class="seq"></div></div>
-                                        <div class="size" id="saveNum">收藏数<div class="seq"></div></div>
-                                        <div class="updateTime" id="shareTime">分享时间<div class="seq"></div></div>
+                                        <div class="size" id="view"><?php echo t('浏览数'); ?><div class="seq"></div></div>
+                                        <div class="size" id="down"><?php echo t('下载数'); ?><div class="seq"></div></div>
+                                        <div class="size" id="saveNum"><?php echo t('收藏数'); ?><div class="seq"></div></div>
+                                        <div class="updateTime" id="shareTime"><?php echo t('分享时间'); ?><div class="seq"></div></div>
                                     </div>
                                 </div>
                             </li>
@@ -70,7 +70,7 @@
                                       <div class="updateTime"><?php echo $v['shareTime']; ?></div>
                                       <div style="display:none;position: absolute;margin-left: -40px;" class="float_box" id="box_<?php echo $v['mapId']; ?>">
                                           <ul class="control">
-                                              <li><a href="#" alt="收藏" data-target="#myModal1" data-toggle="modal" onclick="$('#sid').val(<?php echo $v['id']; ?>);"><i class="icon-star"></i></a></li>
+                                              <li><a href="#" alt="<?php echo t('收藏'); ?>" data-target="#myModal1" data-toggle="modal" onclick="$('#sid').val(<?php echo $v['id']; ?>);"><i class="icon-star"></i></a></li>
                                           </ul>
                                       </div>
                                     </div>
@@ -84,10 +84,10 @@
               <?php if ($page > 1) { ?>
                   <ul class="pagination pagination-sm">
                       <?php if ($curPage > 1) { ?>
-                          <li><a href="javascript:;" onclick="page(-1);">上一页</a></li>
+                          <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                          <li><a href="javascript:;" onclick="page(0);">下一页</a></li>
+                          <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
               <?php } ?>
@@ -100,14 +100,14 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">收藏</h4>
+                              <h4 class="modal-title"><?php echo t('收藏'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
-                              <div class="delText">确定要收藏吗？</div>
+                              <div class="delText"><?php echo t('确定要收藏吗？'); ?></div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.collect();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.collect();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>

@@ -7,27 +7,27 @@ class Install extends Abst {
 
     public function check() {
         if (phpversion() < '5.0.0') {
-            return Response::json(FAIL, array('您的php版本过低，不能安装本软件，请升级到5.0.0或更高版本再安装，谢谢！'));
+            return Response::json(FAIL, array(t('您的php版本过低，不能安装本软件，请升级到5.0.0或更高版本再安装，谢谢！')));
         }
         if (!extension_loaded('PDO')) {
-            return Response::json(FAIL, array('请加载PHP的PDO模块，谢谢！'));
+            return Response::json(FAIL, array(t('请加载PHP的PDO模块，谢谢！')));
         }
         if (!function_exists('session_start')) {
-            return Response::json(FAIL, array('请开启session，谢谢！'));
+            return Response::json(FAIL, array(t('请开启session，谢谢！')));
         }
         if (!is_writable(ROOT_PATH)) {
-            return Response::json(FAIL, array('请保证代码目录有写权限，谢谢！'));
+            return Response::json(FAIL, array(t('请保证代码目录有写权限，谢谢！')));
         }
         $config = require CONFIG_PATH . 'mysql.php';
         try {
             $mysql = new PDO('mysql:host=' . $config['master']['host'] . ';port=' . $config['master']['port'], $config['master']['user'], $config['master']['pwd']);
         } catch (Exception $e) {
-            return Response::json(FAIL, array('请正确输入信息连接mysql；开启php的PDO扩展,mysql扩展；保证启动mysql，谢谢！'));
+            return Response::json(FAIL, array(t('请正确输入信息连接mysql；开启php的PDO扩展,mysql扩展；保证启动mysql，谢谢！')));
         }
         $mysql->exec('CREATE DATABASE ' . $config['master']['dbname']);
         $mysql = null;
         unset($config);
-        return Response::json(SUCC, array('检测通过'));
+        return Response::json(SUCC, array(t('检测通过')));
     }
 
     public function install() {
@@ -45,7 +45,7 @@ class Install extends Abst {
         }
         $res = mkdir($file, 0777, true);
         if (!$res && !file_exists($file)) {
-            return Response::json(FAIL, array('文件存储目录创建失败，请检查对应目录是否有写权限后重试'));
+            return Response::json(FAIL, array(t('文件存储目录创建失败，请检查对应目录是否有写权限后重试')));
         }
         $mysqlConf = array();
         $mysqlConf['slave'][0]['user'] = $mysqlConf['master']['user'] = $dbuname;
@@ -56,7 +56,7 @@ class Install extends Abst {
         if (!file_exists(CONFIG_PATH . 'mysql.php')) {
             $int = file_put_contents(CONFIG_PATH . 'mysql.php', '<?php return ' . var_export($mysqlConf, true) . '; ?>');
             if (!$int) {
-                return Response::json(FAIL, array('conf目录文件写入失败，请检查是否有写权限'));
+                return Response::json(FAIL, array(t('Conf目录文件写入失败，请检查是否有写权限')));
             }
         }
         $cres = $this->check();
@@ -67,13 +67,13 @@ class Install extends Abst {
         $this->executeSql(SQL_PATH . 'opendisk.sql');
         $ures = Factory::getInstance('user')->regist($name, $pwd, 1);
         if ($ures <= 0) {
-            return Response::json(FAIL, array('管理员账号创建失败，请重新安装'));
+            return Response::json(FAIL, array(t('管理员账号创建失败，请重新安装')));
         }
         $handle = fopen(CONFIG_PATH . 'install.lock', 'w');
         fclose($handle);
         $_SESSION['CLOUD_UID'] = $ures;
         setcookie('CLOUD_UID', $ures, time() + 3600 * 24);
-        return Response::json(SUCC, array('安装成功'));
+        return Response::json(SUCC, array(t('安装成功')));
     }
 
     public function executeSql($file) {

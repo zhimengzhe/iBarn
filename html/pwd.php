@@ -6,13 +6,13 @@
                   <div class="modal-dialog">
                       <div class="modal-content" style="margin-bottom: 200px;">
                           <div class="modal-body pull-left">
-                              <div class="modalTitleSmall pull-left">密码：</div>
+                              <div class="modalTitleSmall pull-left"><?php echo t('密码'); ?>：</div>
                               <div class="col-lg-8 pull-left">
-                                  <input class="form-control" id="pwd" type="text" placeholder="请输入资料密码">
+                                  <input class="form-control" id="pwd" type="text" placeholder="<?php echo t('请输入密码'); ?>">
                                   <input type="hidden" id="mapId" name="mapId" value="<?php echo $mapId; ?>">
                               </div>
                               <div class="col-lg-2 pull-left">
-                                  <button type="button" class="btn btn-success" onclick="file.pwd();">确定</button>
+                                  <button type="button" class="btn btn-success" onclick="file.pwd();"><?php echo t('确定'); ?></button>
                               </div>
                           </div>
                       </div>

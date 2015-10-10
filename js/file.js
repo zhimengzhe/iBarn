@@ -8,7 +8,7 @@ file.setName = function() {
     }
     if (!id) {
         $('#myModal2').modal('hide');
-        alert('请选择资源');
+        alert(this.lang('请选择资源'));
         return;
     }
     $.ajax({
@@ -22,7 +22,7 @@ file.setName = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(ret) {
             if (ret.code == 1) {
@@ -61,7 +61,7 @@ file.addFolder = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function (ret) {
             if (ret.code == 1) {
@@ -102,7 +102,7 @@ file.del = function() {
         var idstr = ids.join(',');
         if (!idstr) {
             $('#myModal4').modal('hide');
-            alert('请选择要删除的资源');
+            alert(this.lang('请选择要删除的资源'));
             return;
         }
     }
@@ -115,7 +115,7 @@ file.del = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(data) {
             if (data.code == 1) {
@@ -129,7 +129,7 @@ file.del = function() {
                 });
                 $('#myModal4').modal('hide');
             } else {
-                alert('删除失败，请重试');
+                alert(this.lang('删除失败，请重试'));
             }
             $('#delid').val('');
         }
@@ -144,7 +144,7 @@ file.realDel = function() {
     var idstr = ids.join(',');
     if (!idstr) {
         $('#myModal1').modal('hide');
-        alert('请选择要删除的资源');
+        alert(this.lang('请选择要删除的资源'));
         return;
     }
     $.ajax({
@@ -156,7 +156,7 @@ file.realDel = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(data) {
             if (data.code == 1) {
@@ -165,7 +165,7 @@ file.realDel = function() {
                     $('#li_' + val).remove();
                 });
             } else {
-                alert('删除失败，请重试');
+                alert(this.lang('删除失败，请重试'));
             }
         }
     });
@@ -178,7 +178,7 @@ file.recover = function() {
     });
     var idstr = ids.join(',');
     if (!idstr) {
-        alert('请选择要恢复的资源');
+        alert(this.lang('请选择要恢复的资源'));
         return;
     }
     $.ajax({
@@ -190,7 +190,7 @@ file.recover = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(data) {
             if (data.code == 1) {
@@ -198,7 +198,7 @@ file.recover = function() {
                     $('#li_' + val).remove();
                 });
             } else {
-                alert('还原失败，请重试');
+                alert(this.lang('还原失败，请重试'));
             }
         }
     });
@@ -208,7 +208,7 @@ file.share = function() {
     id = $('#fileId').val();
     if (!id) {
         $('#myModal').modal('hide');
-        alert('请选择要分享的资源');
+        alert(this.lang('请选择要分享的资源'));
         return;
     }
     $.ajax({
@@ -223,7 +223,7 @@ file.share = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(data) {
             if (data.code == 1) {
@@ -250,7 +250,7 @@ file.unShare = function() {
     var idstr = ids.join(',');
     if (!idstr) {
         $('#myModal1').modal('hide');
-        alert('请选择要取消分享的资源');
+        alert(this.lang('请选择资源'));
         return;
     }
     $.ajax({
@@ -262,7 +262,7 @@ file.unShare = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(data) {
             if (data.code == 1) {
@@ -271,7 +271,7 @@ file.unShare = function() {
                     $('#li_' + val).remove();
                 });
             } else {
-                alert('取消分享失败，请重试');
+                alert(this.lang('取消分享失败，请重试'));
             }
         }
     });
@@ -280,18 +280,26 @@ file.unShare = function() {
 file.collect = function() {
     var ids = new Array();
     id = $('#sid').val();
+    var reg = new RegExp("(^|&)a=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    var a = unescape(r[2]);
+    if (a != 'own') {
+        var name = 'classLists';
+    } else {
+        var name = 'squaredCheckbox';
+    }
     if (id) {
         idstr = id;
         ids.push(id);
     } else {
-        $('input[name="classLists"]:checked').each(function(){
+        $('input[name="'+name+'"]:checked').each(function(){
             ids.push($(this).val());
         });
         var idstr = ids.join(',');
     }
     if (!idstr) {
         $('#myModal1').modal('hide');
-        alert('请选择要收藏的资源');
+        alert(this.lang('请选择资源'));
         return;
     }
     $.ajax({
@@ -303,16 +311,20 @@ file.collect = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(res) {
             if (res.code == 1) {
                 $('#myModal1').modal('hide');
-                $.each(ids, function(i, val) {
-                    if ($("#a_" + val).length > 0) {
-                        $("#a_" + val).prepend('<i class="icon-star starFd"></i>');
-                    }
-                });
+                if(a != 'own') {
+                    $.each(ids, function(i, val) {
+                        if ($("#a_" + val).length > 0) {
+                            $("#a_" + val).prepend('<i class="icon-star starFd"></i>');
+                        }
+                    });
+                } else {
+                    alert(res.data);
+                }
             } else {
                 alert(res.data);
             }
@@ -329,7 +341,7 @@ file.unCollect = function() {
     var idstr = ids.join(',');
     if (!idstr) {
         $('#myModal1').modal('hide');
-        alert('请选择要取消收藏的资源');
+        alert(this.lang('请选择资源'));
         return;
     }
     $.ajax({
@@ -341,16 +353,16 @@ file.unCollect = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
-        success: function(data) {
-            if (data.code == 1) {
+        success: function(ret) {
+            if (ret.code == 1) {
                 $('#myModal1').modal('hide');
                 $.each(ids, function(i, val) {
                     $('#li_' + val).remove();
                 });
             } else {
-                alert('取消收藏失败，请重试');
+                alert(ret.data);
             }
         }
     });
@@ -373,13 +385,13 @@ file.trans = function() {
         var sid = ids.join(',');
         if (!sid) {
             $('#myModal3').modal('hide');
-            alert('请选择要移动的资源');
+            alert(this.lang('请选择资源'));
             return;
         }
     }
     did = $('#dirId').val();
     if (did.trim() == '') {
-        alert('请选择要转入的目录');
+        alert(this.lang('请选择要转入的目录'));
         return false;
     }
     $.ajax({
@@ -393,7 +405,7 @@ file.trans = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(ret) {
             if (ret.code == 1) {
@@ -435,7 +447,7 @@ file.pwd = function() {
         dataType: 'json',
         timeout: 8000,
         error: function() {
-            alert('提交超时，请重试');
+            alert(this.lang('提交超时，请重试'));
         },
         success: function(res) {
             if (res.code == 1) {
@@ -460,5 +472,18 @@ file.check = function() {
     if ($.trim($('#search').val()).length < 1) {
         file.error($('#search'));
         return false;
+    }
+}
+
+file.lang = function(str) {
+    var dataObj = eval("("+$('#lang').val()+")");
+    if (Cookies.get('lang') == 'en') {
+        if (dataObj[str]) {
+            return dataObj[str];
+        } else {
+            return str;
+        }
+    } else {
+        return str;
     }
 }

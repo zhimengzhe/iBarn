@@ -11,44 +11,44 @@
                             <div id="ucontainer">
                                 <button class="btn btn-info" type="button" id="pickfiles">
                                     <i class="icon-cloud-upload"></i>
-                                    上传资料
+                                    <?php echo t('上传资料'); ?>
                                 </button>
                             </div>
                         </li>
                         <li>
                             <button class="btn btn-success" type="button" data-target="#myModal5" data-toggle="modal">
                                 <i class="icon-folder-close"></i>
-                                新建文件夹
+                                <?php echo t('新建文件夹'); ?>
                             </button>
                         </li>
                         <li>
                             <button class="btn btn-danger" type="button" data-target="#myModal4" onclick="$('#delid').val('');" data-toggle="modal">
                                 <i class="icon-remove"></i>
-                                删除
+                                <?php echo t('删除'); ?>
                             </button>
                         </li>
                         <li id="down">
                             <button class="btn btn-success" type="button" onclick="down();">
                                 <i class="icon-download"></i>
-                                下载
+                                <?php echo t('下载'); ?>
                             </button>
                         </li>
                         <li>
                             <button class="btn btn-warning" type="button" onclick="modalTrans();$('#sid').val('');" data-toggle="modal">
                                 <i class="icon-random"></i>
-                                移动
+                                <?php echo t('移动'); ?>
                             </button>
                         </li>
                         <li id="share">
                             <button class="btn btn-info" type="button" onclick="modalShare(0, 0);">
                                 <i class="icon-share"></i>
-                                分享
+                                <?php echo t('分享'); ?>
                             </button>
                         </li>
                         <li id="rename" <?php if ($_COOKIE['show'] != 'block') { ?>style="display: none;" <?php } ?>>
                             <button class="btn btn-danger" type="button" onclick="modalName(0, '');" data-toggle="modal">
                                 <i class="icon-edit"></i>
-                                重命名
+                                <?php echo t('重命名'); ?>
                             </button>
                         </li>
                   </ul>
@@ -56,14 +56,14 @@
                       <div class="searchRight pull-right">
                             <div class="input-group m-bot15">
                               <div class="input-group-btn">
-                                  <button class="btn btn-white" type="button">全部</button>
+                                  <button class="btn btn-white" type="button"><?php echo t('全部'); ?></button>
                               </div>
-                              <input type="text" class="form-control" id="search" name="search" value="<?php echo htmlspecialchars($_REQUEST['search'], ENT_NOQUOTES); ?>" placeholder="搜你想要">
+                              <input type="text" class="form-control" id="search" name="search" value="<?php echo htmlspecialchars($_REQUEST['search'], ENT_NOQUOTES); ?>" placeholder="<?php echo t('搜你想要'); ?>">
                               <input type="hidden" id="type" name="type" value="<?php echo (int)$_REQUEST['type']; ?>">
                           </div>
                           <button class="btn btn-success searchButton" type="submit">
                               <i class="icon-search"></i>
-                              搜索
+                              <?php echo t('搜索'); ?>
                           </button>
                       </div>
                   </form>
@@ -82,7 +82,7 @@
                               <i class="icon-file-text"></i>
                           </div>
                           <div class="value">
-                              <h4>我的文档</h4>
+                              <h4><?php echo t('我的文档'); ?></h4>
                           </div>
                       </section>
                       </a>
@@ -94,7 +94,7 @@
                               <i class="icon-picture"></i>
                           </div>
                           <div class="value">
-                              <h4>我的图片</h4>
+                              <h4><?php echo t('我的图片'); ?></h4>
                           </div>
                       </section>
                       </a>
@@ -106,7 +106,7 @@
                               <i class="icon-music"></i>
                           </div>
                           <div class="value">
-                              <h4>我的音乐</h4>
+                              <h4><?php echo t('我的音乐'); ?></h4>
                           </div>
                       </section>
                       </a>
@@ -118,7 +118,7 @@
                               <i class="icon-film"></i>
                           </div>
                           <div class="value">
-                              <h4>我的视频</h4>
+                              <h4><?php echo t('我的视频'); ?></h4>
                           </div>
                       </section>
                       </a>
@@ -130,7 +130,7 @@
                               <i class="icon-cloud-download"></i>
                           </div>
                           <div class="value">
-                              <h4>BT种子</h4>
+                              <h4><?php echo t('BT种子'); ?></h4>
                           </div>
                       </section>
                       </a>
@@ -142,7 +142,7 @@
                               <i class="icon-folder-open-alt"></i>
                           </div>
                           <div class="value">
-                              <h4>其他</h4>
+                              <h4><?php echo t('其他'); ?></h4>
                           </div>
                       </section>
                       </a>
@@ -154,9 +154,9 @@
                   <div class="col-lg-12">
                       <!--breadcrumbs start -->
                       <ul class="breadcrumb">
-                          <li><a href="index.php?path=<?php echo $prePath; ?>"><i class="icon-mail-reply"></i> 返回上一级</a></li>
-                          <li><a href="index.php">全部文件</a></li>
-                          <li class="active">当前目录</li>
+                          <li><a href="index.php?path=<?php echo $prePath; ?>"><i class="icon-mail-reply"></i> <?php echo t('返回上一级'); ?></a></li>
+                          <li><a href="index.php"><?php echo t('所有资料'); ?></a></li>
+                          <li class="active"><?php echo t('当前目录'); ?></li>
                       </ul>
                       <!--breadcrumbs end -->
                   </div>
@@ -190,11 +190,11 @@
                                 <div class="listTableTop pull-left">
                                     <div class="listTableTopL pull-left">
                                         <div class="cBox"><input id="chkAll" name="chkAll" type="checkbox"></div>
-                                        <div class="name" id="name">文件名<div class="seq"></div></div>
+                                        <div class="name" id="name"><?php echo t('名称'); ?><div class="seq"></div></div>
                                     </div>
                                     <div class="listTableTopR pull-right">
-                                        <div class="size" id="size">大小<div class="seq"></div></div>
-                                        <div class="updateTime" id="ctime">上传时间<div class="seq"></div></div>
+                                        <div class="size" id="size"><?php echo t('大小'); ?><div class="seq"></div></div>
+                                        <div class="updateTime" id="ctime"><?php echo t('上传时间'); ?><div class="seq"></div></div>
                                     </div>
                                 </div>
                             </li>
@@ -218,11 +218,11 @@
                                       <div class="updateTime"><?php echo $v['time']; ?></div>
                                       <div style="display:none;" class="float_box" id="box_<?php echo $v['id']; ?>">
                                           <ul class="control">
-                                              <li><a alt="下载" <?php if (!$v['isdir']) { ?>href="index.php?a=down&id=<?php echo $v['id']; ?>"<?php } else {?>href="index.php?a=mdown&ids=<?php echo $v['id']; ?>"<?php } ?>><i class="icon-download-alt"></i></a></li>
-                                              <li><a alt="分享" href="#" onclick="modalShare(<?php echo $v['id']; ?>, '<?php echo base_convert($v['id'], 10, 36); ?>');" data-toggle="modal"><i class="icon-share"></i></a></li>
-                                              <li><a alt="编辑" href="#" onclick="modalName(<?php echo $v['id']; ?>, '<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');" data-toggle="modal"><i class="icon-edit"></i></a></li>
-                                              <li><a alt="移动" href="#" onclick="$('#sid').val(<?php echo $v['id']; ?>);modalTrans();" data-toggle="modal"><i class="icon-random"></i></a></li>
-                                              <li><a alt="删除" href="#" onclick="modalDel('<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');$('#delid').val(<?php echo $v['id']; ?>);" data-toggle="modal"><i class="icon-remove"></i></a></li>
+                                              <li><a <?php if (!$v['isdir']) { ?>href="index.php?a=down&id=<?php echo $v['id']; ?>"<?php } else {?>href="index.php?a=mdown&ids=<?php echo $v['id']; ?>"<?php } ?>><i class="icon-download-alt"></i></a></li>
+                                              <li><a href="#" onclick="modalShare(<?php echo $v['id']; ?>, '<?php echo base_convert($v['id'], 10, 36); ?>');" data-toggle="modal"><i class="icon-share"></i></a></li>
+                                              <li><a href="#" onclick="modalName(<?php echo $v['id']; ?>, '<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');" data-toggle="modal"><i class="icon-edit"></i></a></li>
+                                              <li><a href="#" onclick="$('#sid').val(<?php echo $v['id']; ?>);modalTrans();" data-toggle="modal"><i class="icon-random"></i></a></li>
+                                              <li><a href="#" onclick="modalDel('<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');$('#delid').val(<?php echo $v['id']; ?>);" data-toggle="modal"><i class="icon-remove"></i></a></li>
                                           </ul>
                                       </div>
                                   </div>
@@ -236,18 +236,18 @@
               <?php if ($page > 1) { ?>
                   <ul class="pagination pagination-sm">
                       <?php if ($curPage > 1) { ?>
-                      <li><a href="javascript:;" onclick="page(-1);">上一页</a></li>
+                      <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                      <li><a href="javascript:;" onclick="page(0);">下一页</a></li>
+                      <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
                   <ul class="pagination pagination-sm pull-right">
                       <?php if ($curPage > 1) { ?>
-                          <li><a href="javascript:;" onclick="page(-1);">上一页</a></li>
+                          <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                          <li><a href="javascript:;" onclick="page(0);">下一页</a></li>
+                          <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
               <?php } ?>
@@ -260,29 +260,29 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">共享文件</h4>
+                              <h4 class="modal-title"><?php echo t('共享文件'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
                               <div class="w100 pull-left">
-                                  <div class="modalTitle pull-left">共享对象：</div>
-                                  <div class="modalTitleR pull-left">公开</div>
+                                  <div class="modalTitle pull-left"><?php echo t('共享对象'); ?>：</div>
+                                  <div class="modalTitleR pull-left"><?php echo t('公开'); ?></div>
                               </div>
                               <div class="w100 pull-left">
-                                  <div class="modalTitle pull-left">共享链接：</div>
+                                  <div class="modalTitle pull-left"><?php echo t('共享链接'); ?>：</div>
                                   <div class="modalTitleR pull-left" id="href"></div>
                               </div>
                               <div class="w100 pull-left">
                                   <div class="modalTitle pull-left"></div>
                                   <div class="modalTitleR pull-left">
                                       <div class="form-group pull-left">
-                                          <label class="col-lg-3 col-sm-2 control-label pwd" for="editPwd"><input type="checkbox" id="editPwd" name="edit"> 设置密码</label>
+                                          <label class="col-lg-3 col-sm-2 control-label pwd" for="editPwd"><input type="checkbox" id="editPwd" name="edit"> <?php echo t('设置密码'); ?></label>
                                           <div class="col-lg-4" id="editPwdIpt" style="display: none;">
-                                              <input type="password" placeholder="至多8位" id="inputPassword" class="form-control">
+                                              <input type="password" placeholder="<?php echo t('至多8位'); ?>" id="inputPassword" class="form-control">
                                           </div>
                                       </div>
                                       <div class="form-group pull-left">
                                           <label class="col-lg-3 col-sm-2 control-label pwd" for="editDate">
-                                              <input type="checkbox" id="editDate" name="edit"> 设置过期时间</label>
+                                              <input type="checkbox" id="editDate" name="edit"> <?php echo t('设置过期时间'); ?></label>
                                           <div class="col-lg-4" id="editDateIpt" style="display: none;">
                                               <input type="text" id="inputDate" class="form_datetime-adv form-control">
                                           </div>
@@ -291,8 +291,8 @@
                               </div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.share();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.share();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>
@@ -302,20 +302,20 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">编辑</h4>
+                              <h4 class="modal-title"><?php echo t('编辑'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
                           		<div>
-                                    <div class="modalTitleSmall pull-left">名称：</div>
+                                    <div class="modalTitleSmall pull-left"><?php echo t('名称'); ?>：</div>
                                     <div class="col-lg-10 marginB10 pull-left">
-                                  		<input class="form-control" id="newName" type="text" placeholder="请输入名称">
+                                  		<input class="form-control" id="newName" type="text" placeholder="<?php echo t('请输入名称'); ?>">
                                         <input type="hidden" id="aname" name="aname">
                                     </div>
                                 </div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.setName();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.setName();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>
@@ -325,14 +325,14 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">移动到</h4>
+                              <h4 class="modal-title"><?php echo t('移动到'); ?></h4>
                           </div>
                           <div class="modal-body pull-left" style="height: 412px;overflow-y: scroll;">
                               <div id="tree"></div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.trans();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.trans();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>
@@ -342,14 +342,14 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">删除</h4>
+                              <h4 class="modal-title"><?php echo t('删除'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
-                              <div class="delText">确定要删除吗？</div>
+                              <div class="delText"><?php echo t('确定要删除吗？'); ?></div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.del();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.del();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>
@@ -359,19 +359,19 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">创建文件夹</h4>
+                              <h4 class="modal-title"><?php echo t('新建文件夹'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
                               <div>
-                                  <div class="modalTitleSmall pull-left">名称：</div>
+                                  <div class="modalTitleSmall pull-left"><?php echo t('名称');?>：</div>
                                   <div class="col-lg-10 marginB10 pull-left">
-                                      <input class="form-control" id="folderName" type="text" placeholder="请输入名称">
+                                      <input class="form-control" id="folderName" type="text" placeholder="<?php echo t('请输入名称'); ?>">
                                   </div>
                               </div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.addFolder();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.addFolder();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>
@@ -381,8 +381,8 @@
       <!--main content end-->
   </section>
   <div id="msg_win">
-    <div class="icos"><a id="msg_min" title="最小化" href="javascript:void 0">_</a><a id="msg_close" title="关闭" href="javascript:void 0">×</a></div>
-    <div id="msg_title">上传文件</div>
+    <div class="icos"><a id="msg_min" title="<?php echo t('最小化'); ?>" href="javascript:void 0">_</a><a id="msg_close" title="<?php echo t('关闭'); ?>" href="javascript:void 0">×</a></div>
+    <div id="msg_title"><?php echo t('上传文件'); ?></div>
     <div id="msg_content">
     	<ul class="pull-left" id="progress"></ul>
     </div>
@@ -424,7 +424,6 @@
     <script type="text/javascript" src="lib/hash/sha.js"></script>
     <script type="text/javascript" src="lib/treeview/src/js/bootstrap-treeview.js"></script>
     <script type="text/javascript" src="js/file.js"></script>
-    <script type="text/javascript" src="js/cookie.js"></script>
     <script type="text/javascript" src="js/upload.js"></script>
     <script type="text/javascript">
     $('body').on('hidden', '.modal', function () {$(this).removeData('modal');});
@@ -436,14 +435,14 @@
                 name="classLists";
             }
             if ($('input[name="'+ name +'"]:checked').length > 1) {
-                alert('每个文件共享链接唯一，一次只能分享一个文件');
+                alert(file.lang('每个文件共享链接唯一，一次只能分享一个文件'));
                 return false;
             }
             $('input[name="'+ name +'"]:checked').each(function(){
                 id = $(this).val();
             });
             if (!id) {
-                alert('请选择要分享资源');
+                alert(file.lang('请选择要分享资源'));
                 return false;
             }
             href = 'index.php?a=view&id=' + id;
@@ -476,14 +475,14 @@
     function modalName(id, name) {
         if (!id) {
             if ($('input[name="squaredCheckbox"]:checked').length > 1) {
-                alert('一次只能重命名一个资料');
+                alert(file.lang('一次只能重命名一个资料'));
                 return false;
             }
             $('input[name="squaredCheckbox"]:checked').each(function(){
                 id = $(this).val();
             });
             if (!id) {
-                alert('请选择要重命名的资料');
+                alert(file.lang('请选择要重命名的资料'));
                 return false;
             }
             name = $('#aname_' + id).val();
@@ -509,7 +508,7 @@
         });
         var idstr = ids.join(',');
         if (!idstr) {
-            alert('请选择要下载的文件');
+            alert(file.lang('请选择要下载的文件'));
             return false;
         }
         href = '';
@@ -573,18 +572,18 @@
               } else {
                   type = 0;
               }
-              plupload.each(files, function(file) {
+              plupload.each(files, function(f) {
                   var data = {
-                      name : file.name,
-                      hash : file.hash,
+                      name : f.name,
+                      hash : f.hash,
                       path : $('#path').val(),
-                      size : file.origSize,
-                      mime : file.type,
+                      size : f.origSize,
+                      mime : f.type,
                       type : type
                   };
                   $.post("index.php?a=putFile", data, function(ret) {
                       if (ret.code == 1) {
-                          document.getElementById(file.id).innerHTML = '上传成功';
+                          document.getElementById(f.id).innerHTML = file.lang('上传成功');
                           if (!type) {
                               $('#fileList').after($("<div></div>").html(ret.data).text());
                               var ps = $(".listTableIn").position();
@@ -598,7 +597,7 @@
                           }
                           setTimeout('Message.set()', 4000);
                       } else {
-                          document.getElementById(file.id).innerHTML = '上传失败';
+                          document.getElementById(f.id).innerHTML = file.lang('上传失败');
                       }
                   }, 'json');
               });

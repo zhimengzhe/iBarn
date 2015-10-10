@@ -21,6 +21,8 @@
     Share
     Recycle bin
     Recommend
+    Chinese and English language support
+    Native support for fastDfs distributed file system
     
     Thanks Yolanda for UI help (QQ:648067827)
 
@@ -40,6 +42,7 @@
     分享功能
     回收站功能
     官方推荐模块
+    中英文多语言支持
 
     原生支持fastDfs分布式文件系统
     需服务器自行安装fdfs与fastdfs_client php扩展 

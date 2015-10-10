@@ -23,9 +23,9 @@ class User extends Abst {
                 setcookie('token', sha1($name . substr(md5($pwd . PWD), 6, 20)), time() + 3600 * 24 * 7);
             }
             Factory::getInstance('User')->setLoginTime($res);
-            echo Response::json(SUCC, array('登录成功'));
+            echo Response::json(SUCC, array(tip('登录成功')));
         } else {
-            echo Response::json(FAIL, array('登录失败'));
+            echo Response::json(FAIL, array(tip('登录失败')));
         }
     }
 
@@ -34,16 +34,16 @@ class User extends Abst {
         $pwd  = self::trimSpace($_REQUEST['passWord']);
         $role = $_REQUEST['role'] ? (int)$_REQUEST['role'] : 0;
         if (!$name || !$pwd) {
-            echo Response::json(LACK, array('用户名密码都不能为空'));
+            echo Response::json(LACK, array(tip('用户名密码都不能为空')));
             exit;
         }
         $res = Factory::getInstance('User')->regist($name, $pwd, $role);
         if ($res) {
             $_SESSION['CLOUD_UID'] = $res;
             setcookie('CLOUD_UID', $res, time() + 3600 * 24);
-            echo Response::json(SUCC, array('注册成功'));
+            echo Response::json(SUCC, array(tip('注册成功')));
         } else {
-            echo Response::json(FAIL, array('注册失败'));
+            echo Response::json(FAIL, array(tip('注册失败')));
         }
     }
 
@@ -51,21 +51,21 @@ class User extends Abst {
         $uid = $_SESSION['CLOUD_UID'];
         if ($uid) {
             if ($_COOKIE['CLOUD_UID'] == $uid) {
-                return Response::json(SUCC, array('登录状态'));
+                return Response::json(SUCC, array(tip('登录状态')));
             } else {
 				unset($_SESSION['CLOUD_UID']);
                 setcookie('CLOUD_UID', NULL, time() - 3600);
-                return Response::json(FAIL, array('非登录状态'));
+                return Response::json(FAIL, array(tip('非登录状态')));
             }
         } elseif ($_COOKIE['token']) {
             $res = Factory::getInstance('User')->checkToken($_COOKIE['token']);
             if ($res) {
                 $_SESSION['CLOUD_UID'] = $res;
                 setcookie('CLOUD_UID', $res, time() + 3600 * 24);
-                return Response::json(SUCC, array('登录状态'));
+                return Response::json(SUCC, array(tip('登录状态')));
             } else {
 				setcookie('token', NULL, time() - 3600);
-                return Response::json(FAIL, array('非登录状态'));
+                return Response::json(FAIL, array(tip('非登录状态')));
             }
         }
     }
@@ -82,14 +82,14 @@ class User extends Abst {
         $uid = (int)$_REQUEST['uid'];
         $quota = (int)$_REQUEST['quota'];
         if (!$uid) {
-            echo Response::json(LACK, array('用户ID不能为空'));
+            echo Response::json(LACK, array(tip('用户ID不能为空')));
             exit;
         }
         $res = Factory::getInstance('user')->quota($uid, $quota);
         if ($res) {
-            echo Response::json(SUCC, array('分配成功'));
+            echo Response::json(SUCC, array(tip('分配成功')));
         } else {
-            echo Response::json(FAIL, array('分配失败'));
+            echo Response::json(FAIL, array(tip('分配失败')));
         }
     }
 

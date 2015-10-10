@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="iBarn - 会思考的网盘。考研资料应有尽有！">
-    <meta name="keyword" content="iBarn,网盘,云盘">
+    <meta name="description" content="iBarn">
+    <meta name="keyword" content="iBarn">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>iBarn - 会思考的网盘</title>
+    <title>iBarn</title>
 
     <!-- Bootstrap core CSS -->
     <link href="lib/view/css/bootstrap.min.css" rel="stylesheet">
@@ -29,6 +29,6 @@
     <![endif]-->
 </head>
   <body>
-  	<div class="errorStyle">很抱歉，您无权访问此文件或文件不存在！</div>
+  	<div class="errorStyle"><?php echo t('很抱歉，您无权访问此文件或文件不存在！'); ?></div>
   </body>
 </html>

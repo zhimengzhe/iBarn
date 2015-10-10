@@ -259,19 +259,19 @@ class Core extends Abst {
 
     public function upload() {
         if (!$_REQUEST['uid']) {
-            echo Response::json(LACK, array('用户ID不能为空'));
+            echo Response::json(LACK, array(tip('用户ID不能为空')));
             exit;
         }
         $_REQUEST['name'] = self::filterName(rawurldecode(self::trimSpace($_REQUEST['name'])));
         if (!$_REQUEST['name']) {
-            echo Response::json(LACK, array('文件名不能为空'));
+            echo Response::json(LACK, array(tip('文件名不能为空')));
             exit;
         }
         if (!$_REQUEST['type']) {
             if (!file_exists(DATA_DIR)) {
                 $res = mkdir(DATA_DIR, 0777, true);
                 if (!$res) {
-                    echo Response::json(FAIL, array('存储目录创建失败'));
+                    echo Response::json(FAIL, array(tip('存储目录创建失败')));
                     exit;
                 }
             }
@@ -279,7 +279,7 @@ class Core extends Abst {
         if (!file_exists(UP_DIR)) {
             $res = mkdir(UP_DIR, 0777, true);
             if (!$res) {
-                echo Response::json(FAIL, array('存储目录创建失败'));
+                echo Response::json(FAIL, array(tip('存储目录创建失败')));
                 exit;
             }
         }
@@ -290,26 +290,26 @@ class Core extends Abst {
             'target_dir' => UP_DIR,
             //'allow_extensions' => 'jpg,jpeg,png'
         ))) {
-            echo Response::json(FAIL, array('文件上传失败'));
+            echo Response::json(FAIL, array(tip('上传失败')));
             exit;
         } else {
-            echo Response::json(SUCC, array('文件上传成功'));
+            echo Response::json(SUCC, array(tip('上传成功')));
         }
     }
 
     public function putFile() {
         if (!$_REQUEST['uid']) {
-            echo Response::json(LACK, array('用户ID不能为空'));
+            echo Response::json(LACK, array(tip('用户ID不能为空')));
             exit;
         }
         $name = isset($_REQUEST['name']) ? self::filterName(self::trimSpace(rawurldecode($_REQUEST['name']))) : self::filterName(self::trimSpace($_FILES['file']['name']));
         if (!$name) {
-            echo Response::json(LACK, array('文件名不能为空'));
+            echo Response::json(LACK, array(tip('文件名不能为空')));
             exit;
         }
         $hash = $_REQUEST['hash'];
         if (!$hash) {
-            echo Response::json(LACK, array('hash为必填参数'));
+            echo Response::json(LACK, array(tip('hash为必填参数')));
             exit;
         }
         $size = (int)$_REQUEST['size'];
@@ -330,7 +330,7 @@ class Core extends Abst {
             }
         }
         if (!file_exists($filePath)) {
-            echo Response::json(LACK, array('文件路径不存在'));
+            echo Response::json(LACK, array(tip('文件路径不存在')));
             exit;
         }
         if (!$size) {
@@ -348,13 +348,13 @@ class Core extends Abst {
             if ($newPath) {
                 $filePath = $newPath;
             } else {
-                echo Response::json(FAIL, array('文件转移入库失败，请重试'));
+                echo Response::json(FAIL, array(tip('文件入库失败，请重试')));
                 exit;
             }
         }
         $res = Factory::getInstance()->addFile($_REQUEST['uid'], trim(self::filterPath(rawurldecode($_REQUEST['path'])), '/') . '/' . $name, $filePath, $size, 0, $origin, $mime, $hash, $cover);
         if ($res == 2) {
-            echo Response::json(FORB, array('目录层级过多，超过限制'));
+            echo Response::json(FORB, array(tip('目录层级过多，超过限制')));
         } elseif ($res && is_array($res)) {
             $res['size'] = $this->formatBytes($res['size']);
             if ($_REQUEST['type']) {
@@ -364,7 +364,7 @@ class Core extends Abst {
             }
             echo Response::json(SUCC, array($res));
         } else {
-            echo Response::json(FAIL, array('文件入库失败'));
+            echo Response::json(FAIL, array(tip('文件入库失败，请重试')));
         }
     }
 
@@ -444,24 +444,24 @@ class Core extends Abst {
         $origin = isset($_REQUEST['origin']) ? $_REQUEST['origin'] : 'os';
         $cover = $_REQUEST['cover'] ? 1 : 0;
         if (!$uid) {
-            echo Response::json(LACK, array('用户ID不能为空'));
+            echo Response::json(LACK, array(tip('用户ID不能为空')));
             exit;
         }
         if (!$name) {
-            echo Response::json(LACK, array('文件夹名不能为空'));
+            echo Response::json(LACK, array(tip('文件名不能为空')));
             exit;
         }
         if (strlen($name) > 200) {
-            echo Response::json(FORB, array('文件夹名不能超过200个字符'));
+            echo Response::json(FORB, array(tip('文件夹名不能超过200个字符')));
             exit;
         }
         $res = Factory::getInstance()->addFolder($uid, $path, $name, $origin, $cover);
         if (!$cover && $res == 3) {
-            echo Response::json(FORB, array('同名文件夹已存在'));
+            echo Response::json(FORB, array(tip('同名文件夹已存在')));
             exit;
         }
         if ($res == 2) {
-            echo Response::json(FORB, array('目录层级过多，超过限制'));
+            echo Response::json(FORB, array(tip('目录层级过多，超过限制')));
         } elseif ($res && is_array($res)) {
             if ($_REQUEST['type']) {
                 $res = $this->formatBigHtml($res);
@@ -470,7 +470,7 @@ class Core extends Abst {
             }
             echo Response::json(SUCC, array($res));
         } else {
-            echo Response::json(FAIL, array('创建失败'));
+            echo Response::json(FAIL, array(tip('创建失败')));
         }
     }
 
@@ -480,16 +480,16 @@ class Core extends Abst {
         $aname = self::filterName(self::trimSpace(rawurldecode($_REQUEST['aname'])));
         $ext = pathinfo($aname, PATHINFO_EXTENSION);
         if (!$mapId || trim($name) == '') {
-            echo Response::json(LACK, array('缺少参数'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $res = Factory::getInstance()->setName($mapId, $name . ($ext ? '.' . $ext : ''));
         if ($res == 2) {
-            echo Response::json(FORB, array('同名文件已存在'));
+            echo Response::json(FORB, array(tip('同名文件已存在')));
         } elseif ($res == 1) {
             echo Response::json(SUCC, array($name . ($ext ? '.' . $ext : '')));
         } else {
-            echo Response::json(FAIL, array('修改失败'));
+            echo Response::json(FAIL, array(tip('修改失败')));
         }
     }
 
@@ -497,7 +497,7 @@ class Core extends Abst {
         $uid = (int)$_REQUEST['uid'];
         $mapId = $_REQUEST['ids'];
         if (!$mapId || !$uid) {
-            echo Response::json(LACK, array('缺少参数'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $mapIds = explode(',', $mapId);
@@ -528,9 +528,9 @@ class Core extends Abst {
             }
         }
         if ($res) {
-            echo Response::json(SUCC, array('删除成功'));
+            echo Response::json(SUCC, array(tip('删除成功')));
         } else {
-            echo Response::json(FAIL, array('删除失败'));
+            echo Response::json(FAIL, array(tip('删除失败')));
         }
     }
 
@@ -539,9 +539,9 @@ class Core extends Abst {
         $uid = (int)$_REQUEST['uid'];
         $res = Factory::getInstance()->delRecycle($uid, $ids);
         if ($res) {
-            echo Response::json(SUCC, array('删除成功'));
+            echo Response::json(SUCC, array(tip('删除成功')));
         } else {
-            echo Response::json(FAIL, array('删除失败'));
+            echo Response::json(FAIL, array(tip('删除失败')));
         }
     }
 
@@ -558,9 +558,9 @@ class Core extends Abst {
             }
         }
         if ($res) {
-            echo Response::json(SUCC, array('还原成功'));
+            echo Response::json(SUCC, array(tip('还原成功')));
         } else {
-            echo Response::json(FAIL, array('还原失败'));
+            echo Response::json(FAIL, array(tip('还原失败')));
         }
     }
 
@@ -571,7 +571,7 @@ class Core extends Abst {
         $dpath  = self::trimSpace($_REQUEST['dpath']);
         $cover  = (int)$_REQUEST['cover'];
         if (!$uid || !$smapId) {
-            echo Response::json(LACK, array('缺少参数'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $sid = explode(',', $smapId);
@@ -581,11 +581,11 @@ class Core extends Abst {
             }
         }
         if ($res == 1) {
-            echo Response::json(SUCC, array('移动成功'));
+            echo Response::json(SUCC, array(tip('移动成功')));
         } elseif ($res == 2) {
-            echo Response::json(FORB, array('没有移动'));
+            echo Response::json(FORB, array(tip('没有移动')));
         } else {
-            echo Response::json(FAIL, array('移动失败'));
+            echo Response::json(FAIL, array(tip('移动失败')));
         }
     }
 
@@ -596,7 +596,7 @@ class Core extends Abst {
         $dpath  = self::trimSpace($_REQUEST['dpath']);
         $cover  = (int)$_REQUEST['cover'];
         if (!$uid || !$smapId || !$dmapId) {
-            echo Response::json(LACK, array('缺少参数'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $res = Factory::getInstance()->duplicate($uid, $smapId, $dmapId, $dpath, $cover);
@@ -613,7 +613,7 @@ class Core extends Abst {
         if (!$urlkey) {
             $mapId = (int)$_REQUEST['id'];
             if (!$mapId) {
-                echo Response::json(LACK, array('缺少参数'));
+                echo Response::json(LACK, array(tip('参数不全')));
                 exit;
             }
         } else {
@@ -686,7 +686,7 @@ class Core extends Abst {
         if (!$urlkey) {
             $mapId = (int)$_REQUEST['id'];
             if (!$mapId) {
-                echo Response::json(LACK, array('缺少参数'));
+                echo Response::json(LACK, array(tip('参数不全')));
                 exit;
             }
         } else {
@@ -890,16 +890,16 @@ class Core extends Abst {
         ini_set('memory_limit','" . ($size + 3) . "M');
         ?>";
         file_put_contents(CONFIG_PATH . 'upload.php', $str);
-        echo Response::json(SUCC, array('设置成功'));
+        echo Response::json(SUCC, array(tip('设置成功')));
     }
 
     public function getTree() {
         $uid = (int)$_REQUEST['uid'];
         $list = Factory::getInstance()->getTree($uid);
-        $res = '[{"text": "所有资料", "mapId": "0"}]';
+        $res = '[{"text": "' . t('所有资料') . '", "mapId": "0"}]';
         if ($list) {
             $list = $this->tree($list);
-            $ret = array(0 => array('text' => '所有资料', 'mapId' => 0));
+            $ret = array(0 => array('text' => t('所有资料'), 'mapId' => 0));
             $ret[0]['nodes'] = $list;
             unset($list);
             $res = json_encode($ret);

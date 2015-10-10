@@ -9,14 +9,14 @@
                             <div id="ucontainer">
                                 <button class="btn btn-danger" type="button" data-target="#myModal1" data-toggle="modal">
                                     <i class="icon-remove-sign"></i>
-                                    彻底删除
+                                    <?php echo t('彻底删除'); ?>
                                 </button>
                             </div>
                       </li>
                   	  <li>
                           <button class="btn btn-success" type="button" onclick="file.recover();">
                               <i class="icon-smile"></i>
-                              还原资料
+                              <?php echo t('还原资料'); ?>
                           </button>
                       </li>
                   </ul>
@@ -24,13 +24,13 @@
                       <div class="searchRight pull-right">
                           <div class="input-group m-bot15">
                               <div class="input-group-btn">
-                                  <button class="btn btn-white" type="button">全部</button>
+                                  <button class="btn btn-white" type="button"><?php echo t('全部'); ?></button>
                               </div>
                               <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>">
                           </div>
                           <button class="btn btn-success searchButton" type="submit">
                               <i class="icon-search"></i>
-                              搜索
+                              <?php echo t('搜索'); ?>
                           </button>
                       </div>
                   </form>
@@ -43,11 +43,11 @@
                                 <div class="listTableTop pull-left">
                                     <div class="listTableTopL pull-left">
                                         <div class="cBox"><input id="chkAll" type="checkbox"></div>
-                                        <div class="name">名称</div>
+                                        <div class="name"><?php echo t('名称'); ?></div>
                                     </div>
                                     <div class="listTableTopR pull-right">
-                                        <div class="size">大小</div>
-                                        <div class="updateTime">上传时间</div>
+                                        <div class="size"><?php echo t('大小'); ?></div>
+                                        <div class="updateTime"><?php echo t('上传时间'); ?></div>
                                     </div>
                                 </div>
                             </li>
@@ -79,10 +79,10 @@
               <?php if ($page > 1) { ?>
                   <ul class="pagination pagination-sm">
                       <?php if ($curPage > 1) { ?>
-                          <li><a href="index.php?class=recycle&search=<?php echo $search; ?>&curPage=<?php echo max($curPage-1, 1); ?>">上一页</a></li>
+                          <li><a href="index.php?class=recycle&search=<?php echo $search; ?>&curPage=<?php echo max($curPage-1, 1); ?>"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                          <li><a href="index.php?class=recycle&search=<?php echo $search; ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>">下一页</a></li>
+                          <li><a href="index.php?class=recycle&search=<?php echo $search; ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
               <?php } ?>
@@ -93,14 +93,14 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">删除</h4>
+                              <h4 class="modal-title"><?php echo t('删除'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
-                              <div class="delText">确定要删除吗？</div>
+                              <div class="delText"><?php echo t('确定要删除吗？'); ?></div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.realDel();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.realDel();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>

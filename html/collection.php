@@ -10,7 +10,7 @@
                             <div id="ucontainer">
                                 <button class="btn btn-warning" type="button" data-target="#myModal1" data-toggle="modal">
                                     <i class="icon-star-empty"></i>
-                                    取消收藏
+                                    <?php echo t('取消收藏'); ?>
                                 </button>
                             </div>
                       </li>
@@ -20,13 +20,13 @@
                       <div class="searchRight pull-right">
                           <div class="input-group m-bot15">
                               <div class="input-group-btn">
-                                  <button class="btn btn-white" type="button">全部</button>
+                                  <button class="btn btn-white" type="button"><?php echo t('全部'); ?></button>
                               </div>
-                              <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>" placeholder="搜你想要">
+                              <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>" placeholder="<?php echo t('搜你想要'); ?>">
                           </div>
                           <button class="btn btn-success searchButton" type="submit">
                               <i class="icon-search"></i>
-                              搜索
+                              <?php echo t('搜索'); ?>
                           </button>
                       </div>
                   </form>
@@ -39,11 +39,11 @@
                                 <div class="listTableTop pull-left">
                                     <div class="listTableTopL pull-left">
                                         <div class="cBox"><input id="chkAll" type="checkbox"></div>
-                                        <div class="name">名称</div>
+                                        <div class="name"><?php echo t('名称'); ?></div>
                                     </div>
                                     <div class="listTableTopR pull-right">
-                                        <div class="size" id="size">大小<div class="seq"></div></div>
-                                        <div class="updateTime" id="collectTime">收藏时间<div class="seq"></div></div>
+                                        <div class="size" id="size"><?php echo t('大小'); ?><div class="seq"></div></div>
+                                        <div class="updateTime" id="collectTime"><?php echo t('收藏时间'); ?><div class="seq"></div></div>
                                     </div>
                                 </div>
                             </li>
@@ -90,14 +90,14 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">取消收藏</h4>
+                              <h4 class="modal-title"><?php echo t('取消收藏'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
-                              <div class="delText">确定要取消收藏吗？</div>
+                              <div class="delText"><?php echo t('确定要取消收藏吗？'); ?></div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.unCollect();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.unCollect();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>

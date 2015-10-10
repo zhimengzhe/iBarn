@@ -81,11 +81,11 @@ class Collection extends Abst {
         $uid = (int)$_REQUEST['uid'];
         $ids = $_REQUEST['ids'];
         if (!$uid) {
-            echo Response::json(LACK, array('登录用户才能收藏'));
+            echo Response::json(LACK, array(tip('请先登录')));
             exit;
         }
         if (!$ids) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $idArray = explode(',', $ids);
@@ -97,36 +97,36 @@ class Collection extends Abst {
             }
             $fac->incrCollect($ids);
         }
-        echo Response::json(SUCC, array('收藏成功'));
+        echo Response::json(SUCC, array(tip('操作成功')));
     }
 
     public function unCollect() {
         $uid = (int)$_REQUEST['uid'];
         $ids = $_REQUEST['ids'];
         if (!$uid || !$ids) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         Factory::getInstance()->decrCollect($ids);
         $res = Factory::getInstance()->unCollect($uid, $ids);
         if ($res) {
-            echo Response::json(SUCC, array('取消收藏成功'));
+            echo Response::json(SUCC, array(tip('操作成功')));
         } else {
-            echo Response::json(FAIL, array('取消收藏失败'));
+            echo Response::json(FAIL, array(tip('操作失败')));
         }
     }
 
     public function unCollectAll() {
         $uid = (int)$_REQUEST['uid'];
         if (!$uid) {
-            echo Response::json(LACK, array('参数不全'));
+            echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
         $res = Factory::getInstance()->unCollectAll($uid);
         if ($res) {
-            echo Response::json(SUCC, array('取消收藏成功'));
+            echo Response::json(SUCC, array(tip('操作成功')));
         } else {
-            echo Response::json(FAIL, array('取消收藏失败'));
+            echo Response::json(FAIL, array(tip('操作失败')));
         }
     }
 }

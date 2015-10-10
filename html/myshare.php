@@ -10,7 +10,7 @@
                             <div id="ucontainer">
                                 <button class="btn btn-warning" type="button" data-target="#myModal1" data-toggle="modal">
                                     <i class="icon-share"></i>
-                                    取消分享
+                                    <?php echo t('取消分享'); ?>
                                 </button>
                             </div>
                       </li>
@@ -20,13 +20,13 @@
                       <div class="searchRight pull-right">
                           <div class="input-group m-bot15">
                               <div class="input-group-btn">
-                                  <button class="btn btn-white" type="button">全部</button>
+                                  <button class="btn btn-white" type="button"><?php echo t('全部'); ?></button>
                               </div>
-                              <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>" placeholder="搜你想要">
+                              <input type="text" class="form-control" id="search" name="search" value="<?php echo $_REQUEST['search']; ?>" placeholder="<?php echo t('搜你想要'); ?>">
                           </div>
                           <button class="btn btn-success searchButton" type="submit">
                               <i class="icon-search"></i>
-                              搜索
+                              <?php echo t('搜索'); ?>
                           </button>
                       </div>
                   </form>
@@ -39,13 +39,13 @@
                                 <div class="listTableTop pull-left">
                                     <div class="listTableTopL pull-left">
                                         <div class="cBox"><input id="chkAll" type="checkbox"></div>
-                                        <div class="name">名称</div>
+                                        <div class="name"><?php echo t('名称'); ?></div>
                                     </div>
                                     <div class="listTableTopR5 pull-right">
-                                        <div class="size" id="view">浏览数<div class="seq"></div></div>
-                                        <div class="size" id="down">下载数<div class="seq"></div></div>
-                                        <div class="size" id="saveNum">收藏数<div class="seq"></div></div>
-                                        <div class="updateTime" id="shareTime">分享时间<div class="seq"></div></div>
+                                        <div class="size" id="view"><?php echo t('浏览数'); ?><div class="seq"></div></div>
+                                        <div class="size" id="down"><?php echo t('下载数'); ?><div class="seq"></div></div>
+                                        <div class="size" id="saveNum"><?php echo t('收藏数'); ?><div class="seq"></div></div>
+                                        <div class="updateTime" id="shareTime"><?php echo t('分享时间'); ?><div class="seq"></div></div>
                                     </div>
                                 </div>
                             </li>
@@ -70,7 +70,7 @@
                                       <div class="updateTime" id="shareTime"><?php echo $v['shareTime']; ?></div>
                                       <div style="display: none;position: absolute;margin-left: -40px;" class="float_box" id="box_<?php echo $v['mapId']; ?>">
                                           <ul class="control">
-                                              <li><a alt="下载" <?php if (!$v['isdir']) { ?>href="index.php?a=down&id=<?php echo $v['mapId']; ?>"<?php } else {?>href="index.php?a=mdown&ids=<?php echo $v['mapId']; ?>"<?php } ?>><i class="icon-download-alt"></i></a></li>
+                                              <li><a alt="<?php echo t('下载'); ?>" <?php if (!$v['isdir']) { ?>href="index.php?a=down&id=<?php echo $v['mapId']; ?>"<?php } else {?>href="index.php?a=mdown&ids=<?php echo $v['mapId']; ?>"<?php } ?>><i class="icon-download-alt"></i></a></li>
                                           </ul>
                                       </div>
                                   </div>
@@ -84,10 +84,10 @@
               <?php if ($page > 1) { ?>
                   <ul class="pagination pagination-sm">
                       <?php if ($curPage > 1) { ?>
-                          <li><a href="javascript:;" onclick="page(-1);">上一页</a></li>
+                          <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                          <li><a href="javascript:;" onclick="page(0);">下一页</a></li>
+                          <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
               <?php } ?>
@@ -99,14 +99,14 @@
                       <div class="modal-content">
                           <div class="modal-header pull-left">
                               <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                              <h4 class="modal-title">取消分享</h4>
+                              <h4 class="modal-title"><?php echo t('取消分享'); ?></h4>
                           </div>
                           <div class="modal-body pull-left">
-                              <div class="delText">确定要取消分享吗？取消之后，其他用户将看不到本资源</div>
+                              <div class="delText"><?php echo t('确定要取消分享吗？取消之后，其他用户将看不到本资源'); ?></div>
                           </div>
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-success" onclick="file.unShare();">确定</button>
-                              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                              <button type="button" class="btn btn-success" onclick="file.unShare();"><?php echo t('确定'); ?></button>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo t('取消'); ?></button>
                           </div>
                       </div>
                   </div>
@@ -151,14 +151,14 @@
     function show(id, urlkey, pwd) {
         var pwdinfo = '';
         if (pwd.length > 0) {
-            pwdinfo = '<span style="margin-left:20px;">密码：' + pwd + '</span>';
+            pwdinfo = '<span style="margin-left:20px;">'+file.lang('密码')+'：' + pwd + '</span>';
         }
         if ($('#info_'+id).length <= 0) {
             $('#li_'+id).after('<li id="info_'+id+'"><div class="listTableIn pull-left">'+
             '<div class="listTableInL pull-left" style="width: 100%;">'+
-            '<div class="name" style="margin-left: 20px;">分享链接：<span id="url_'+id+'">http://'+window.location.host+'/index.php?a=view&urlkey='+urlkey+'</span>'+pwdinfo+
+            '<div class="name" style="margin-left: 20px;">'+file.lang('分享链接')+'：<span id="url_'+id+'">http://'+window.location.host+'/index.php?a=view&urlkey='+urlkey+'</span>'+pwdinfo+
             '<button id="copy'+id+'" class="btn btn-success copy" onclick="copy('+id+');" type="button" style="margin-left:20px;">'+
-                '<i class="icon-copy"></i> 复制' +
+                '<i class="icon-copy"></i> '+file.lang('复制')+'' +
             '</button></div>'+
             '</div></div></li>');
         } else {
@@ -170,12 +170,12 @@
         if (window.clipboardData && $.browser.msie) {
             window.clipboardData.clearData();
             if(window.clipboardData.setData("Text", content)) {
-                alert('复制成功！ 你可以利用快捷方式Ctrl+V键粘贴到UC、QQ或MSN等聊天工具中');
+                alert(file.lang('复制成功！ 你可以利用快捷方式Ctrl+V键粘贴到QQ等聊天工具中'));
             } else {
-                alert('你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制');
+                alert(file.lang('你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制'));
             }
         }
-        alert('你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制');
+        alert(file.lang('你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制'));
     }
     $("#chkAll").click(function() {
         if (this.checked) {

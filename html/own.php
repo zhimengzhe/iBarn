@@ -9,7 +9,7 @@
                       <li id="down"  style="margin-left: 120px;">
                           <button class="btn btn-success" type="button" onclick="down();">
                               <i class="icon-download"></i>
-                              下载
+                              <?php echo t('下载'); ?>
                           </button>
                       </li>
                       <?php if (!$_REQUEST['pid']) { ?>
@@ -17,7 +17,7 @@
                           <div id="ucontainer">
                               <button class="btn btn-info" type="button" onclick="file.collect();">
                                   <i class="icon-star"></i>
-                                  收藏
+                                  <?php echo t('收藏'); ?>
                               </button>
                           </div>
                       </li>
@@ -27,13 +27,13 @@
                       <div class="searchRight pull-right">
                           <div class="input-group m-bot15">
                               <div class="input-group-btn">
-                                  <button class="btn btn-white" type="button">全部</button>
+                                  <button class="btn btn-white" type="button"><?php echo t('全部'); ?></button>
                               </div>
-                              <input type="text" class="form-control" id="search" name="search" value="<?php echo htmlspecialchars($_REQUEST['search'], ENT_NOQUOTES); ?>" placeholder="搜你想要">
+                              <input type="text" class="form-control" id="search" name="search" value="<?php echo htmlspecialchars($_REQUEST['search'], ENT_NOQUOTES); ?>" placeholder="<?php echo t('搜你想要'); ?>">
                           </div>
                           <button class="btn btn-success searchButton" type="submit">
                               <i class="icon-search"></i>
-                              搜索
+                              <?php echo t('搜索'); ?>
                           </button>
                       </div>
                   </form>
@@ -44,8 +44,8 @@
                       <div class="col-lg-12">
                           <!--breadcrumbs start -->
                           <ul class="breadcrumb">
-                              <li><a href="index.php?a=own&urlkey=<?php echo base_convert($mapInfo['id'], 10, 36); ?>"><i class="icon-mail-reply"></i> 返回</a></li>
-                              <li class="active">当前目录</li>
+                              <li><a href="index.php?a=own&urlkey=<?php echo base_convert($mapInfo['id'], 10, 36); ?>"><i class="icon-mail-reply"></i> <?php echo t('返回'); ?></a></li>
+                              <li class="active"><?php echo t('当前目录'); ?></li>
                           </ul>
                           <!--breadcrumbs end -->
                       </div>
@@ -94,10 +94,10 @@
               <?php if ($page > 1) { ?>
                   <ul class="pagination pagination-sm">
                       <?php if ($curPage > 1) { ?>
-                          <li><a href="javascript:;" onclick="page(-1);">上一页</a></li>
+                          <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                          <li><a href="javascript:;" onclick="page(0);">下一页</a></li>
+                          <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
               <?php } ?>
@@ -138,16 +138,6 @@
     <script type="text/javascript" src="lib/view/js/checkbox.js"></script>
     <script type="text/javascript" src="js/file.js"></script>
     <script>
-    $("#chkAll").click(function() {
-        if (this.checked) {
-            $('input:checkbox[name="classLists"]').prop("checked", true);
-        } else {
-            $('input:checkbox[name="classLists"]').prop("checked", false);
-        }
-    });
-    $('input[name="classLists"]').click(function(){
-        $('#chkAll').attr('checked', $('input[name="classLists"]:checked').length == $('input[name="classLists"]').length);
-    });
     $('body').on('hidden', '.modal', function() {$(this).removeData('modal');});
 
     //custom select box
@@ -181,7 +171,7 @@
             });
             var idstr = ids.join(',');
             if (!idstr) {
-                alert('请选择要下载的文件');
+                alert(file.lang('请选择要下载的文件'));
                 return false;
             }
 
@@ -197,13 +187,13 @@
             }
         } else {
             if (!id) {
-                alert('请选择要下载的文件');
+                alert(file.lang('请选择要下载的文件'));
                 return false;
             }
             href = $('#a_' + id).attr('href');
             info = href.match(/urlkey=([^&]+)/);
             if (!info) {
-                alert('请选择要下载的文件');
+                alert(file.lang('请选择要下载的文件'));
                 return false;
             }
             pinfo = href.match(/pid=([^&]+)/);
