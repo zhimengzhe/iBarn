@@ -91,7 +91,8 @@ var Message = {
         var me = this;
         this.minbtn.onclick = function() {me.set();this.blur()};
         this.closebtn.onclick = function() {me.close()};
-        this.char=navigator.userAgent.toLowerCase().indexOf('firefox')+1?['_','::','×']:['0','2','r'];//FF不支持webdings字体
+        //this.char=navigator.userAgent.toLowerCase().indexOf('firefox')+1?['_','::','×']:['0','2','r'];//FF不支持webdings字体
+		this.char=['_','::','×'];//FF不支持webdings字体
         this.minbtn.innerHTML=this.char[0];
         this.closebtn.innerHTML=this.char[2];
         setTimeout(function() {//初始化最先位置
