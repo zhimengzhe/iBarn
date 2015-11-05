@@ -52,7 +52,7 @@
 
 ## 服务(service)
 ---
-**同时提供定制服务，二次开发，有意者联系 fanyalei@aliyun.com 或 QQ 451802973**
+**提供定制服务，二次开发，可开发票。有意者联系 fanyalei@aliyun.com 或 QQ 451802973**
 
 **While providing customized services, and the two development.**
 
