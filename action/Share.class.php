@@ -27,7 +27,7 @@ class Share extends Abst {
             foreach ((array)$list as $k => $v) {
                 if (trim($v['name']) == '') {
                     $mapInfo = $fac->getFileMap($v['mapId']);
-                    $list[$k]['name'] = $mapInfo['name'] ? $mapInfo['name'] : '资料已被删除';
+                    $list[$k]['name'] = $mapInfo['name'] ? $mapInfo['name'] : tip('资料已被删除');
                     $list[$k]['type'] = $mapInfo['type'];
                 }
                 if ($urlkey) {
@@ -51,6 +51,63 @@ class Share extends Abst {
             }
             $page = ceil($num/$perPage);
             include VIEW_PATH . 'myshare.php';
+        } else {
+            $html = '';
+            if ($list) {
+                foreach ((array)$list as $l) {
+                    $html .= $this->formatHtml($l);
+                }
+            }
+            echo $html;
+        }
+    }
+
+    public function getShareMe() {
+        $uid   = (int)$_REQUEST['uid'];
+        $urlkey = $_REQUEST['urlkey'];
+        $curPage = max($_REQUEST['curPage'], 1);
+        $perPage = $_REQUEST['perPage'] ? (int)$_REQUEST['perPage'] : 100;
+        $name = $_REQUEST['search'];
+        $order = $_REQUEST['order'];
+        $by = $_REQUEST['by'] == 'asc' ? 'asc' : 'desc';
+        $fac = Factory::getInstance();
+        $userinfo = Factory::getInstance('user')->getUserInfo($uid);
+        if ($urlkey) {
+            $mapId = base_convert($urlkey, 36, 10);
+            $map = $fac->getFileMap($mapId);
+            $list = $fac->getDirList($map['uid'], $mapId, $order, $by, 0, $curPage, $perPage);
+        } else {
+            $list = $fac->getShareMeList($uid, $curPage, $perPage, $name, $order, $by);
+        }
+        if ($list) {
+            $fileIocn = json_decode(ICON, true);
+            foreach ((array)$list as $k => $v) {
+                if (trim($v['name']) == '') {
+                    $mapInfo = $fac->getFileMap($v['mapId']);
+                    $list[$k]['name'] = $mapInfo['name'] ? $mapInfo['name'] : tip('资料已被删除');
+                    $list[$k]['type'] = $mapInfo['type'];
+                }
+                if ($urlkey) {
+                    $list[$k]['mapId'] = $v['id'];
+                    $list[$k]['id'] = 0;
+                    $list[$k]['shareTime'] = $_REQUEST['shareTime'];
+                }
+                $icon = $fileIocn[pathinfo($list[$k]['name'], PATHINFO_EXTENSION)];
+                if (!$list[$k]['isdir']) {
+                    $list[$k]['icon'] = $icon ? $icon : $fileIocn['default'];
+                } else {
+                    $list[$k]['icon'] = $fileIocn['folder'];
+                }
+            }
+        }
+        if (!$_REQUEST['res']) {
+            if ($urlkey) {
+                $num = $fac->getDirNum($uid, $mapId, 0);
+            } else {
+                $num = $fac->getShareMeNum($uid, $name);
+            }
+            $page = ceil($num/$perPage);
+            include VIEW_PATH . 'shareme.php';
         } else {
             $html = '';
             if ($list) {
@@ -167,16 +224,34 @@ class Share extends Abst {
         $mapId = (int)$_REQUEST['id'];
         $price = (int)$_REQUEST['price'];
         $pwd = self::trimSpace(rawurldecode($_REQUEST['pwd']));
+        $suser = self::trimSpace(rawurldecode($_REQUEST['suser']));
         if (strlen($pwd) > 8) {
             echo Response::json(FAIL, array(tip('密码不能超过8位')));
             exit;
+        }
+        if ($type != 1) {
+            if (!$suser) {
+                echo Response::json(FAIL, array(tip('被分享人不能为空')));
+                exit;
+            } else {
+                $userinfo = Factory::getInstance('user')->getUserByName($suser);
+                $sid = $userinfo['uid'];
+                if (!$sid) {
+                    echo Response::json(FAIL, array(tip('被分享人不存在')));
+                    exit;
+                }
+                if ($uid == $sid) {
+                    echo Response::json(FAIL, array(tip('不能分享给自己')));
+                    exit;
+                }
+            }
         }
         $overTime = $_REQUEST['overTime'];
         if (!$uid || !$mapId) {
             echo Response::json(LACK, array(tip('参数不全')));
             exit;
         }
-        $res = Factory::getInstance()->share($uid, $type, $mapId, $pwd, $overTime, $price);
+        $res = Factory::getInstance()->share($uid, $type, $mapId, $pwd, $overTime, $price, $sid);
         if ($res == -1) {
             echo Response::json(FORB, array(tip('文件已分享，不能重复分享')));
         } elseif ($res) {

@@ -125,10 +125,10 @@ class CoreImpl extends Abst {
         return Mysql::getInstance('slave')->fetchAll($sql, array(':uid' => $uid, ':ids' => $mapIds));
     }
 
-    public function addFile($uid, $path, $location, $size = 0, $isdir = 0, $origin = 'os', $mime = '', $hash = '', $isCover = 0) {
+    public function addFile($uid, $path, $location, $size = 0, $isdir = 0, $origin = 'os', $mime = '', $hash = '', $isCover = 0, $md5 = '') {
         $mysql = Mysql::getInstance();
-        $loc = $mysql->fetchColumn('select location from fileinfo where hash = :hash and size = :size', array(
-            ':hash' => $hash,
+        $loc = $mysql->fetchColumn('select location from fileinfo where md5 = :md5 and size = :size', array(
+            ':md5' => $md5,
             ':size' => $size
         ));
         if ($loc) {
@@ -141,11 +141,12 @@ class CoreImpl extends Abst {
         $res = $this->addFileMap($uid, $path, $location, $size, $mime, $isdir, $origin, $isCover, $type);
         if ($res) {
             if (!$loc) {
-                $mysql->execute('insert into fileinfo (hash, mime, location, size, time)
-                                 values (:hash, :mime, :location, :size, :time)', array(
+                $mysql->execute('insert into fileinfo (hash, mime, location, md5, size, time)
+                                 values (:hash, :mime, :location, :md5, :size, :time)', array(
                     ':hash' => $hash,
                     ':mime' => strtolower($mime),
                     ':location' => $location,
+					':md5' => $md5,
                     ':size' => $size,
                     ':time' => date('Y-m-d H:i:s')
                 ));
@@ -190,11 +191,11 @@ class CoreImpl extends Abst {
     }
 
     public function uploadCheck($hash, $size) {
-        $location = Mysql::getInstance()->fetchColumn('select location from fileinfo where hash = :hash and size = :size', array(
+        $ret = Mysql::getInstance()->fetchRow('select location, size, md5, mime from fileinfo where hash = :hash and size = :size', array(
             ':hash' => $hash,
             ':size' => $size
         ));
-        return $location ? $location : 0;
+        return $ret['location'] ? array('location' => $ret['location'], 'size' => $ret['size'], 'md5' => $ret['md5'], 'mime' => $ret['mime']) : array();
     }
 
     public function addFileMap($uid, $path, $location = '', $size = 0, $mime = '', $isDir = 1, $origin = 'os', $isCover = 0, $type = 0) {
@@ -277,16 +278,6 @@ class CoreImpl extends Abst {
         return $this->addFileMap($uid, trim($path, '/') . '/' . $name, '', 0, '', 1, $origin, $isCover);
     }
 
-    public function getShareMeList($uid, $curPage = 1, $perPage = 20, $name = '') {
-        $bind = array(':uid' => $uid);
-        if (trim($name) != '') {
-            $like = ' and name like :name';
-            $bind[':name'] = '%' . $name . '%';
-        }
-        $sql = 'select * from share where type = 1 ' . $like . ' limit ' . $perPage . ' offset ' . ($curPage - 1) * $perPage;
-        return Mysql::getInstance('slave')->fetchAll($sql, $bind);
-    }
-
     public function getMyShareList($uid, $curPage = 1, $perPage = 20, $name = '', $order = 'shareTime', $by = 'desc') {
         $bind = array(':uid' => $uid);
         if (in_array($order, array('view', 'down', 'saveNum', 'shareTime'))) {
@@ -296,7 +287,7 @@ class CoreImpl extends Abst {
         }
         $sql = 'select id, mapId, pwd, isdir, size, view, down, saveNum, shareTime
                   from share
-              where uid = :uid and type = 1 ' . $mix . ' limit ' . $perPage . ' offset ' . ($curPage - 1) * $perPage;
+              where uid = :uid ' . $mix . ' limit ' . $perPage . ' offset ' . ($curPage - 1) * $perPage;
         if (trim($name) != '') {
             $like = ' and m.name like :name';
             $bind[':name'] = '%' . $name . '%';
@@ -309,12 +300,44 @@ class CoreImpl extends Abst {
 
     public function getMyShareNum($uid, $name = '') {
         $bind = array(':uid' => $uid);
-        $sql = 'select count(*) from share where uid = :uid and type = 1';
+        $sql = 'select count(*) from share where uid = :uid';
         if (trim($name) != '') {
             $like = ' and m.name like :name';
             $bind[':name'] = '%' . $name . '%';
             $sql = 'select count(s.*) from share s left join fileMap m on s.mapId = m.id
-                  where s.uid = :uid and s.type = 1' . $like;
+                  where s.uid = :uid' . $like;
+        }
+        return Mysql::getInstance('slave')->fetchColumn($sql, $bind);
+    }
+
+    public function getShareMeList($uid, $curPage = 1, $perPage = 20, $name = '', $order = 'shareTime', $by = 'desc') {
+        $bind = array(':sid' => $uid);
+        if (in_array($order, array('view', 'down', 'saveNum', 'shareTime'))) {
+            $mix = ' order by ' . $order . ' ' . $by;
+        } else {
+            $mix = ' order by isdir desc, shareTime desc ';
+        }
+        $sql = 'select id, mapId, pwd, isdir, size, view, down, saveNum, shareTime
+                  from share
+              where sid = :sid and type = 2 ' . $mix . ' limit ' . $perPage . ' offset ' . ($curPage - 1) * $perPage;
+        if (trim($name) != '') {
+            $like = ' and m.name like :name';
+            $bind[':name'] = '%' . $name . '%';
+            $sql = 'select s.id, s.mapId, s.isdir, s.size, s.view, s.down, s.saveNum, s.shareTime, s.pwd, m.name, m.type from share s
+                      left join fileMap m on s.mapId = m.id
+                  where s.sid = :sid and s.type = 2 ' . $like . $mix . ' limit ' . $perPage . ' offset ' . ($curPage - 1) * $perPage;
+        }
+        return Mysql::getInstance('slave')->fetchAll($sql, $bind);
+    }
+
+    public function getShareMeNum($uid, $name = '') {
+        $bind = array(':sid' => $uid);
+        $sql = 'select count(*) from share where sid = :sid and type = 2';
+        if (trim($name) != '') {
+            $like = ' and m.name like :name';
+            $bind[':name'] = '%' . $name . '%';
+            $sql = 'select count(s.*) from share s left join fileMap m on s.mapId = m.id
+                  where s.sid = :sid and s.type = 2' . $like;
         }
         return Mysql::getInstance('slave')->fetchColumn($sql, $bind);
     }
@@ -360,34 +383,58 @@ class CoreImpl extends Abst {
         return $mysql->getRowCount() ? 1 : 0;
     }
 
-    public function share($uid, $type, $mapId, $pwd, $overTime, $price = 0) {
+    public function share($uid, $type, $mapId, $pwd, $overTime, $price = 0, $sid = 0) {
         $mysql = Mysql::getInstance();
         $fileMap = $mysql->fetchRow('select location, isdir from filemap where id = :mapId and uid = :uid', array(':mapId' => $mapId, ':uid' => $uid));
         if (!$fileMap['location'] && $fileMap['isdir'] == 0) {
             return 0;
         }
-        $sql = 'select id from share where uid = :uid and mapId = :mapId and type = :type';
-        if ($mysql->fetchColumn($sql, array(
-            ':uid' => $uid,
-            ':mapId' => $mapId,
-            ':type' => $type
-        ))) {
-            return -1;
-        }
-        $sql = 'insert into share (uid, mapId, isdir, type, pwd, shareTime, overTime, price)
+        if ($type == 1) {
+            $sql = 'select id from share where uid = :uid and mapId = :mapId and (overTime > now() or overTime = "0000-00-00 00:00:00")';
+            if ($mysql->fetchColumn($sql, array(
+                ':uid' => $uid,
+                ':mapId' => $mapId
+            ))) {
+                return -1;
+            }
+            $sql = 'insert into share (uid, mapId, isdir, type, pwd, shareTime, overTime, price)
                 values (:uid, :mapId, :isdir, :type, :pwd, :shareTime, :overTime, :price)';
-        $mysql->execute($sql, array(
-            ':uid' => $uid,
-            ':mapId' => $mapId,
-            ':isdir' => $fileMap['isdir'],
-            ':type' => $type,
-            ':pwd' => $pwd,
-            ':shareTime' => date('Y-m-d H:i:s'),
-            ':overTime' => $overTime,
-            ':price' => $price
-        ));
-        $id = $mysql->lastInsertid();
-        return $id ? $id : 0;
+            $mysql->execute($sql, array(
+                ':uid' => $uid,
+                ':mapId' => $mapId,
+                ':isdir' => $fileMap['isdir'],
+                ':type' => $type,
+                ':pwd' => $pwd,
+                ':shareTime' => date('Y-m-d H:i:s'),
+                ':overTime' => $overTime,
+                ':price' => $price
+            ));
+            $id = $mysql->lastInsertid();
+            return $id ? $id : 0;
+        } else {
+            $sql = 'select id from share where uid = :uid and sid = :sid and mapId = :mapId and type = :type';
+            if ($mysql->fetchColumn($sql, array(
+                ':uid' => $uid,
+                ':sid' => $sid,
+                ':mapId' => $mapId,
+                ':type' => $type
+            ))) {
+                return -1;
+            }
+            $sql = 'insert into share (uid, sid, mapId, isdir, type, shareTime, price)
+                    values (:uid, :sid, :mapId, :isdir, :type, :shareTime, :price)';
+            $mysql->execute($sql, array(
+                ':uid' => $uid,
+                ':sid' => $sid,
+                ':mapId' => $mapId,
+                ':isdir' => $fileMap['isdir'],
+                ':type' => $type,
+                ':shareTime' => date('Y-m-d H:i:s'),
+                ':price' => $price
+            ));
+            $id = $mysql->lastInsertid();
+            return $id ? $id : 0;
+        }
     }
 
     public function unShare($uid, $ids) {
@@ -659,8 +706,23 @@ class CoreImpl extends Abst {
     }
 
     public function delFileMap($uid, $mapId) {
-        Mysql::getInstance()->execute('delete from filemap where uid = :uid and find_in_set(cast(id as char), :mapId)', array(':uid' => $uid, ':mapId' => $mapId));
-        return Mysql::getInstance()->getRowCount() ? 1 : 0;
+		$mysql = Mysql::getInstance();
+        $mapinfo = $this->getFileMap($mapId);
+        $mysql->execute('delete from filemap where uid = :uid and find_in_set(cast(id as char), :mapId)', array(':uid' => $uid, ':mapId' => $mapId));
+        $ret = $mysql->getRowCount();
+        if ($ret) {
+            if ($mapinfo['isdir'] == 0) {
+                $uinfo = $mysql->fetchRow('select sum(size) size, count(*) num from filemap where uid = :uid and isdir = 0', array(':uid' => $uid));
+                $mysql->execute('update users set fileNum = :fileNum, size = :size where uid = :uid', array(
+                    ':uid' => $uid,
+                    ':fileNum' => $uinfo['num'],
+                    ':size' => $uinfo['size']
+                ));
+            }
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public function delRecycle($uid, $ids) {

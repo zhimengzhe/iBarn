@@ -59,8 +59,8 @@
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
+                        <li><a href="index.php?m=user&a=set"><i class="icon-cog"></i><?php echo t('设置'); ?></a></li>
                         <li><a href="#"><i class="icon-suitcase"></i><?php echo t('简介'); ?></a></li>
-                        <li><a href="#"><i class="icon-cog"></i><?php echo t('设置'); ?></a></li>
                         <li><a href="#"><i class="icon-bell-alt"></i><?php echo t('消息'); ?></a></li>
                         <li><a href="index.php?m=user&a=logout"><i class="icon-key"></i><?php echo t('退出'); ?></a></li>
                     </ul>
@@ -133,6 +133,12 @@
                         <span><?php echo t('我的分享'); ?></span>
                     </a>
                 </li>
+                <li <?php if ($_REQUEST['m'] == 'share' && $_REQUEST['a'] == 'getShareMe') { ?>class="on"<?php } ?>>
+                    <a href="index.php?m=share&a=getShareMe">
+                        <i class="icon-retweet"></i>
+                        <span><?php echo t('分享给我'); ?></span>
+                    </a>
+                </li>
                 <li <?php if ($_REQUEST['a'] == 'offer') { ?>class="on"<?php } ?>>
                     <a href="index.php?a=offer">
                         <i class="icon-gift"></i>
@@ -162,7 +168,7 @@
                 </div>
             </div>
             <div class="pull-left">
-                <span><?php echo $space['spaceFormat']; ?></span> / <?php echo $space['all']; ?>.00G
+                <span><?php echo $space['spaceFormat']; ?></span> / <?php echo $space['all']; ?> G
             </div>
         </div>
     </aside>

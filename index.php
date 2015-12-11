@@ -31,11 +31,11 @@ if ($_REQUEST['uid']) {
             $uidDir .=  sprintf("%02d", substr($_REQUEST['uid'], $i, 2)) . DS;
         }
     }
-    $space = User::getUseSpace();
-    $userInfo = User::getUserInfo($_REQUEST['uid']);
+    $space = User::getUserSpace();
+    $userInfo = User::getUserInfo();
     $all = LIMIT + (int)$userInfo['capacity'];
-    $space['percent'] = $space['space'] / ($all * 1024 * 1024 * 1024 * 1024) * 100;
-    $space['all'] = $all;
+    $space['percent'] = $space['space'] / ($all * 1024 * 1024) * 100;
+    $space['all'] = round($all/1024, 2);
     define('SPACE', json_encode($space));
 }
 define('UID_DIR', $uidDir);

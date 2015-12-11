@@ -298,6 +298,7 @@ class Core extends Abst {
     }
 
     public function putFile() {
+		ini_set('memory_limit','-1');
         if (!$_REQUEST['uid']) {
             echo Response::json(LACK, array(tip('用户ID不能为空')));
             exit;
@@ -316,25 +317,40 @@ class Core extends Abst {
         if (!$size) {
             $size = $_FILES['file']['size'];
         }
-        $mime = $_REQUEST['mime'];
+        //$mime = $_REQUEST['mime'];
+		$mime = '';
         if ($_FILES["file"]["type"] && !$mime) {
             $mime = $_FILES["file"]["type"];
         }
         $exist = Factory::getInstance()->uploadCheck($hash, $size);
         if ($exist) {
-            $filePath = $exist;
+			$filePath = $exist['location'];
+            $size = $exist['size'];
+            $md5 = $exist['md5'];
+            if (!$mime) {
+                $mime = $exist['mime'];
+            }
         } else {
             $filePath = UP_DIR . $name;
             if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
                 $filePath = iconv('utf-8', 'gbk//IGNORE', $filePath);
             }
+			if (!file_exists($filePath)) {
+				echo Response::json(LACK, array(tip('文件路径不存在')));
+				exit;
+			}
+			if (!$size) {
+				$size = sprintf('%u', filesize($filePath));
+			}
+			$md5 = md5_file($filePath);
         }
-        if (!file_exists($filePath)) {
-            echo Response::json(LACK, array(tip('文件路径不存在')));
+		$check = Factory::getInstance('user')->isExceedLimits($_REQUEST['uid']);
+        if ($check) {
+            if (!$exist) {
+                unlink($filePath);
+            }
+            echo Response::json(FAIL, array(tip('存储空间已满')));
             exit;
-        }
-        if (!$size) {
-            $size = sprintf('%u', filesize($filePath));
         }
         $origin = isset($_REQUEST['origin']) ? $_REQUEST['origin'] : 'os';
         if (!$mime) {
@@ -351,8 +367,10 @@ class Core extends Abst {
                 echo Response::json(FAIL, array(tip('文件入库失败，请重试')));
                 exit;
             }
+        } else {
+            unlink(UP_DIR . $name);
         }
-        $res = Factory::getInstance()->addFile($_REQUEST['uid'], trim(self::filterPath(rawurldecode($_REQUEST['path'])), '/') . '/' . $name, $filePath, $size, 0, $origin, $mime, $hash, $cover);
+        $res = Factory::getInstance()->addFile($_REQUEST['uid'], trim(self::filterPath(rawurldecode($_REQUEST['path'])), '/') . '/' . $name, $filePath, $size, 0, $origin, $mime, $hash, $cover, $md5);
         if ($res == 2) {
             echo Response::json(FORB, array(tip('目录层级过多，超过限制')));
         } elseif ($res && is_array($res)) {
@@ -406,6 +424,7 @@ class Core extends Abst {
                 $storageInfo = $tracker->applyStorage($gs[0]);
                 $storage = new FastDFS\Storage($storageInfo['storage_addr'], $storageInfo['storage_port']);
                 $ret = $storage->uploadFile($storageInfo['storage_index'], $path);
+				unlink($path);
                 return $ret['group'] . DS . $ret['path'];
             }
         } else {
@@ -737,24 +756,7 @@ class Core extends Abst {
             $fileName = 'sorry.' . pathinfo($url['path'], PATHINFO_EXTENSION);
         }
         $fsize = (int)$info['size'];
-        if (!empty($fsize)) {
-            $start = null;
-            $end = $fsize - 1;
-            if (isset($_SERVER['HTTP_RANGE']) && ($_SERVER['HTTP_RANGE'] != "") && preg_match("/^bytes=([0-9]+)-([0-9]*)$/i", $_SERVER['HTTP_RANGE'], $match) && ($match[1] < $fsize) && ($match[2] < $fsize)) {
-                $start = $match[1];
-                if (!empty($match[2]))$end = $match[2];
-            }
-            header("Cache-control: public");
-            header("Pragma: public");
-            if ($start === null) {
-                header("HTTP/1.1 200 OK");
-                header("Content-Length: $fsize");
-                header("Accept-Ranges: bytes");
-            } else {
-                header("HTTP/1.1 206 Partial Content");
-                header("Content-Length: " . ($end - $start + 1));
-                header("Content-Ranges: bytes " . $start . "-" . $end . "/" . $fsize);
-            }
+        if (!empty($fsize) && $info['location']) {
             header('Content-type: ' . ($info['mime'] ? $info['mime'] : 'application/octet-stream'));
             if (preg_match("/MSIE/", $_SERVER["HTTP_USER_AGENT"])) {
                 header('Content-Disposition: attachment; filename="' . rawurlencode($fileName) . '"');
@@ -763,22 +765,12 @@ class Core extends Abst {
             } else {
                 header('Content-Disposition: attachment; filename="' . $fileName . '"');
             }
-            ob_clean();
-            flush();
             session_write_close();
             if (!extension_loaded('fastdfs_client')) {
-                $fp = fopen($info['location'], "rb");
-                fseek($fp, $start);
-                $chunk = 1024 * 1024;
-                while(($nowNum = ftell($fp)) < $end){
-                    if ($nowNum >= ($end - $chunk)) {
-                        $chunk = $end - $nowNum + 1;
-                    }
-                    echo fread($fp, $chunk);
-                    sleep(2);
-                }
-                fclose($fp);
-                exit();
+                header('cache-control:public');
+                include LIB_PATH . 'down' . DS . 'FileDownload.class.php';
+                $obj = new FileDownload();
+                $obj->download($info['location'], $fileName, $fsize, true);
             } else {
                 $group = include FDFS . 'group.php';
                 $g = strtok($info['location'], '/');
@@ -790,7 +782,7 @@ class Core extends Abst {
                     include VIEW_PATH . 'error.php';
                 }
             }
-        }else {
+        } else {
             header("HTTP/1.1 404 Not Found");
             header('Content-Type: text/html; charset=utf-8');
         }
@@ -875,10 +867,10 @@ class Core extends Abst {
             header('Content-Disposition: attachment; filename="' . $zipName . '"');
         }
         header('Content-Length:' . filesize($zipName));
-        ob_clean();
-        flush();
         session_write_close();
         readfile($zipName);
+		ob_flush();
+		flush();
         unlink($zipName);
     }
 

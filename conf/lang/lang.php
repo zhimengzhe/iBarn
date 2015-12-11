@@ -31,10 +31,13 @@ $lang = array(
     'Move to' => '移动到',
     'Shared file' => '共享文件',
     'Share to' => '共享对象',
-    'Open' => '公开',
+    'Pub' => '公开',
     'Shared link' => '共享链接',
     'Set PWD' => '设置密码',
     'Set deadline' => '设置过期时间',
+    'Individual' => '个人',
+    'Be shared' => '被分享人',
+    'Enter the username' => '输入被分享人用户名',
 
     'Name' => '名称',
     'Size' => '大小',
@@ -106,6 +109,7 @@ $lang = array(
     'Administrator account create failed, please reinstall' => '管理员账号创建失败，请重新安装',
     'Install success' => '安装成功',
     'There are not allowed special characters' => '有不被允许的特殊字符',
+    'Share me' => '分享给我',
 );
 define('LANG', json_encode($lang));
 function t($string) {

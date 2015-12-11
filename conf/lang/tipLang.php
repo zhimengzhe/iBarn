@@ -57,6 +57,11 @@ $tiplang = array(
     'File with the same name already exists' => '同名文件已存在',
     'Copy success! You can use Ctrl+V to show' => '复制成功！ 你可以利用快捷方式Ctrl+V键粘贴到QQ等聊天工具中',
     'Your browser does not support scripting replication, please try to copy the manual by [Ctrl+C]' => '你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制',
+    'Be shared man is need' => '被分享人不能为空',
+    'This person does not exist' => '被分享人不存在',
+    'Can not share to yourself' => '不能分享给自己',
+    'Data has been deleted' => '资料已被删除',
+    'Space is full' => '存储空间已满',
 );
 define('TIPLANG', json_encode(array_flip($tiplang)));
 function tip($string) {

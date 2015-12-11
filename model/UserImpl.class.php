@@ -58,9 +58,9 @@ class UserImpl extends Abst {
         return $id ? $id : 0;
     }
 
-    public function quota($uid, $quota = 1000) {
+    public function quota($uid, $capacity = 1000) {
         $mysql = Mysql::getInstance();
-        $mysql->execute('update users set quota = :quota where uid = :uid', array(':uid' => $uid, ':quota' => $quota));
+        $mysql->execute('update users set capacity = :capacity where uid = :uid', array(':uid' => $uid, ':capacity' => $capacity));
         return $mysql->getRowCount() ? 1 : 0;
     }
 
@@ -68,8 +68,28 @@ class UserImpl extends Abst {
         return Mysql::getInstance('slave')->fetchRow('select uid, name, avatar, capacity, role from users where uid = :uid', array(':uid' => $uid));
     }
 
-    public function getUseSpace($uid) {
+    public function getUserByName($name) {
+        return Mysql::getInstance('slave')->fetchRow('select uid, name, avatar, capacity, role from users where name = :name', array(':name' => $name));
+    }
+
+    public function getUsersByName($name, $num) {
+        return Mysql::getInstance('slave')->fetchAll('select uid, name, avatar, capacity, role from users where name like :name limit ' . (int)$num,
+            array(':name' => '%' . $name . '%'));
+    }
+
+    public function getUserSpace($uid) {
         return Mysql::getInstance('slave')->fetchColumn('select size from users where uid = :uid', array(':uid' => $uid));
+    }
+
+	public function isExceedLimits($uid) {
+        $size = $this->getUserSpace($uid);
+        $user = $this->getUserInfo($uid);
+        $capacity = $user['capacity'] + LIMIT;
+        if ($capacity * 1024 * 1024 <= $size) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 ?>

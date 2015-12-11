@@ -206,10 +206,20 @@ file.recover = function() {
 
 file.share = function() {
     id = $('#fileId').val();
+    suser = $('#suser').val();
     if (!id) {
         $('#myModal').modal('hide');
         alert(this.lang('请选择要分享的资源'));
         return;
+    }
+    if ($('#shareType').val() == 1) {
+        type = 1;
+    } else {
+        if (!suser) {
+            file.error($('#suser'));
+            return false;
+        }
+        type = 2;
     }
     $.ajax({
         url : 'index.php?m=share&a=shares',
@@ -218,7 +228,9 @@ file.share = function() {
             id : id,
             pwd : $('#inputPassword').val(),
             price : $('#price').val(),
-            overTime : $('#inputDate').val()
+            overTime : $('#inputDate').val(),
+            type : type,
+            suser : suser
         },
         dataType: 'json',
         timeout: 8000,

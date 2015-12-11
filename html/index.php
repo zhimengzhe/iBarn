@@ -52,6 +52,7 @@
                             </button>
                         </li>
                   </ul>
+<!--                  <h4 style="margin-left: 15px;margin-bottom: 20px;">如果觉得好，在<a target="_blank" href="https://github.com/zhimengzhe/iBarn">https://github.com/zhimengzhe/iBarn</a>上给颗星；欢迎参观主站：<a href="http://www.godeye.org">http://www.godeye.org</a></h4>-->
                   <form action="index.php" onsubmit="return file.check();">
                       <div class="searchRight pull-right">
                             <div class="input-group m-bot15">
@@ -265,13 +266,24 @@
                           <div class="modal-body pull-left">
                               <div class="w100 pull-left">
                                   <div class="modalTitle pull-left"><?php echo t('共享对象'); ?>：</div>
-                                  <div class="modalTitleR pull-left"><?php echo t('公开'); ?></div>
+                                  <div class="modalTitleR pull-left">
+                                      <select id="shareType" onchange="show();">
+                                          <option value="1"><?php echo t('公开'); ?></option>
+                                          <option value="2"><?php echo t('个人'); ?></option>
+                                      </select>
+                                  </div>
                               </div>
                               <div class="w100 pull-left">
                                   <div class="modalTitle pull-left"><?php echo t('共享链接'); ?>：</div>
                                   <div class="modalTitleR pull-left" id="href"></div>
                               </div>
-                              <div class="w100 pull-left">
+                              <div id="showSid" class="w100 pull-left" style="display: none;">
+                                  <div class="modalTitle pull-left"><?php echo t('被分享人'); ?>：</div>
+                                  <div class="modalTitleR pull-left">
+                                      <input type="text" id="suser" data-provide="typeahead" autocomplete="off" class="form-control" placeholder="<?php echo t('输入被分享人用户名'); ?>">
+                                  </div>
+                              </div>
+                              <div class="w100 pull-left" id="showPub">
                                   <div class="modalTitle pull-left"></div>
                                   <div class="modalTitleR pull-left">
                                       <div class="form-group pull-left">
@@ -395,10 +407,10 @@
     <script src="lib/view/js/jquery.scrollTo.min.js"></script>
     <script src="lib/view/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="lib/view/js/jquery.sparkline.js" type="text/javascript"></script>
-    <script src="lib/view/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+	<script src="lib/view/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="lib/view/js/owl.carousel.js" ></script>
     <script src="lib/view/js/jquery.customSelect.min.js" ></script>
-    <script src="lib/view/js/respond.min.js" ></script>
+    <script src="lib/view/js/respond.min.js"></script>
 
     <script class="include" type="text/javascript" src="lib/view/js/jquery.dcjqaccordion.2.7.js"></script>
 
@@ -410,6 +422,7 @@
     <script src="lib/view/js/easy-pie-chart.js"></script>
     <script src="lib/view/js/count.js"></script>
 
+    <script type="text/javascript" src="lib/view/assets/bootstrap-typeahead/bootstrap3-typeahead.js"></script>
     <script type="text/javascript" src="lib/view/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
     <script type="text/javascript" src="lib/view/assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript" src="lib/view/assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
@@ -438,7 +451,7 @@
                 alert(file.lang('每个文件共享链接唯一，一次只能分享一个文件'));
                 return false;
             }
-            $('input[name="'+ name +'"]:checked').each(function(){
+            $('input[name="'+ name +'"]:checked').each(function() {
                 id = $(this).val();
             });
             if (!id) {
@@ -595,9 +608,9 @@
                           } else {
                               $('.listType').prepend($("<div></div>").html(ret.data).text());
                           }
-                          setTimeout('Message.set()', 4000);
+                          setTimeout('Message.close()', 4000);
                       } else {
-                          document.getElementById(f.id).innerHTML = file.lang('上传失败');
+                          document.getElementById(f.id).innerHTML = file.lang(ret.data);
                       }
                   }, 'json');
               });
@@ -648,6 +661,19 @@
                 }
             }
         });
+        $('#suser').typeahead({
+            source : function (query, process) {
+                $.ajax({
+                    url: 'index.php?m=user&a=getUsersByName',
+                    type: 'post',
+                    data: { name: query },
+                    dataType: 'json',
+                    success: function (ret) {
+                        return process(ret);
+                    }
+                });
+            }
+        });
     })
     $("#chkAll").click(function() {
         if (this.checked) {
@@ -663,8 +689,8 @@
         $('#chkAll').attr('checked', $('input[name="classLists"]:checked').length == $('input[name="classLists"]').length);
     });
 
-    var i=0;
-    var j=0;
+    var i = 0;
+    var j = 0;
     $('#editPwd').click(function() {
         i++%2==0?$('#editPwdIpt').show():$('#editPwdIpt').hide();
     });
@@ -720,6 +746,15 @@
             }
         });
     });
+    function show() {
+        if ($('#shareType').val() == 1) {
+            $('#showPub').show();
+            $('#showSid').hide();
+        } else {
+            $('#showPub').hide();
+            $('#showSid').show();
+        }
+    }
     function page(type) {
         order = $('#order').val();
         by = $('#by').val();

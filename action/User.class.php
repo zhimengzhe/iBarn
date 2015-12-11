@@ -93,10 +93,10 @@ class User extends Abst {
         }
     }
 
-    public function getUseSpace() {
+    public function getUserSpace() {
         $uid = (int)$_REQUEST['uid'];
         if ($uid) {
-            $res = Factory::getInstance('user')->getUseSpace($uid);
+            $res = Factory::getInstance('user')->getUserSpace($uid);
         }
         return array('space' => (int)$res, 'spaceFormat' => self::formatBytes((int)$res));
     }
@@ -104,6 +104,22 @@ class User extends Abst {
     public function getUserInfo() {
         $uid = (int)$_REQUEST['uid'];
         return Factory::getInstance('user')->getUserInfo($uid);
+    }
+
+    public function getUsersByName() {
+        $name = self::trimSpace(rawurldecode($_REQUEST['name']));
+        $num = $_REQUEST['num'] ? (int)$_REQUEST['num'] : 6;
+        if (!$name) {
+            return array();
+        }
+        $info =  Factory::getInstance('user')->getUsersByName($name, $num);
+        $ret = array();
+        if ($info) {
+            foreach ($info as $v) {
+                $ret[] = $v['name'];
+            }
+        }
+        echo json_encode($ret);
     }
 }
 ?>
