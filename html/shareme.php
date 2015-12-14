@@ -220,9 +220,9 @@
             by = <?php echo "'" . $_REQUEST['by'] . "'"; ?>;
         }
         if (type == -1) {
-            href = 'index.php?m=share&a=getShareMe&urlkey=<?php echo $urlkey; ?>&search=<?php echo $search; ?>&curPage=<?php echo max($curPage-1, 1); ?>&order=' + order + '&by=' + by;
+            href = 'index.php?m=share&a=getShareMe&urlkey=<?php echo htmlspecialchars($urlkey, ENT_NOQUOTES); ?>&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo max($curPage-1, 1); ?>&order=' + order + '&by=' + by;
         } else if (type == 0) {
-            href = 'index.php?m=share&a=getShareMe&urlkey=<?php echo $urlkey; ?>&search=<?php echo $search; ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>&order=' + order + '&by=' + by;
+            href = 'index.php?m=share&a=getShareMe&urlkey=<?php echo htmlspecialchars($urlkey, ENT_NOQUOTES); ?>&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>&order=' + order + '&by=' + by;
         }
         window.location.href = href;
     }

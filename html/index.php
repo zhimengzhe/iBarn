@@ -765,9 +765,9 @@
             by = <?php echo "'" . $_REQUEST['by'] . "'"; ?>;
         }
         if (type == -1) {
-            href = 'index.php?path=<?php echo $path; ?>&search=<?php echo $search; ?>&curPage=<?php echo max($curPage-1, 1); ?>&type=<?php echo (int)$type; ?>&order=' + order + '&by=' + by;
+            href = 'index.php?path=<?php echo htmlspecialchars($path, ENT_NOQUOTES); ?>&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo max($curPage-1, 1); ?>&type=<?php echo (int)$type; ?>&order=' + order + '&by=' + by;
         } else if (type == 0) {
-            href = 'index.php?path=<?php echo $path; ?>&search=<?php echo $search; ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>&type=<?php echo (int)$type; ?>&order=' + order + '&by=' + by;
+            href = 'index.php?path=<?php echo htmlspecialchars($path, ENT_NOQUOTES); ?>&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>&type=<?php echo (int)$type; ?>&order=' + order + '&by=' + by;
         }
         window.location.href = href;
     }

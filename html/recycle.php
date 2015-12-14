@@ -79,10 +79,10 @@
               <?php if ($page > 1) { ?>
                   <ul class="pagination pagination-sm">
                       <?php if ($curPage > 1) { ?>
-                          <li><a href="index.php?class=recycle&search=<?php echo $search; ?>&curPage=<?php echo max($curPage-1, 1); ?>"><?php echo t('上一页'); ?></a></li>
+                          <li><a href="index.php?class=recycle&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo max($curPage-1, 1); ?>"><?php echo t('上一页'); ?></a></li>
                       <?php }
                       if ($curPage < $page) { ?>
-                          <li><a href="index.php?class=recycle&search=<?php echo $search; ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>"><?php echo t('下一页'); ?></a></li>
+                          <li><a href="index.php?class=recycle&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>"><?php echo t('下一页'); ?></a></li>
                       <?php } ?>
                   </ul>
               <?php } ?>

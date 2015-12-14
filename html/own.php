@@ -155,9 +155,9 @@
     });
     function page(type) {
         if (type == -1) {
-            href = 'index.php?m=share&a=getPub&search=<?php echo $search; ?>&curPage=<?php echo max($curPage-1, 1); ?>';
+            href = 'index.php?m=share&a=getPub&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo max($curPage-1, 1); ?>';
         } else if (type == 0) {
-            href = 'index.php?m=share&a=getPub&search=<?php echo $search; ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>';
+            href = 'index.php?m=share&a=getPub&search=<?php echo htmlspecialchars($search, ENT_NOQUOTES); ?>&curPage=<?php echo min(max($curPage, 1)+1, $page); ?>';
         }
         window.location.href = href;
     }
