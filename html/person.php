@@ -30,7 +30,7 @@
 <body>
 <section id="container">
     <header class="header white-bg">
-        <div class="pull-left logo" title="iBarn" style="float: left;"><a href="#">iBarn</a></div>
+        <div class="pull-left logo" title="iBarn" style="float: left;"><a href="index.php">iBarn</a></div>
         <div style="color: #ffffff;float:left;margin-top: 43px;"><a href="javascript:;" onclick="Cookies.set('lang', 'zh');window.location.reload();" style="color: #ffffff;">中文</a> | <a href="javascript:;" onclick="Cookies.set('lang', 'en');window.location.reload();" style="color: #ffffff;">English</a></div>
 
         <?php if ($userinfo) { ?>
