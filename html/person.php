@@ -47,7 +47,7 @@
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li><a href="index.php?m=user&a=set"><i class="icon-cog"></i><?php echo t('设置'); ?></a></li>
-                            <li><a href="#"><i class="icon-suitcase"></i><?php echo t('简介'); ?></a></li>
+                            <li><a href="index.php?m=user&a=person"><i class="icon-suitcase"></i><?php echo t('简介'); ?></a></li>
                             <li><a href="#"><i class="icon-bell-alt"></i><?php echo t('消息'); ?></a></li>
                             <li><a href="index.php?m=user&a=logout"><i class="icon-key"></i><?php echo t('退出'); ?></a></li>
                         </ul>
