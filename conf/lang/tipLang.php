@@ -62,6 +62,10 @@ $tiplang = array(
     'Can not share to yourself' => '不能分享给自己',
     'Data has been deleted' => '资料已被删除',
     'Space is full' => '存储空间已满',
+    'Please complete' => '请完整填写修改项',
+    'Two times the new password is not consistent' => '两次输入的新密码不一致',
+    'The old password is wrong' => '原密码错误',
+    'Password is not modified' => '密码未修改',
 );
 define('TIPLANG', json_encode(array_flip($tiplang)));
 function tip($string) {

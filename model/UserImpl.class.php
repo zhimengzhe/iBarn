@@ -27,6 +27,27 @@ class UserImpl extends Abst {
         }
     }
 
+    public function checkPwd($uid, $pwd) {
+        $res = Mysql::getInstance('slave')->fetchColumn('select uid from users where uid = :uid and password = :pwd', array(':uid' => $uid, ':pwd' => substr(md5($pwd . PWD), 6, 20)));
+        return $res ? true : false;
+    }
+
+    public function setUserEmail($uid, $email) {
+        Mysql::getInstance()->execute('update users set email = :email where uid = :uid', array(':uid' => $uid, ':email' => $email));
+        return Mysql::getInstance()->getRowCount() ? true : false;
+    }
+
+    public function setUser($uid, $pwd, $email = '') {
+        $bind[':uid'] = $uid;
+        $bind[':pwd'] = substr(md5($pwd . PWD), 6, 20);
+        if ($email) {
+            $mail = ', email = :email';
+            $bind[':email'] = $email;
+        }
+        Mysql::getInstance()->execute('update users set password = :pwd ' . $mail . ' where uid = :uid', $bind);
+        return Mysql::getInstance()->getRowCount() ? true : false;
+    }
+
     public function checkToken($token) {
         $res = Mysql::getInstance('slave')->fetchColumn('select uid from users where token = :token', array(':token' => $token));
         return $res ? $res : 0;
@@ -65,7 +86,7 @@ class UserImpl extends Abst {
     }
 
     public function getUserInfo($uid) {
-        return Mysql::getInstance('slave')->fetchRow('select uid, name, avatar, capacity, role from users where uid = :uid', array(':uid' => $uid));
+        return Mysql::getInstance('slave')->fetchRow('select uid, name, email, avatar, capacity, role from users where uid = :uid', array(':uid' => $uid));
     }
 
     public function getUserByName($name) {

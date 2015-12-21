@@ -110,6 +110,13 @@ $lang = array(
     'Install success' => '安装成功',
     'There are not allowed special characters' => '有不被允许的特殊字符',
     'Share me' => '分享给我',
+    'Email' => '邮箱地址',
+    'Return' => '返回网盘',
+    'New Email' => '新邮箱',
+    'Change Password' => '修改密码',
+    'old password' => '原密码',
+    'new password' => '新密码',
+    'repeat new password' => '重复新密码',
 );
 define('LANG', json_encode($lang));
 function t($string) {

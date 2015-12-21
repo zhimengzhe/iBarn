@@ -121,5 +121,51 @@ class User extends Abst {
         }
         echo json_encode($ret);
     }
+
+    public function set() {
+        $userinfo = Factory::getInstance('user')->getUserInfo($_REQUEST['uid']);
+        include VIEW_PATH . 'set.php';
+    }
+
+    public function setUser() {
+        $uid = (int)$_REQUEST['uid'];
+        if (!$uid) {
+            echo Response::json(LACK, array(tip('用户ID不能为空')));
+            exit;
+        }
+        $email = self::trimSpace(rawurldecode($_REQUEST['email']));
+        $pwd = self::trimSpace(rawurldecode($_REQUEST['pwd']));
+        $npwd = self::trimSpace(rawurldecode($_REQUEST['npwd']));
+        $nrpwd = self::trimSpace(rawurldecode($_REQUEST['nrpwd']));
+        if ($email && !$npwd) {
+            $ret = Factory::getInstance('user')->setUserEmail($uid, $email);
+        }
+        if ($npwd) {
+            $check = Factory::getInstance('user')->checkPwd($uid, $pwd);
+            if (!$check) {
+                echo Response::json(LACK, array(tip('原密码错误')));
+                exit;
+            }
+            if ($npwd != $nrpwd) {
+                echo Response::json(LACK, array(tip('两次输入的新密码不一致')));
+                exit;
+            }
+            if ($pwd == $npwd) {
+                echo Response::json(LACK, array(tip('密码未修改')));
+                exit;
+            }
+            $ret = Factory::getInstance('user')->setUser($uid, $npwd, $email);
+        }
+        if ($ret) {
+            echo Response::json(SUCC, array(tip('操作成功')));
+        } else {
+            echo Response::json(FAIL, array(tip('操作失败')));
+        }
+    }
+
+    public function person() {
+        $userinfo = Factory::getInstance('user')->getUserInfo($_REQUEST['uid']);
+        include VIEW_PATH . 'person.php';
+    }
 }
 ?>
