@@ -102,6 +102,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `uid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `email` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
   `password` char(32) COLLATE utf8_bin NOT NULL DEFAULT '',
   `avatar` varchar(60) COLLATE utf8_bin NOT NULL DEFAULT '',
   `fileNum` int(11) NOT NULL DEFAULT '0',
