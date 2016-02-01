@@ -117,6 +117,8 @@ $lang = array(
     'old password' => '原密码',
     'new password' => '新密码',
     'repeat new password' => '重复新密码',
+    'ShareUrl' => '分享链接',
+	'Copy' => '复制',
 );
 define('LANG', json_encode($lang));
 function t($string) {

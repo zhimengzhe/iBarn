@@ -53,7 +53,7 @@
                             foreach ((array)$list as $k => $v) {
                             ?>
                       		<li id="li_<?php echo $v['id']; ?>">
-                          		<div class="listTableIn pull-left" onmouseenter="$('#box_<?php echo $v['mapId']; ?>').show();" onmouseleave="$('#box_<?php echo $v['mapId']; ?>').hide();" <?php if (!$urlkey) { ?>onclick="show(<?php echo $v['id']; ?>, '<?php echo base_convert($v['mapId'], 10, 36); ?>', '<?php echo htmlspecialchars($v['pwd'], ENT_NOQUOTES); ?>');" <?php } ?>>
+                          		<div class="listTableIn pull-left" onmouseenter="$('#box_<?php echo $v['mapId']; ?>').show();" onmouseleave="$('#box_<?php echo $v['mapId']; ?>').hide();" <?php if (!$urlkey) { ?>onclick="show(<?php echo $v['id']; ?>);" <?php } ?>>
                               		<div class="listTableInL pull-left">
                                       <div class="cBox"><input name="classLists" type="checkbox" value="<?php echo $v['id']; ?>"></div>
                                       <div class="name">
@@ -76,6 +76,14 @@
                                   </div>
                               </div>
                           </li>
+                            <li id="share_<?php echo $v['id']; ?>" style="display: none;"><div class="listTableIn pull-left" >
+                                <div class="listTableInL pull-left" style="width: 100%;">
+                                    <div class="name" style="margin-left: 20px;"><?php echo t('分享链接');?>：<span id="url_<?php echo $v['id']; ?>">http://index.php?a=view&urlkey=<?php echo base_convert($v['mapId'], 10, 36); if ($v['pwd']) { echo ' ' . t('密码') . '：'  . htmlspecialchars($v['pwd'], ENT_NOQUOTES); } ?></span>
+                                        <button id="copy<?php echo $v['id']; ?>" class="btn btn-success copy" data="<?php echo $v['id']; ?>" type="button" style="margin-left:20px;" data-clipboard-target="url_<?php echo $v['id']; ?>">
+                                            <i class="icon-copy"></i> <?php echo t('复制'); ?>
+                                        </button></div>
+                                </div></div>
+                            </li>
                             <?php }
                            } ?>
                       </ul>
@@ -147,35 +155,25 @@
     <script src="lib/view/js/advanced-form-components.js"></script>
 
     <script type="text/javascript" src="js/file.js"></script>
+    <script type="text/javascript" src="plugin/copy/ZeroClipboard.js"></script>
     <script>
-    function show(id, urlkey, pwd) {
-        var pwdinfo = '';
-        if (pwd.length > 0) {
-            pwdinfo = '<span style="margin-left:20px;">'+file.lang('密码')+'：' + pwd + '</span>';
-        }
-        if ($('#info_'+id).length <= 0) {
-            $('#li_'+id).after('<li id="info_'+id+'"><div class="listTableIn pull-left">'+
-            '<div class="listTableInL pull-left" style="width: 100%;">'+
-            '<div class="name" style="margin-left: 20px;">'+file.lang('分享链接')+'：<span id="url_'+id+'">http://'+window.location.host+'/index.php?a=view&urlkey='+urlkey+'</span>'+pwdinfo+
-            '<button id="copy'+id+'" class="btn btn-success copy" onclick="copy('+id+');" type="button" style="margin-left:20px;">'+
-                '<i class="icon-copy"></i> '+file.lang('复制')+'' +
-            '</button></div>'+
-            '</div></div></li>');
+    function show(id) {
+        if ($('#share_' + id).is(":hidden")) {
+            var clip = null;
+            var clip = new ZeroClipboard($('#copy'+id) );
+            clip.setText($("#url_"+id).text());
+            clip.on("ready", function(readyEvent) {
+                clip.on("aftercopy", function(event) {
+                    alert(file.lang("复制成功"));
+                });
+            });
+            clip.on('error', function(event) {
+                ZeroClipboard.destroy();
+            });
+            $('#share_' + id).show();
         } else {
-            $('#info_'+id).remove();
+            $('#share_' + id).hide();
         }
-    }
-    function copy(id) {
-        var content = $('#url_' + id).text();
-        if (window.clipboardData && $.browser.msie) {
-            window.clipboardData.clearData();
-            if(window.clipboardData.setData("Text", content)) {
-                alert(file.lang('复制成功！ 你可以利用快捷方式Ctrl+V键粘贴到QQ等聊天工具中'));
-            } else {
-                alert(file.lang('你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制'));
-            }
-        }
-        alert(file.lang('你的浏览器不支持脚本复制或你拒绝了浏览器安全确认，请尝试手动[Ctrl+C]复制'));
     }
     $("#chkAll").click(function() {
         if (this.checked) {
@@ -184,12 +182,10 @@
             $('input:checkbox[name="classLists"]').prop("checked", false);
         }
     });
-    $('input[name="classLists"]').click(function(){
+    $('input[name="classLists"]').click(function() {
         $('#chkAll').attr('checked', $('input[name="classLists"]:checked').length == $('input[name="classLists"]').length);
     });
     $('body').on('hidden', '.modal', function () {$(this).removeData('modal');});
-
-    //custom select box
     $(function() {
         $('select.styled').customSelect();
         $(".listTable.pull-left").on('click', 'li', function() {
