@@ -217,8 +217,9 @@ class CoreImpl extends Abst {
                     $dirSize = $size;
                     $isdir = $isDir;
                 }
-                $pathId = $mysql->fetchColumn('select id from filemap where uid = :uid and name = :name and pid = :pid', array(
+                $pathId = $mysql->fetchColumn('select id from filemap where uid = :uid and name = :name and pid = :pid and isdir = :isdir', array(
                     ':uid' => $uid,
+					':isdir' => $isdir,
                     ':name' => $v,
                     ':pid' => $pid
                 ));
@@ -228,7 +229,7 @@ class CoreImpl extends Abst {
                             return 3;
                         }
                         $v = $this->reName($v);
-                        while ($mysql->fetchColumn('select id from filemap where uid = :uid and name = :name and pid = :pid', array(
+                        while ($mysql->fetchColumn('select id from filemap where uid = :uid and name = :name and pid = :pid and isdir = 0', array(
                             ':uid' => $uid,
                             ':name' => $v,
                             ':pid' => $pid
