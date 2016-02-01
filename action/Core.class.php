@@ -756,7 +756,7 @@ class Core extends Abst {
             $fileName = 'sorry.' . pathinfo($url['path'], PATHINFO_EXTENSION);
         }
         $fsize = (int)$info['size'];
-        if (!empty($fsize) && $info['location']) {
+        if ($info['location']) {
             header('Content-type: ' . ($info['mime'] ? $info['mime'] : 'application/octet-stream'));
             if (preg_match("/MSIE/", $_SERVER["HTTP_USER_AGENT"])) {
                 header('Content-Disposition: attachment; filename="' . rawurlencode($fileName) . '"');
