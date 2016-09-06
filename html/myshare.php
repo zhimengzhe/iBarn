@@ -78,7 +78,7 @@
                           </li>
                             <li id="share_<?php echo $v['id']; ?>" style="display: none;"><div class="listTableIn pull-left" >
                                 <div class="listTableInL pull-left" style="width: 100%;">
-                                    <div class="name" style="margin-left: 20px;"><?php echo t('分享链接');?>：<span id="url_<?php echo $v['id']; ?>">http://index.php?a=view&urlkey=<?php echo base_convert($v['mapId'], 10, 36); if ($v['pwd']) { echo ' ' . t('密码') . '：'  . htmlspecialchars($v['pwd'], ENT_NOQUOTES); } ?></span>
+                                    <div class="name" style="margin-left: 20px;"><?php echo t('分享链接');?>：<span id="url_<?php echo $v['id']; ?>">http://<?php echo $_SERVER['HTTP_HOST']; ?>/index.php?a=view&urlkey=<?php echo base_convert($v['mapId'], 10, 36); if ($v['pwd']) { echo ' ' . t('密码') . '：'  . htmlspecialchars($v['pwd'], ENT_NOQUOTES); } ?></span>
                                         <button id="copy<?php echo $v['id']; ?>" class="btn btn-success copy" data="<?php echo $v['id']; ?>" type="button" style="margin-left:20px;" data-clipboard-target="url_<?php echo $v['id']; ?>">
                                             <i class="icon-copy"></i> <?php echo t('复制'); ?>
                                         </button></div>
