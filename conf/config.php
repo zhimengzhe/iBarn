@@ -1,6 +1,6 @@
 <?php
 $dataDir = 'data';
-define('LIMIT', '10');
+define('LIMIT', '1000');
 ini_set("display_errors","Off");
 ini_set('file_uploads','ON');
 ini_set('max_input_time','180');
