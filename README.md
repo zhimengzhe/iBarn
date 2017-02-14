@@ -23,6 +23,9 @@
     Recommend
     Chinese and English language support
     Native support for fastDfs distributed file system
+
+    Support Windows client program, very powerful, like Operating local file.
+    Free installation experience version corresponds to the code: iBarn-win-1.0.rar file
     
     Thanks Yolanda for UI help (QQ:648067827)
 
@@ -38,8 +41,7 @@
     搜索功能
     列表大小图标切换
     按照文件名称大小上传时间等排序
-    收藏功能
-    分享功能
+    收藏功能，分享功能
     回收站功能
     官方推荐模块
     中英文多语言支持
@@ -47,6 +49,9 @@
     原生支持fastDfs分布式文件系统
     需服务器自行安装fdfs与fastdfs_client php扩展 
     需修改配置文件：lib/fdfs/config.php  lib/fdfs/group.php
+
+    同时提供windows客户端程序，功能强大，像操作本地文件一样操作iBarn网盘
+    免安装体验版本对应代码中：iBarn-win-1.0.rar 文件
     
     感谢王云(QQ:648067827)在前端UI上提供的帮助
 
@@ -54,7 +59,7 @@
 ---
 **提供定制服务，二次开发，可开发票。有意者联系 fanyalei@aliyun.com 或 QQ 451802973**
 
-**While providing customized services, and the two development.**
+**While providing customized services.**
 
 **the intention to contact by email fanyalei@aliyun.com or QQ 451802973**
     
