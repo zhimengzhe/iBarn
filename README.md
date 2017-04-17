@@ -66,7 +66,8 @@
 ## 说明(introduction)
 ---
 * 安装非常简单，直接下载代码到web服务器根目录，用浏览器打开，输入必要信息，一键安装
-* 点击[Demo](http://www.godeye.org:82/index.php)进入体验页面
+* 点击[Demo](http://www.godeye.org:82/index.php)进入开源版体验页面
+* 点击[Demo](http://www.godeye.org:81/index.php)进入企业版体验页面  用户名：test 密码：123456
 * 上传文件，生成配置文件都需要文件目录有写权限，安装时注意检查
 
 
