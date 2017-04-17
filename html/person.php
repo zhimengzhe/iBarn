@@ -40,15 +40,15 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img width="40" height="40" alt="<?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?>" src="<?php echo $userinfo['avatar']; ?>">
+                            <img width="40" height="40" alt="<?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?>" src="<?php echo $userinfo['avatar'] ? htmlspecialchars($userinfo['avatar'], ENT_NOQUOTES) : DEFAULT_AVATAR; ?>">
                             <span class="username"><?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
-                            <li><a href="index.php?m=user&a=set"><i class="icon-cog"></i><?php echo t('设置'); ?></a></li>
-                            <li><a href="index.php?m=user&a=person"><i class="icon-suitcase"></i><?php echo t('简介'); ?></a></li>
-                            <li><a href="#"><i class="icon-bell-alt"></i><?php echo t('消息'); ?></a></li>
+                            <li><a href="index.php?m=user&a=set"><i class="icon-edit"></i><?php echo t('编辑'); ?></a></li>
+                            <li><a href="index.php?m=user&a=person"><i class="icon-eye-open"></i><?php echo t('查看'); ?></a></li>
+                            <li><a href="index.php?m=user&a=avatar"><i class="icon-cog"></i><?php echo t('设置头像'); ?></a></li>
                             <li><a href="index.php?m=user&a=logout"><i class="icon-key"></i><?php echo t('退出'); ?></a></li>
                         </ul>
                     </li>
@@ -61,67 +61,66 @@
     <section class="wrapper">
         <div class="row" style="background-image:url(img/bg0.jpg); border-bottom: 1px solid #bbb;height: 190px;margin-top: -20px;">
             <div class="container">
-                <div class="col-md-2 col-sm-3 col-xs-6" style="padding-left:0;">
+                <div class="col-md-2 col-sm-3 col-xs-6" style="padding-left:0;float:left;">
                     <div style="margin-top: 22px;">
-                        <img src="<?php echo htmlspecialchars(($userinfo['avatar'] ? $userinfo['avatar'] : 'img/default.png'), ENT_NOQUOTES); ?>" width="143px" height="143px"/>
+                        <img src="<?php echo $info['avatar'] ? htmlspecialchars($info['avatar'], ENT_NOQUOTES) : DEFAULT_AVATAR; ?>" width="143px" height="143px"/>
                     </div>
+                </div>
+                <div style="margin-top: 22px;float:left;">
+                    <div class="form-group">
+                        <h3><?php echo htmlspecialchars($info['name'], ENT_NOQUOTES); ?></h3>
+                    </div>
+                    <div class="form-group">
+                        Email : <?php echo htmlspecialchars($info['email'], ENT_NOQUOTES); ?>
+                    </div>
+                    <a class="btn btn-primary" type="button" href="index.php"><?php echo t('返回网盘'); ?></a>
+                    <?php if ($userinfo['uid'] == $info['uid'] && $info['uid']) { ?>
+                        <a class="btn btn-info" type="button" href="index.php?m=user&a=set"><?php echo t('编辑个人资料'); ?></a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" style="top:100px; float: none;display: block; margin:auto;">
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title"><?php echo t('用户名'); ?>：</h3>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="form-group">
-                            <?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?>
-                        </div>
-                    </div>
-                    <div class="box-header">
-                        <h3 class="box-title"><?php echo t('邮箱地址'); ?>：</h3>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
-                        <div class="form-group">
-                            <?php echo htmlspecialchars($userinfo['email'], ENT_NOQUOTES); ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-footer" style="margin-top: 30px;">
-                    <a class="btn btn-primary" type="button" href="index.php"><?php echo t('返回网盘'); ?></a>
-                </div>
-            </div><!-- /.col -->
+            <div class="col-lg-12" id="block">
+                <div style="margin: 20px;"><h3><?php echo t('共享文件'); ?>：</h3></div>
+                <ul class="listType pull-left">
+                    <?php if ($list) {
+                        foreach ((array)$list as $k => $v) {
+                            ?>
+                            <li id="bli_<?php echo $v['mapId']; ?>">
+                                <a target="_self" <?php if ($v['type'] == 2) { ?>data-lightbox="img_<?php echo $v['mapId']; ?>"<?php } ?> <?php if ($v['isdir']) { ?> href="index.php?path=<?php echo (trim(rawurlencode($_REQUEST['path']), '/') ? trim(rawurlencode($_REQUEST['path']), '/') . '/' : '') . htmlspecialchars($v['name'], ENT_NOQUOTES); ?>" <?php } elseif ($v['type'] == 2) { ?> href="index.php?a=view&urlkey=<?php echo base_convert($v['mapId'], 10, 36); ?>" <?php } else { ?> href="index.php?a=down&urlkey=<?php echo base_convert($v['mapId'], 10, 36); ?>" <?php } ?> id="ba_<?php echo $v['mapId']; ?>">
+                                    <div id="d_<?php echo $v['mapId']; ?>" class="big <?php echo $v['bicon'] . 'Big'; ?>"></div>
+                                    <p><?php if (function_exists('mb_substr')) { echo htmlspecialchars(mb_substr($v['name'], 0, 12, 'utf8'), ENT_NOQUOTES);
+                                        } else { echo htmlspecialchars(substr($v['name'], 0, 12), ENT_NOQUOTES); } ?></p>
+                                    <input type="hidden" id="aname_<?php echo $v['mapId']; ?>" value="<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>">
+                                </a>
+                            </li>
+                        <?php }
+                    } ?>
+                </ul>
+            </div>
         </div>
+        <?php if ($page > 1) { ?>
+            <ul class="pagination pagination-sm">
+                <?php if ($curPage > 1) { ?>
+                    <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
+                <?php }
+                if ($curPage < $page) { ?>
+                    <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
+                <?php } ?>
+            </ul>
+            <ul class="pagination pagination-sm pull-right">
+                <?php if ($curPage > 1) { ?>
+                    <li><a href="javascript:;" onclick="page(-1);"><?php echo t('上一页'); ?></a></li>
+                <?php }
+                if ($curPage < $page) { ?>
+                    <li><a href="javascript:;" onclick="page(0);"><?php echo t('下一页'); ?></a></li>
+                <?php } ?>
+            </ul>
+        <?php } ?>
     </section>
 </section><!-- /.content -->
 <script src="lib/view/js/jquery.js"></script>
 <script src="lib/view/js/bootstrap.min.js"></script>
-<script>
-    function set() {
-        var email = $('#email').val();
-        var pwd = $('#pwd').val();
-        var npwd = $('#npwd').val();
-        var nrpwd = $('#nrpwd').val();
-        if (!email && !pwd) {
-            alert(file.lang('请完整填写修改项'));
-            return;
-        }
-        if (npwd != nrpwd) {
-            alert(file.lang('两次输入的新密码不一致'));
-            return;
-        }
-        $.ajax({
-            url: 'index.php?m=user&a=setUser',
-            type: 'POST',
-            data:{ email : email, pwd : pwd, npwd : npwd, nrpwd : nrpwd },
-            dataType: 'json',
-            timeout: 8000,
-            success: function(data){
-                alert(data.data);
-            }
-        });
-    }
-</script>
 </body>
 </html>
