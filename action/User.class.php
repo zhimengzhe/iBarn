@@ -123,7 +123,7 @@ class User extends Abst {
     }
 
     public function set() {
-        $userinfo = Factory::getInstance('user')->getUserInfo($_REQUEST['uid']);
+        $userinfo = Factory::getInstance('user')->getUserInfo($_SESSION['CLOUD_UID']);
         include VIEW_PATH . 'set.php';
     }
 
@@ -164,8 +164,47 @@ class User extends Abst {
     }
 
     public function person() {
-        $userinfo = Factory::getInstance('user')->getUserInfo($_REQUEST['uid']);
+        $userinfo = Factory::getInstance('user')->getUserInfo($_SESSION['CLOUD_UID']);
+        $uid  = (int)$_GET['uid'];
+        if (!$uid) {
+            $uid = $_SESSION['CLOUD_UID'];
+        }
+        $info = Factory::getInstance('user')->getUserInfo($uid);
+        $curPage = max($_REQUEST['curPage'], 1);
+        $perPage = $_REQUEST['perPage'] ? (int)$_REQUEST['perPage'] : 100;
+        $fac = Factory::getInstance();
+        $list = $fac->getMyShareList($uid, $curPage, $perPage);
+        if ($list) {
+            $fileIocn = json_decode(ICON, true);
+            foreach ((array)$list as $k => $v) {
+                if (trim($v['name']) == '') {
+                    $mapInfo = $fac->getFileMap($v['mapId']);
+                    $list[$k]['name'] = $mapInfo['name'] ? $mapInfo['name'] : tip('资料已被删除');
+                    $list[$k]['type'] = $mapInfo['type'];
+                }
+                $icon = $fileIocn[pathinfo($list[$k]['name'], PATHINFO_EXTENSION)];
+                if (!$list[$k]['isdir']) {
+                    $list[$k]['icon'] = $icon ? $icon : $fileIocn['default'];
+                    $list[$k]['bicon'] = trim(strrchr($list[$k]['icon'], ' '));
+                } else {
+                    $list[$k]['icon'] = $fileIocn['folder'];
+                    $list[$k]['bicon'] = 'folder';
+                }
+            }
+        }
+        $num = $fac->getMyShareNum($uid);
+        $page = ceil($num/$perPage);
         include VIEW_PATH . 'person.php';
+    }
+
+    public function avatar() {
+        $uid = (int)$_REQUEST['uid'];
+        $fac = Factory::getInstance('user');
+        $userinfo = $fac->getUserInfo($uid);
+        if (!$userinfo['avatar']) {
+            $userinfo['avatar'] = DEFAULT_AVATAR;
+        }
+        include VIEW_PATH . 'avatar.php';
     }
 }
 ?>

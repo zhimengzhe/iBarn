@@ -53,15 +53,15 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img width="40" height="40" alt="<?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?>" src="<?php echo $userinfo['avatar']; ?>">
+                        <img width="40" height="40" alt="<?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?>" src="<?php echo $userinfo['avatar'] ? htmlspecialchars($userinfo['avatar'], ENT_NOQUOTES) : DEFAULT_AVATAR; ?>">
                         <span class="username"><?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?></span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
-                        <li><a href="index.php?m=user&a=set"><i class="icon-cog"></i><?php echo t('设置'); ?></a></li>
-                        <li><a href="index.php?m=user&a=person"><i class="icon-suitcase"></i><?php echo t('简介'); ?></a></li>
-                        <li><a href="#"><i class="icon-bell-alt"></i><?php echo t('消息'); ?></a></li>
+                        <li><a href="index.php?m=user&a=set"><i class="icon-edit"></i><?php echo t('编辑'); ?></a></li>
+                        <li><a href="index.php?m=user&a=person"><i class="icon-eye-open"></i><?php echo t('查看'); ?></a></li>
+                        <li><a href="index.php?m=user&a=avatar"><i class="icon-cog"></i><?php echo t('设置头像'); ?></a></li>
                         <li><a href="index.php?m=user&a=logout"><i class="icon-key"></i><?php echo t('退出'); ?></a></li>
                     </ul>
                 </li>

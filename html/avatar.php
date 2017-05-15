@@ -40,8 +40,9 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+<!--                            <img width="40" height="40" alt="--><?php //echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?><!--" src="--><?php //echo $userinfo['avatar']; ?><!--">-->
                             <img width="40" height="40" alt="<?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?>" src="<?php echo $userinfo['avatar'] ? htmlspecialchars($userinfo['avatar'], ENT_NOQUOTES) : DEFAULT_AVATAR; ?>">
-                            <span class="username"><?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?></span>
+                            <?php if ($userinfo['email']) { ?><span class="username">Email：<?php echo htmlspecialchars($userinfo['email'], ENT_NOQUOTES); ?></span><?php } ?>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -61,50 +62,27 @@
     <section class="wrapper">
         <div class="row" style="background-image:url(img/bg0.jpg); border-bottom: 1px solid #bbb;height: 190px;margin-top: -20px;">
             <div class="container">
-                <div class="col-md-2 col-sm-3 col-xs-6" style="padding-left:0;float:left;">
+                <div class="col-md-2 col-sm-3 col-xs-6" style="padding-left:0;">
                     <div style="margin-top: 22px;">
-                        <img src="<?php echo $userinfo['avatar'] ? htmlspecialchars($userinfo['avatar'], ENT_NOQUOTES) : DEFAULT_AVATAR; ?>" width="143px" height="143px"/>
-                    </div>
-                </div>
-                <div style="margin-top: 22px;float:left;">
-                    <div class="form-group">
-                        <h3><?php echo htmlspecialchars($userinfo['name'], ENT_NOQUOTES); ?></h3>
-                    </div>
-                    <div class="form-group">
-                        Email : <?php echo htmlspecialchars($userinfo['email'], ENT_NOQUOTES); ?>
+                        <img id="showAvatar" src="<?php echo $userinfo['avatar'] ? htmlspecialchars($userinfo['avatar'], ENT_NOQUOTES) : DEFAULT_AVATAR; ?>" width="143px" height="143px"/>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" style="top:50px; float: none;display: block; margin:auto;">
+            <div class="col-md-4" style="top:100px; float: none;display: block; margin:auto;">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title"><?php echo t('新邮箱'); ?></h3>
+                        <h3 class="box-title"><?php echo t('设置头像'); ?>：</h3>
                     </div><!-- /.box-header -->
-
                     <div class="box-body">
-                        <div class="form-group">
-                            <input type="text" placeholder="<?php echo t('邮箱地址'); ?>" class="form-control" id="email">
+                        <div id="ucontainer" style="margin-top: 30px;">
+                            <button class="btn btn-info" type="button" id="avatar">
+                                <i class="icon-cloud-upload"></i>
+                                <?php echo t('上传头像'); ?>
+                            </button>
+                            <a style="margin-left:20px;" href="index.php"><?php echo t('返回网盘'); ?></a>
                         </div>
-                    </div>
-
-                    <div class="box-header">
-                        <h3 class="box-title"><?php echo t('修改密码'); ?></h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="form-group">
-                            <input type="text" placeholder="<?php echo t('原密码'); ?>" id="pwd" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="<?php echo t('新密码'); ?>" class="form-control" id="npwd">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="<?php echo t('重复新密码'); ?>" class="form-control" id="nrpwd">
-                        </div>
-                    </div>
-                    <div class="box-footer">
-                        <button class="btn btn-primary" type="button" onclick="set();"><?php echo t('设置'); ?></button><a style="margin-left: 20px;" href="index.php"><?php echo t('返回网盘'); ?></a>
                     </div>
                 </div>
             </div><!-- /.col -->
@@ -113,31 +91,46 @@
 </section><!-- /.content -->
 <script src="lib/view/js/jquery.js"></script>
 <script src="lib/view/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/plupload/js/plupload.full.min.js"></script>
 <script>
-    function set() {
-        var email = $('#email').val();
-        var pwd = $('#pwd').val();
-        var npwd = $('#npwd').val();
-        var nrpwd = $('#nrpwd').val();
-        if (!email && !pwd) {
-            alert(file.lang('请完整填写修改项'));
-            return;
-        }
-        if (npwd != nrpwd) {
-            alert(file.lang('两次输入的新密码不一致'));
-            return;
-        }
-        $.ajax({
-            url: 'index.php?m=user&a=setUser',
-            type: 'POST',
-            data:{ email : email, pwd : pwd, npwd : npwd, nrpwd : nrpwd },
-            dataType: 'json',
-            timeout: 8000,
-            success: function(data){
-                alert(data.data);
+    var uploader = new plupload.Uploader({
+        runtimes : 'html5,flash,silverlight,html4',
+        browse_button : 'avatar',
+        container: document.getElementById('ucontainer'),
+        multi_selection : false,
+        url : 'index.php?a=upload',
+        chunk_size : '1024kb',
+        flash_swf_url : 'lib/plupload/js/Moxie.swf',
+        silverlight_xap_url : 'lib/plupload/js/Moxie.xap',
+        filters : {
+            max_file_size : '15mb',
+            mime_types : []
+        },
+//            multipart_params : { uid : 1 },
+        init: {
+            FilesAdded: function(up, files) {
+                uploader.start();
+            },
+            UploadComplete: function(up, files) {
+                plupload.each(files, function(f) {
+                    var data = {
+                        name : f.name,
+                        size : f.origSize,
+                        mime : f.type
+                    };
+                    $.post("index.php?a=setAvatar", data, function(ret) {
+                        if (ret.code == 1) {
+//                            $('#showAvatar').attr('src', ret.data);
+                            window.location.reload();
+                        } else {
+                            alert(ret.data);
+                        }
+                    }, 'json');
+                });
             }
-        });
-    }
+        }
+    });
+    uploader.init();
 </script>
 </body>
 </html>

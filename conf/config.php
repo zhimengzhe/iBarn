@@ -18,6 +18,7 @@ define('SQL_PATH', ROOT_PATH . 'sql' . DS);
 define('CONFIG_PATH', ROOT_PATH . 'conf' . DS);
 define('LOG_PATH', ROOT_PATH . 'log' . DS);
 define('ACTION_PATH', ROOT_PATH . 'action' . DS);
+define('DEFAULT_AVATAR', 'img/default.png');
 define('PWD', 'openstorer');
 define('DIR', $dataDir);
 define('FDFS', LIB_PATH . 'fdfs' . DS);
