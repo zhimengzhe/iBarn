@@ -46,7 +46,7 @@
     官方推荐模块
     中英文多语言支持
 
-    原生支持fastDfs分布式文件系统
+    原生支持开源fastDfs分布式文件系统，可定制支持阿里云OSS 七牛云存储  亚马逊S3等文件系统
     需服务器自行安装fdfs与fastdfs_client php扩展 
     需修改配置文件：lib/fdfs/config.php  lib/fdfs/group.php
 
