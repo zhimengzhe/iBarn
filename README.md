@@ -51,7 +51,7 @@
     需修改配置文件：lib/fdfs/config.php  lib/fdfs/group.php
 
     同时提供windows客户端程序，功能强大，像操作本地文件一样操作iBarn网盘
-    免安装体验版本对应代码中：iBarn-win-1.0.rar 文件
+    免安装体验版本对应代码中：iBarn-win-1.1.zip 文件
     
     感谢王云(QQ:648067827)在前端UI上提供的帮助
 
