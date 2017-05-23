@@ -66,14 +66,13 @@
 ## 说明(introduction)
 ---
 * 安装非常简单，直接下载代码到web服务器根目录，用浏览器打开，输入必要信息，一键安装
-* 点击[Demo](http://www.godeye.org:82/index.php)进入开源版体验页面
 * 点击[Demo](http://www.godeye.org:81/index.php)进入企业版体验页面  点击进入[后台](http://www.godeye.org:81/admin.php)  用户名：test 密码：123456
 * 上传文件，生成配置文件都需要文件目录有写权限，安装时注意检查
 
 
 * Installation is very simple, directly download the code to the web server root directory, 
 with the browser to open, enter the necessary information, a key installation
-* Click [Demo](http://www.godeye.org:82/index.php) to erperience the iBarn
+* Click [Demo](http://www.godeye.org:81/index.php) to erperience the iBarn   UserName:test PassWord:123456
 * Upload files, generate configuration files are required to write the file directory permissions, 
 when you install, attention to check
 
