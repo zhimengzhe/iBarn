@@ -141,13 +141,15 @@ class PluploadHandler {
 					throw new Exception('', PLUPLOAD_SECURITY_ERR);
 				}
 
-				rename($tmp_path, $file_path);
-
-				return array(
-					'name' => $file_name,
-					'path' => $file_path,
-					'size' => filesize($file_path)
-				);
+				if(rename($tmp_path, $file_path)) {
+					return array(
+						'name' => $file_name,
+						'path' => $file_path,
+						'size' => filesize($file_path)
+					);
+				} else {
+					return false;
+				}
 			} 
 
 			// ok so far
