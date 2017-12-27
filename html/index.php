@@ -219,11 +219,11 @@
                                       <div class="updateTime"><?php echo $v['time']; ?></div>
                                       <div style="display:none;" class="float_box" id="box_<?php echo $v['id']; ?>">
                                           <ul class="control">
-                                              <li><a <?php if (!$v['isdir']) { ?>href="index.php?a=down&id=<?php echo $v['id']; ?>"<?php } else {?>href="index.php?a=mdown&ids=<?php echo $v['id']; ?>"<?php } ?>><i class="icon-download-alt"></i></a></li>
-                                              <li><a href="#" onclick="modalShare(<?php echo $v['id']; ?>, '<?php echo base_convert($v['id'], 10, 36); ?>');" data-toggle="modal"><i class="icon-share"></i></a></li>
-                                              <li><a href="#" onclick="modalName(<?php echo $v['id']; ?>, '<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');" data-toggle="modal"><i class="icon-edit"></i></a></li>
-                                              <li><a href="#" onclick="$('#sid').val(<?php echo $v['id']; ?>);modalTrans();" data-toggle="modal"><i class="icon-random"></i></a></li>
-                                              <li><a href="#" onclick="modalDel('<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');$('#delid').val(<?php echo $v['id']; ?>);" data-toggle="modal"><i class="icon-remove"></i></a></li>
+                                              <li><a title="<?php echo t('下载'); ?>" <?php if (!$v['isdir']) { ?>href="index.php?a=down&id=<?php echo $v['id']; ?>"<?php } else {?>href="index.php?a=mdown&ids=<?php echo $v['id']; ?>"<?php } ?>><i class="icon-download-alt"></i></a></li>
+                                              <li><a title="<?php echo t('分享'); ?>" href="#" onclick="modalShare(<?php echo $v['id']; ?>, '<?php echo base_convert($v['id'], 10, 36); ?>');" data-toggle="modal"><i class="icon-share"></i></a></li>
+                                              <li><a title="<?php echo t('编辑'); ?>" href="#" onclick="modalName(<?php echo $v['id']; ?>, '<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');" data-toggle="modal"><i class="icon-edit"></i></a></li>
+                                              <li><a title="<?php echo t('移动'); ?>" href="#" onclick="$('#sid').val(<?php echo $v['id']; ?>);modalTrans();" data-toggle="modal"><i class="icon-random"></i></a></li>
+                                              <li><a title="<?php echo t('删除'); ?>" href="#" onclick="modalDel('<?php echo htmlspecialchars($v['name'], ENT_NOQUOTES); ?>');$('#delid').val(<?php echo $v['id']; ?>);" data-toggle="modal"><i class="icon-remove"></i></a></li>
                                           </ul>
                                       </div>
                                   </div>
