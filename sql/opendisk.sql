@@ -104,7 +104,7 @@ CREATE TABLE `users` (
   `name` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT '',
   `email` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT '',
   `password` char(32) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `avatar` varchar(60) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `avatar` varchar(250) COLLATE utf8_bin NOT NULL DEFAULT '',
   `fileNum` int(11) NOT NULL DEFAULT '0',
   `size` bigint(20) NOT NULL DEFAULT '0',
   `capacity` int(11) NOT NULL DEFAULT '0',
