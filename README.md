@@ -27,7 +27,7 @@
     Support Windows client program, very powerful, like Operating local file.
     Free installation experience version corresponds to the code: iBarn-win-1.0.rar file
     
-    Thanks Yolanda for UI help (QQ:648067827)
+    Thanks Yolanda for UI help
 
     Chinese:
     iBarn网盘是一个基于PHP开发的先进的云存储系统，
