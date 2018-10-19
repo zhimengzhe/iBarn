@@ -23,8 +23,6 @@
     Recommend
     Chinese and English language support
     Native support for fastDfs distributed file system
-    
-    Thanks Yolanda for UI help (QQ:648067827)
 
     Chinese:
     iBarn网盘是一个基于PHP开发的先进的云存储系统，
@@ -47,8 +45,6 @@
     原生支持fastDfs分布式文件系统
     需服务器自行安装fdfs与fastdfs_client php扩展 
     需修改配置文件：lib/fdfs/config.php  lib/fdfs/group.php
-    
-    感谢王云(QQ:648067827)在前端UI上提供的帮助
 
 ## 服务(service)
 ---
