@@ -2,7 +2,9 @@
 /**
  * @版权所有 翻版必究
  * @desc: 控制层
- * @author: 樊亚磊 mail:fanyalei@aliyun.com QQ:451802973
+ * @author: 樊亚磊
+ * @mail:fanyalei@aliyun.com
+ * @QQ:451802973
  */
 class Core extends Abst {
 

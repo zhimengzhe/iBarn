@@ -63,4 +63,3 @@ Log::getInstance('apistat')->write(array(
     'runTime' => round(microtime(true) - $stime, 5)
 ), 'file');
 session_write_close();
-?>
