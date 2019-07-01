@@ -67,7 +67,7 @@
                             <input type="text" placeholder="<?php echo t('数据库密码'); ?>" id="dbpwd" class="form-control">
                             <input type="text" placeholder="<?php echo t('数据库名'); ?>" id="dbname" class="form-control">
                             <input type="text" placeholder="<?php echo t('数据库HOST'); ?>" id="host" class="form-control">
-                            <input type="text" placeholder="<?php echo t('数据库端口'); ?>" id="port" value="3306" class="form-control">
+                            <input type="text" placeholder="<?php echo t('数据库端口'); ?>" id="port" class="form-control">
                         </div>
                     </div>
                     <div class="box-footer">
@@ -97,6 +97,7 @@
         var dbpwd = $('#dbpwd').val();
         var dbname = $('#dbname').val();
         var host = $('#host').val();
+        var port = $('#port').val();
         if (!name) {
             error($('#name'));
             return;
@@ -124,7 +125,7 @@
         $.ajax({
             url: 'install.php',
             type: 'POST',
-            data:{ name : name, pwd : pwd, file : file, dbuname : dbuname, dbpwd : dbpwd, dbname : dbname, host : host },
+            data:{ name : name, pwd : pwd, file : file, dbuname : dbuname, dbpwd : dbpwd, dbname : dbname, host : host, port:port },
             dataType: 'json',
             timeout: 8000,
             success: function(data){
