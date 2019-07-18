@@ -810,6 +810,7 @@ class Core extends Abst {
         }
         if ($info) {
             foreach ($info as $v) {
+				$count = 0;
                 //
                 if ($_SESSION['CLOUD_UID'] != $v['uid']) {
                     $pids = str_replace('/', ',', trim($v['path'], '/'));
@@ -838,15 +839,19 @@ class Core extends Abst {
                     }
                 }
                 //
-                if ($v['isdir']) {
+				if ($v['isdir']) {
                     $list = $fac->getFileMapByPid($v['uid'], $v['id'], 1);
                     if ($list) {
                         foreach ($list as $y) {
-                            $dirs[] = $y['location'];
+                            $dirs[$count]['location'] = $y['location'];
+							$dirs[$count]['name'] = $y['name'];
+							$count++;
                         }
                     }
                 } else {
-                    $dirs[] = $v['location'];
+                    $dirs[$count]['location'] = $v['location'];
+					$dirs[$count]['name'] = $v['name'];
+					$count++;
                 }
             }
         } else {
@@ -855,9 +860,10 @@ class Core extends Abst {
         }
         $zip = new zipArchive();
         $zipName = md5(uniqid() . time()) . '.zip';
-        $zip->open($zipName, ZipArchive::CREATE|ZIPARCHIVE::OVERWRITE);
+        $zip->open($zipName, ZipArchive::CREATE | ZIPARCHIVE::OVERWRITE);
+		//var_dump($dirs);die();
         foreach ($dirs as $v) {
-            $zip->addFile($v, basename($v));
+            $zip->addFile($v['location'], $v['name']);
         }
         $zip->close();
         header('Content-Type:Application/zip');
