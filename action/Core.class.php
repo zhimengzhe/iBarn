@@ -855,7 +855,7 @@ class Core extends Abst {
         }
         $zip = new zipArchive();
         $zipName = md5(uniqid() . time()) . '.zip';
-        $zip->open($zipName, ZIPARCHIVE::OVERWRITE);
+        $zip->open($zipName, ZipArchive::CREATE|ZIPARCHIVE::OVERWRITE);
         foreach ($dirs as $v) {
             $zip->addFile($v, basename($v));
         }
