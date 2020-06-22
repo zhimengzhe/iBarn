@@ -32,7 +32,7 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "express": "3.4.x",
+    "express": "4.17.x",
     "ejs": "2.2.x",
     "phantomjs": "1.9.x"
   },
