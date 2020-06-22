@@ -67,7 +67,7 @@
 ## 说明(introduction)
 ---
 * 安装非常简单，直接下载代码到web服务器根目录，用浏览器打开，输入必要信息，一键安装
-* 点击[Demo](http://www.godeye.org:81/index.php) 进入企业版体验页面  用户名：test 密码：123456
+* 点击[Demo](http://123.56.106.229:81/index.php) 进入企业版体验页面  用户名：test 密码：123456
 * 上传文件，生成配置文件都需要文件目录有写权限，安装时注意检查
 
 
@@ -82,4 +82,4 @@ when you install, attention to check
 ###打开手机通过支付宝扫描二维码捐赠本项目
 （支付宝账号[alipay]：goodboyfan01@yahoo.com.cn）
 
-![godeye](http://www.godeye.org/img/theme/apuzvzlz1em53xhd90.png)
+![godeye](http://123.56.106.229/img/theme/apuzvzlz1em53xhd90.png)
