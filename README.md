@@ -53,7 +53,7 @@
     企业版（收费）附加功能：（DEMO因为服务器配置原因，有些功能看不到，原则上不提供大的定制开发，小的修改可以做）
     1.单个文件迅雷下载
     2.视频音频文件的在线播放
-    3.增加后台，提供资料与用户的管理  http://www.godeye.org:81/admin.php 用户名：test 密码：123456
+    3.增加后台，提供资料与用户的管理  http://123.56.106.229:81/admin.php 用户名：test 密码：123456
     4.程序健壮性，安全性有相当的提高
 
 ## 服务(service)
@@ -73,7 +73,7 @@
 
 * Installation is very simple, directly download the code to the web server root directory, 
 with the browser to open, enter the necessary information, a key installation
-* Click [Demo](http://www.godeye.org:81/index.php) to erperience the iBarn   UserName:test PassWord:123456
+* Click [Demo](http://123.56.106.229:81/index.php) to erperience the iBarn   UserName:test PassWord:123456
 * Upload files, generate configuration files are required to write the file directory permissions, 
 when you install, attention to check
 
